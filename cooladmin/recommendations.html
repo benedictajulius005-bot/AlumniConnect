@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Explore personalized job recommendations based on your skills on AlumniConnect." />
+  <title>Recommended Jobs | AlumniConnect</title>
+  <meta name="theme-color" content="#4272d7" />
+  <link href="css/font-face.css" rel="stylesheet" media="all" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <link href="vendor/fontawesome-7.3.1/css/all.min.css" rel="stylesheet" media="all" />
+  <link href="vendor/bootstrap-5.3.8.min.css" rel="stylesheet" media="all" />
+  <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all" />
+  <link href="css/theme.css" rel="stylesheet" media="all" />
+  <link href="css/app.css" rel="stylesheet" media="all" />
+</head>
+
+<body class="app"><a class="visually-hidden-focusable skip-link" href="#main-content">Skip to main content</a>
+  <div class="page-wrapper">
+    <header class="header-mobile d-block d-lg-none">
+      <div class="header-mobile__bar">
+        <div class="container-fluid">
+          <div class="header-mobile-inner"><a class="logo" href="index4.html"
+              style="font-size:22px;font-weight:700;color:#263b64;text-decoration:none;">
+              AlumniConnect
+            </a>
+            <button class="hamburger hamburger--slider" type="button" aria-label="Toggle navigation"><span
+                class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+          </div>
+        </div>
+      </div>
+
+      <nav class="navbar-mobile">
+        <div class="container-fluid">
+          <ul class="navbar-mobile__list list-unstyled">
+
+            <li>
+              <a href="index4.html">
+                <i class="fa-solid fa-gauge-high"></i>
+                Dashboard
+              </a>
+            </li>
+
+            <li>
+              <a href="profile.html">
+                <i class="fa-solid fa-user"></i>
+                My Profile
+              </a>
+            </li>
+
+            <li>
+              <a href="skills.html">
+                <i class="fa-solid fa-list-check"></i>
+                My Skills
+              </a>
+            </li>
+
+            <li>
+              <a href="employment.html">
+                <i class="fa-solid fa-briefcase"></i>
+                Employment Information
+              </a>
+            </li>
+
+            <li>
+              <a href="jobs.html">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Job Opportunities
+              </a>
+            </li>
+
+            <li class="active">
+              <a href="recommendations.html">
+                <i class="fa-solid fa-star"></i>
+                Recommended Jobs
+              </a>
+            </li>
+
+            <li>
+              <a href="events.html">
+                <i class="fa-solid fa-calendar-days"></i>
+                Events
+              </a>
+            </li>
+
+            <li>
+              <a href="announcements.html">
+                <i class="fa-solid fa-bullhorn"></i>
+                Announcements
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+
+    </header>
+    <aside class="menu-sidebar" id="main-sidebar">
+      <div class="logo"><a class="logo-link" href="index4.html" aria-label="AlumniConnect home">
+          <span class="logo-mark" aria-hidden="true">A</span>
+          <span class="logo-text">AlumniConnect</span>
+        </a>
+        <button class="sidebar-close js-sidebar-toggle" type="button" aria-label="Close navigation"><i
+            class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      </div>
+      <div class="menu-sidebar__content js-scrollbar1">
+
+        <nav class="navbar-sidebar">
+          <ul class="list-unstyled navbar__list">
+
+            <li>
+              <a href="index4.html">
+                <i class="fa-solid fa-gauge-high"></i>
+                Dashboard
+              </a>
+            </li>
+
+            <li>
+              <a href="profile.html">
+                <i class="fa-solid fa-user"></i>
+                My Profile
+              </a>
+            </li>
+
+            <li>
+              <a href="skills.html">
+                <i class="fa-solid fa-list-check"></i>
+                My Skills
+              </a>
+            </li>
+
+            <li>
+              <a href="employment.html">
+                <i class="fa-solid fa-briefcase"></i>
+                Employment Information
+              </a>
+            </li>
+
+            <li>
+              <a href="jobs.html">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Job Opportunities
+              </a>
+            </li>
+
+            <li class="active">
+              <a href="recommendations.html">
+                <i class="fa-solid fa-star"></i>
+                Recommended Jobs
+              </a>
+            </li>
+
+            <li>
+              <a href="events.html">
+                <i class="fa-solid fa-calendar-days"></i>
+                Events
+              </a>
+            </li>
+
+            <li>
+              <a href="announcements.html">
+                <i class="fa-solid fa-bullhorn"></i>
+                Announcements
+              </a>
+            </li>
+
+          </ul>
+        </nav>
+
+      </div>
+    </aside>
+    <div class="page-container">
+
+      <header class="header-desktop" style="min-height:75px;">
+        <div class="section__content section__content--p30">
+          <div class="container-fluid">
+            <div class="header-wrap">
+
+              <button class="sidebar-toggle js-sidebar-toggle" type="button" aria-label="Toggle navigation"
+                aria-expanded="false" aria-controls="main-sidebar">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+              </button>
+
+              <div class="header-button">
+                <div class="account-wrap">
+                  <div class="account-item position-relative" id="alumniAccountMenu">
+
+                    <button type="button" id="alumniAccountToggle"
+                      class="d-flex align-items-center gap-2 border-0 bg-transparent" aria-expanded="false"
+                      aria-controls="alumniAccountDropdown">
+
+                      <span id="alumniInitials"
+                        class="d-flex align-items-center justify-content-center rounded-circle text-white fw-bold"
+                        style="width:42px;height:42px;background:#263b64;">
+                        A
+                      </span>
+
+                      <span class="fw-semibold">My Account</span>
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+                    <div id="alumniAccountDropdown" class="position-absolute bg-white shadow rounded-3 p-3"
+                      style="display:none;right:0;top:55px;width:240px;z-index:9999;">
+
+                      <div class="mb-3">
+                        <strong id="dropdownAlumniName">Alumni</strong>
+                        <div id="dropdownAlumniEmail" class="text-muted small text-break"></div>
+                      </div>
+
+                      <hr>
+
+                      <a href="profile.html" class="d-block text-decoration-none mb-3">
+                        <i class="fa-solid fa-user me-2"></i>
+                        My Profile
+                      </a>
+
+                      <a href="#" id="alumniLogoutBtn" class="d-block text-decoration-none text-danger">
+                        <i class="fa-solid fa-power-off me-2"></i>
+                        Logout
+                      </a>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-content" id="main-content">
+        <div class="section__content section__content--p30">
+          <div class="container-fluid"> <!-- Page header -->
+            <div class="page-header">
+              <div>
+                <h1>Recommended Jobs</h1>
+                <p class="subtitle"> Discover job opportunities that match your skills and qualifications.</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="card">
+                  <div class="card-header">
+                    <strong>Skill-Based Job Recommendations</strong>
+                  </div>
+
+                  <div class="card-body">
+
+
+
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+                      <h4 class="mb-0">Jobs Matched to Your Skills</h4>
+
+                      <button type="button" class="btn btn-outline-primary btn-sm" id="refreshRecommendationsBtn">
+                        <i class="fa-solid fa-rotate me-1"></i>
+                        Refresh
+                      </button>
+                    </div>
+
+                    <p class="text-muted mb-4">
+                      Explore job opportunities recommended based on
+                      the skills in your alumni profile.
+                    </p>
+
+                    <div id="recommendationsMessage" class="mb-3" aria-live="polite">
+                      Loading your recommended jobs...
+                    </div>
+
+                    <div id="recommendationsList" class="row g-3">
+                      <!-- Recommended jobs will appear here -->
+                    </div>
+
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="js/vanilla-utils.js"></script>
+  <script src="vendor/bootstrap-5.3.8.bundle.min.js"></script>
+  <script src="vendor/chartjs/chart.umd.js-4.5.1.min.js"></script>
+  <script src="js/bootstrap5-init.js"></script>
+  <script src="js/main-vanilla.js"></script>
+  <script src="js/modern-plugins.js"></script>
+
+  <script>
+    async function loadRecommendedJobs() {
+      const token = localStorage.getItem("token");
+      const userId = localStorage.getItem("userId");
+      const role = localStorage.getItem("role");
+
+      if (!token || !userId || role !== "ALUMNI") {
+        window.location.href = "login.html";
+        return;
+      }
+
+      const message = document.getElementById("recommendationsMessage");
+      const list = document.getElementById("recommendationsList");
+
+      message.textContent = "Loading your recommended jobs...";
+      list.innerHTML = "";
+
+      try {
+        const response = await fetch(
+          `http://localhost:8080/api/recommendations/alumni/${userId}`,
+          {
+            headers: {
+              "Authorization": `Bearer ${token}`
+            }
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("Failed to load recommendations.");
+        }
+
+        const recommendations = await response.json();
+
+        message.textContent = "";
+
+        if (recommendations.length === 0) {
+          message.textContent =
+            "No recommended jobs yet. Add skills to your profile to improve your matches.";
+          return;
+        }
+
+        recommendations.forEach(job => {
+          const matchScore = Math.round(job.matchScore || 0);
+
+          const column = document.createElement("div");
+          column.className = "col-md-6 col-xl-4";
+
+          const card = document.createElement("div");
+          card.className = "card h-100 shadow-sm";
+
+          const body = document.createElement("div");
+          body.className = "card-body";
+
+          const title = document.createElement("h5");
+          title.className = "card-title";
+          title.textContent = job.jobTitle || "Untitled Job";
+
+          const company = document.createElement("p");
+          company.className = "mb-2";
+          company.textContent = job.companyName || "Company not specified";
+
+          const location = document.createElement("p");
+          location.className = "text-muted mb-2";
+          location.textContent = job.location || "Location not specified";
+
+        const type = document.createElement("p");
+type.className = "text-muted mb-3";
+type.textContent =
+  job.employmentType || "Employment type not specified";
+
+// Matching skills
+const matchingSkillsTitle = document.createElement("h6");
+matchingSkillsTitle.className = "fw-bold mt-3 mb-2";
+matchingSkillsTitle.textContent = "Matching Skills";
+
+const matchingSkillsContainer = document.createElement("div");
+matchingSkillsContainer.className = "d-flex flex-wrap gap-2 mb-3";
+
+const matchingSkills = Array.isArray(job.matchingSkills)
+  ? job.matchingSkills
+  : [];
+
+if (matchingSkills.length > 0) {
+  matchingSkills.forEach(skill => {
+    const badge = document.createElement("span");
+    badge.className = "badge bg-success";
+    badge.textContent = skill;
+    matchingSkillsContainer.appendChild(badge);
+  });
+} else {
+  matchingSkillsContainer.textContent = "No matching skills.";
+}
+
+// Missing skills
+const missingSkillsTitle = document.createElement("h6");
+missingSkillsTitle.className = "fw-bold mb-2";
+missingSkillsTitle.textContent = "Skills to Improve";
+
+const missingSkillsContainer = document.createElement("div");
+missingSkillsContainer.className = "d-flex flex-wrap gap-2 mb-3";
+
+const missingSkills = Array.isArray(job.missingSkills)
+  ? job.missingSkills
+  : [];
+
+if (missingSkills.length > 0) {
+  missingSkills.forEach(skill => {
+    const badge = document.createElement("span");
+    badge.className = "badge bg-warning text-dark";
+    badge.textContent = skill;
+    missingSkillsContainer.appendChild(badge);
+  });
+} else {
+  missingSkillsContainer.textContent = "You have all required skills!";
+}
+
+const match = document.createElement("p");
+          match.className = "fw-bold mb-2";
+          match.textContent = `${matchScore}% Skill Match`;
+
+          const progress = document.createElement("div");
+          progress.className = "progress";
+
+          const progressBar = document.createElement("div");
+          progressBar.className = "progress-bar";
+          progressBar.style.width =
+            `${Math.max(0, Math.min(100, matchScore))}%`;
+          progressBar.setAttribute("role", "progressbar");
+          progressBar.setAttribute("aria-valuenow", matchScore);
+          progressBar.setAttribute("aria-valuemin", "0");
+          progressBar.setAttribute("aria-valuemax", "100");
+
+          progress.appendChild(progressBar);
+          body.append(
+  title,
+  company,
+  location,
+  type,
+  matchingSkillsTitle,
+  matchingSkillsContainer,
+  missingSkillsTitle,
+  missingSkillsContainer,
+  match,
+  progress
+);
+          card.appendChild(body);
+          column.appendChild(card);
+          list.appendChild(column);
+        });
+
+      } catch (error) {
+        console.error("Recommendations error:", error);
+        message.textContent =
+          "Unable to load recommended jobs. Please try again.";
+      }
+    }
+
+    loadRecommendedJobs();
+
+    document.getElementById("refreshRecommendationsBtn")
+      .addEventListener("click", loadRecommendedJobs);
+
+    // Alumni account dropdown
+    const alumniFirstName = localStorage.getItem("firstName") || "";
+    const alumniLastName = localStorage.getItem("lastName") || "";
+    const alumniEmail = localStorage.getItem("email") || "";
+
+    document.getElementById("alumniInitials").textContent =
+      (alumniFirstName.charAt(0) + alumniLastName.charAt(0)).toUpperCase() || "A";
+
+    document.getElementById("dropdownAlumniName").textContent =
+      [alumniFirstName, alumniLastName].filter(Boolean).join(" ") || "Alumni";
+
+    document.getElementById("dropdownAlumniEmail").textContent = alumniEmail;
+
+    const accountToggle = document.getElementById("alumniAccountToggle");
+    const accountDropdown = document.getElementById("alumniAccountDropdown");
+
+    accountToggle.addEventListener("click", function (event) {
+      event.stopPropagation();
+
+      const isOpen = accountDropdown.style.display === "block";
+
+      accountDropdown.style.display = isOpen ? "none" : "block";
+      accountToggle.setAttribute("aria-expanded", String(!isOpen));
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!document.getElementById("alumniAccountMenu").contains(event.target)) {
+        accountDropdown.style.display = "none";
+        accountToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    document.getElementById("alumniLogoutBtn")
+      .addEventListener("click", function (event) {
+        event.preventDefault();
+
+        ["token", "role", "userId", "firstName", "lastName", "email"]
+          .forEach(key => localStorage.removeItem(key));
+
+        window.location.href = "login.html";
+      });
+
+  </script>
+
+</body>
+
+</html>

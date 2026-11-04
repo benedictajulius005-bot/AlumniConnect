@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="generator" content="CoolAdmin 3.4.0"/>
+    <meta name="description" content="Create a new CoolAdmin account."/>
+    <title>Alumni Registration | AlumniConnect</title>
+    <meta name="robots" content="noindex,nofollow"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Create account | CoolAdmin Bootstrap 5 Admin Dashboard"/>
+    <meta property="og:description" content="Create a new CoolAdmin account."/>
+    <meta property="og:image" content="screenshots/cooladmin-bootstrap-dashboard-2.png"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Create account | CoolAdmin Bootstrap 5 Admin Dashboard"/>
+    <meta name="twitter:description" content="Create a new CoolAdmin account."/>
+    <meta name="theme-color" content="#4272d7"/>
+    <link href="css/font-face.css" rel="stylesheet" media="all"/>
+    <link rel="preconnect" href="https://rsms.me/"/>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css"/>
+    <link href="vendor/fontawesome-7.3.1/css/all.min.css" rel="stylesheet" media="all"/>
+    <link href="vendor/bootstrap-5.3.8.min.css" rel="stylesheet" media="all"/>
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all"/>
+    <link href="css/theme.css" rel="stylesheet" media="all"/>
+    <link href="css/app.css" rel="stylesheet" media="all"/>
+  </head>
+  <body class="app auth-page"><a class="visually-hidden-focusable skip-link" href="#auth-form">Skip to sign-up form</a>
+    <main class="login-wrap" id="auth-form">
+      <div class="login-content">            <a href="index.html" class="auth-brand" aria-label="CoolAdmin home">
+                <span class="logo-mark" aria-hidden="true">C</span>
+                <span class="logo-text">AlumniConnect</span>
+            </a>
+            <h1 class="auth-title">Create your account</h1>
+            <p class="auth-subtitle">
+    Create your alumni account to manage your career profile,
+    skills, and discover job opportunities.
+</p>
+
+           <form class="login-form" id="registerForm">
+
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input id="firstName" class="au-input"
+               type="text" autocomplete="given-name"
+               placeholder="Enter your first name" required>
+    </div>
+
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input id="lastName" class="au-input"
+               type="text" autocomplete="family-name"
+               placeholder="Enter your last name" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input id="email" class="au-input"
+               type="email" autocomplete="email"
+               placeholder="you@example.com" required>
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" class="au-input"
+               type="password" autocomplete="new-password"
+               placeholder="At least 12 characters"
+               minlength="12" required>
+    </div>
+
+    <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input id="confirmPassword" class="au-input"
+               type="password" autocomplete="new-password"
+               placeholder="Confirm your password" required>
+    </div>
+
+    <div id="registerMessage" role="status" aria-live="polite"
+         style="margin-bottom: 15px;"></div>
+
+    <button class="au-btn au-btn--green"
+            type="submit" id="registerButton">
+        Create Alumni Account
+    </button>
+
+</form>
+
+            <div class="register-link">
+                <p>Already have an account? <a href="login.html">Sign in</a></p>
+            </div>
+
+      </div>
+    </main>
+    <script src="js/vanilla-utils.js"></script>
+    <script src="vendor/bootstrap-5.3.8.bundle.min.js"></script>
+    <script src="js/bootstrap5-init.js"></script>
+    <script src="js/main-vanilla.js"></script>
+    <script src="js/modern-plugins.js"></script>
+    <script>
+document.getElementById("registerForm")
+    .addEventListener("submit", async function (event) {
+
+        event.preventDefault();
+
+        const firstName = document.getElementById("firstName").value.trim();
+        const lastName = document.getElementById("lastName").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
+
+        const message = document.getElementById("registerMessage");
+        const button = document.getElementById("registerButton");
+
+        message.textContent = "";
+
+        if (!firstName || !lastName || !email || !password) {
+            message.textContent = "Please complete all required fields.";
+            message.style.color = "red";
+            return;
+        }
+
+        if (password.length < 12) {
+            message.textContent = "Password must contain at least 12 characters.";
+            message.style.color = "red";
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            message.textContent = "Passwords do not match.";
+            message.style.color = "red";
+            return;
+        }
+
+        const registrationData = {
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            password: password
+        };
+
+        button.disabled = true;
+        button.textContent = "Creating account...";
+
+        try {
+            const response = await fetch(
+                "http://localhost:8080/api/auth/register",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(registrationData)
+                }
+            );
+
+            if (!response.ok) {
+                if (response.status === 409) {
+                    throw new Error("An account with this email already exists.");
+                }
+
+                if (response.status === 400) {
+                    throw new Error("Invalid registration details. Please check your information.");
+                }
+
+                throw new Error("Registration failed. Please try again.");
+            }
+
+            const registeredUser = await response.json();
+
+            // Public registration must never grant administrator privileges.
+            if (registeredUser.role !== "ALUMNI") {
+                message.textContent =
+                    "Account created, but its role needs administrator verification. Please contact support.";
+                message.style.color = "red";
+                console.error("Unexpected registration role:", registeredUser.role);
+                return;
+            }
+
+            message.textContent =
+                "Alumni account created successfully! Redirecting to login...";
+            message.style.color = "green";
+
+            this.reset();
+
+            setTimeout(() => {
+                window.location.href = "login.html";
+            }, 1500);
+
+        } catch (error) {
+            console.error("Registration error:", error);
+
+            message.textContent = error.message;
+            message.style.color = "red";
+
+        } finally {
+            button.disabled = false;
+            button.textContent = "Create Alumni Account";
+        }
+    });
+</script>
+  </body>
+</html>

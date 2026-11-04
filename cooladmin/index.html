@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description"
+    content="Manage alumni profiles, employment statistics, job opportunities, events, and announcements on AlumniConnect." />
+  <title>Admin Dashboard | AlumniConnect</title>
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#4272d7" />
+  <link href="css/font-face.css" rel="stylesheet" media="all" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <link href="vendor/fontawesome-7.3.1/css/all.min.css" rel="stylesheet" media="all" />
+  <link href="vendor/bootstrap-5.3.8.min.css" rel="stylesheet" media="all" />
+  <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all" />
+  <link href="css/theme.css" rel="stylesheet" media="all" />
+  <link href="css/app.css" rel="stylesheet" media="all" />
+  <style>
+    .admin-jobs-table {
+      width: 100%;
+      min-width: 750px;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .admin-jobs-table th,
+    .admin-jobs-table td {
+      padding: 16px 24px;
+      text-align: left;
+      vertical-align: middle;
+      white-space: normal;
+      overflow-wrap: break-word;
+    }
+
+    /* Job Title */
+    .admin-jobs-table th:nth-child(1),
+    .admin-jobs-table td:nth-child(1) {
+      width: 45%;
+    }
+
+    /* Company */
+    .admin-jobs-table th:nth-child(2),
+    .admin-jobs-table td:nth-child(2) {
+      width: 28%;
+    }
+
+    /* Location */
+    .admin-jobs-table th:nth-child(3),
+    .admin-jobs-table td:nth-child(3) {
+      width: 27%;
+    }
+  </style>
+
+</head>
+
+<body class="app"><a class="visually-hidden-focusable skip-link" href="#main-content">Skip to main content</a>
+  <div class="page-wrapper">
+    <header class="header-mobile d-block d-lg-none">
+      <div class="header-mobile__bar">
+        <div class="container-fluid">
+          <div class="header-mobile-inner"><a class="logo-link" href="index.html"
+              aria-label="AlumniConnect Admin Dashboard">
+              <span class="logo-mark" aria-hidden="true">A</span>
+              <span class="logo-text">AlumniConnect</span>
+            </a>
+            <button class="hamburger hamburger--slider" type="button" aria-label="Toggle navigation"><span
+                class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar-mobile">
+        <div class="container-fluid">
+
+          <ul class="navbar-mobile__list list-unstyled">
+
+            <li class="active">
+              <a href="index.html">
+                <i class="fa-solid fa-gauge-high"></i>
+                Dashboard
+              </a>
+            </li>
+
+            <li>
+              <a href="admin-alumni.html">
+                <i class="fa-solid fa-users"></i>
+                Alumni Management
+              </a>
+            </li>
+
+            <li>
+              <a href="admin-jobs.html">
+                <i class="fa-solid fa-briefcase"></i>
+                Job Management
+              </a>
+            </li>
+
+            <li>
+              <a href="admin-skills.html">
+                <i class="fa-solid fa-list-check"></i>
+                Skill Management
+              </a>
+            </li>
+
+            <li>
+              <a href="admin-events.html">
+                <i class="fa-solid fa-calendar-days"></i>
+                Events Management
+              </a>
+            </li>
+
+            <li>
+              <a href="admin-announcements.html">
+                <i class="fa-solid fa-bullhorn"></i>
+                Announcements
+              </a>
+            </li>
+
+            <li>
+              <a href="admin-departments.html">
+                <i class="fa-solid fa-building-columns"></i>
+                Departments
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+      </nav>
+    </header>
+    <aside class="menu-sidebar" id="main-sidebar">
+      <div class="logo">
+        <a class="logo-link" href="index.html" aria-label="AlumniConnect Admin Dashboard">
+          <span class="logo-mark" aria-hidden="true">A</span>
+          <span class="logo-text">AlumniConnect</span>
+        </a>
+        <button class="sidebar-close js-sidebar-toggle" type="button" aria-label="Close navigation"><i
+            class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      </div>
+      <div class="menu-sidebar__content js-scrollbar1">
+        <nav class="navbar-sidebar">
+
+          <ul class="list-unstyled navbar__list">
+
+            <li class="active">
+              <a href="index.html">
+                <i class="fa-solid fa-gauge-high"></i>
+                Dashboard
+              </a>
+            </li>
+
+            <li>
+              <a href="admin-alumni.html">
+                <i class="fa-solid fa-users"></i>
+                Alumni Management
+              </a>
+            </li>
+
+            <li>
+              <a href="admin-jobs.html">
+                <i class="fa-solid fa-briefcase"></i>
+                Job Management
+              </a>
+            </li>
+
+            <li>
+              <a href="admin-skills.html">
+                <i class="fa-solid fa-list-check"></i>
+                Skill Management
+              </a>
+            </li>
+
+            <li>
+              <a href="admin-events.html">
+                <i class="fa-solid fa-calendar-days"></i>
+                Events Management
+              </a>
+            </li>
+
+            <li>
+              <a href="admin-announcements.html">
+                <i class="fa-solid fa-bullhorn"></i>
+                Announcements
+              </a>
+            </li>
+
+            <li>
+              <a href="admin-departments.html">
+                <i class="fa-solid fa-building-columns"></i>
+                Departments
+              </a>
+            </li>
+
+          </ul>
+
+        </nav>
+      </div>
+    </aside>
+    <div class="page-container">
+      <header class="header-desktop">
+        <div class="section__content section__content--p30">
+          <div class="container-fluid">
+            <div class="header-wrap">
+              <button class="sidebar-toggle js-sidebar-toggle" type="button" aria-label="Toggle navigation"
+                aria-expanded="false" aria-controls="main-sidebar"><i class="fa-solid fa-bars"
+                  aria-hidden="true"></i></button>
+              <div class="header-button" style="margin-left:auto;">
+                <div class="account-wrap" id="adminAccountMenu" style="position:relative;">
+
+                  <button type="button" id="adminAccountToggle" aria-label="Open admin account menu"
+                    aria-expanded="false" style="display:flex;align-items:center;gap:10px;
+             border:0;background:transparent;cursor:pointer;
+             padding:8px;">
+
+                    <span id="adminInitials" style="display:flex;align-items:center;justify-content:center;
+               width:40px;height:40px;border-radius:50%;
+               background:#263b64;color:white;font-weight:700;">
+                      A
+                    </span>
+
+                    <span id="adminHeaderName" style="font-weight:600;color:#263b64;">
+                      Administrator
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down" style="font-size:12px;color:#263b64;"></i>
+                  </button>
+
+                  <div id="adminAccountDropdown" style="display:none;position:absolute;right:0;top:100%;
+             width:260px;background:white;border-radius:8px;
+             box-shadow:0 8px 24px rgba(0,0,0,0.15);
+             z-index:1000;padding:16px;">
+
+                    <div style="padding-bottom:12px;border-bottom:1px solid #eee;">
+                      <strong id="dropdownAdminName" style="display:block;color:#263b64;">
+                        Administrator
+                      </strong>
+
+                      <small id="dropdownAdminEmail" style="color:#777;overflow-wrap:anywhere;"></small>
+
+                      <small style="display:block;margin-top:6px;color:#777;">
+                        System Administrator
+                      </small>
+                    </div>
+
+                    <button type="button" id="adminLogoutBtn" style="width:100%;margin-top:12px;padding:10px;
+               border:0;background:#f8f9fa;border-radius:5px;
+               text-align:left;cursor:pointer;color:#c0392b;">
+
+                      <i class="fa-solid fa-right-from-bracket"></i>
+                      Logout
+                    </button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="main-content" id="main-content">
+        <div class="section__content section__content--p30">
+          <div class="container-fluid">
+            <!-- Page header -->
+            <div class="page-header">
+              <div>
+                <h1>Admin Dashboard</h1>
+                <p class="subtitle"> Manage alumni records, career opportunities,
+                  events, and announcements from one place.</p>
+              </div>
+
+              <div class="page-header__actions">
+                <button type="button" class="m-btn m-btn--ghost" id="dash-refresh-btn"
+                  aria-label="Refresh dashboard data">
+                  <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i>
+                  Refresh
+                </button>
+              </div>
+
+            </div>
+
+            <!-- KPI strip -->
+            <div class="row row-tight">
+              <div class="col-sm-6 col-lg-3">
+
+                <article class="stat-card">
+                  <div class="stat-card__head">
+                    <p class="stat-card__label">Total Alumni</p>
+                    <span class="stat-card__icon stat-card__icon--c1">
+                      <i class="fa-solid fa-graduation-cap"></i>
+                    </span>
+                  </div>
+
+                  <p class="stat-card__value" id="totalAlumni">--</p>
+
+                  <p class="text-muted small mb-0">
+                    Registered alumni profiles
+                  </p>
+                </article>
+
+              </div>
+              <div class="col-sm-6 col-lg-3">
+
+                <article class="stat-card">
+                  <div class="stat-card__head">
+                    <p class="stat-card__label">Employed Alumni</p>
+                    <span class="stat-card__icon stat-card__icon--c2">
+                      <i class="fa-solid fa-briefcase"></i>
+                    </span>
+                  </div>
+
+                  <p class="stat-card__value" id="employedAlumni">--</p>
+
+                  <p class="text-muted small mb-0">
+                    Alumni currently employed
+                  </p>
+                </article>
+
+              </div>
+              <div class="col-sm-6 col-lg-3">
+
+                <article class="stat-card">
+                  <div class="stat-card__head">
+                    <p class="stat-card__label">Active Jobs</p>
+                    <span class="stat-card__icon stat-card__icon--c3">
+                      <i class="fa-solid fa-briefcase"></i>
+                    </span>
+                  </div>
+
+                  <p class="stat-card__value" id="activeJobs">--</p>
+
+                  <p class="text-muted small mb-0">
+                    Available job opportunities
+                  </p>
+                </article>
+
+              </div>
+              <div class="col-sm-6 col-lg-3">
+
+                <article class="stat-card">
+                  <div class="stat-card__head">
+                    <p class="stat-card__label">Upcoming Events</p>
+                    <span class="stat-card__icon stat-card__icon--c4">
+                      <i class="fa-solid fa-calendar-days"></i>
+                    </span>
+                  </div>
+
+                  <p class="stat-card__value" id="upcomingEvents">--</p>
+
+                  <p class="text-muted small mb-0">
+                    Scheduled upcoming events
+                  </p>
+                </article>
+
+              </div>
+            </div>
+
+            <!-- Primary chart + activity feed -->
+            <div class="row row-tight" style="margin-top: 16px;">
+              <div class="col-lg-8">
+                <section class="m-card" aria-labelledby="rev-trend-title" data-skeletonize>
+                  <header class="m-card__header">
+                    <div>
+                      <h2 class="m-card__title" id="rev-trend-title">
+                        Alumni Employment Overview
+                      </h2>
+                      <p class="m-card__subtitle">
+                        Employment status distribution among registered alumni.
+                      </p>
+                    </div>
+
+                  </header>
+                  <div style="height: 280px; position: relative;">
+                    <canvas id="employmentChart"></canvas>
+                  </div>
+                </section>
+              </div>
+              <div class="col-lg-4">
+                <section class="m-card" aria-labelledby="activity-title">
+                  <header class="m-card__header">
+                    <div>
+                      <h2 class="m-card__title" id="activity-title">Recent Alumni Registration</h2>
+                      <p class="m-card__subtitle">Recently registered alumni profiles.</p>
+                    </div>
+                    <a href="admin-alumni.html" class="m-btn m-btn--ghost"
+                      style="height:30px; padding:0 10px; font-size:12.5px;">
+                      <i class="fa-solid fa-users"></i>
+                      Manage Alumni
+                    </a>
+                  </header>
+
+                  <ul class="activity-list" id="recentAlumniList">
+                    <li class="activity-item">
+                      <div class="activity-item__body">
+                        <p class="activity-item__text text-muted">
+                          Loading alumni records...
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+
+                </section>
+              </div>
+            </div>
+
+            <!-- Tasks + top products -->
+            <div class="row row-tight" style="margin-top: 16px;">
+              <div class="col-lg-6">
+                <section class="m-card" aria-labelledby="tasks-title">
+                  <header class="m-card__header">
+                    <div>
+                      <h2 class="m-card__title" id="tasks-title">Upcoming Events</h2>
+                      <p class="m-card__subtitle"> Scheduled events for the alumni community.</p>
+                    </div>
+
+                    <a href="admin-events.html" class="m-btn m-btn--ghost"
+                      style="height:30px; padding:0 10px; font-size:12.5px;">
+                      <i class="fa-solid fa-calendar-days"></i>
+                      Manage Events
+                    </a>
+
+                  </header>
+
+                  <ul class="task-list" id="adminUpcomingEvents">
+                    <li class="task-item">
+                      <span class="text-muted">
+                        Loading upcoming events...
+                      </span>
+                    </li>
+                  </ul>
+
+                </section>
+              </div>
+              <div class="col-lg-6">
+                <section class="m-card" aria-labelledby="top-products-title">
+                  <header class="m-card__header">
+                    <div>
+                      <h2 class="m-card__title" id="top-products-title">Recent Job Opportunities</h2>
+                      <p class="m-card__subtitle"> Available career opportunities for alumni.</p>
+                    </div>
+                    <a href="admin-jobs.html" class="m-btn m-btn--ghost"
+                      style="height:30px; padding:0 10px; font-size:12.5px;">
+                      <i class="fa-solid fa-briefcase"></i>
+                      Manage Jobs
+                    </a>
+                  </header>
+
+                  <div class="table-responsive">
+                    <table class="m-table admin-jobs-table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Job Title</th>
+                          <th scope="col">Company</th>
+                          <th scope="col">Location</th>
+                        </tr>
+                      </thead>
+
+                      <tbody id="adminRecentJobs">
+                        <tr>
+                          <td colspan="3" class="text-muted">
+                            Loading job opportunities...
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                </section>
+              </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="row mt-4">
+              <div class="col-md-12">
+                <div class="copyright">
+                  <p>© 2026 AlumniConnect. All rights reserved.</p>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="js/vanilla-utils.js"></script>
+  <script src="vendor/bootstrap-5.3.8.bundle.min.js"></script>
+  <script src="vendor/chartjs/chart.umd.js-4.5.1.min.js"></script>
+  <script src="js/bootstrap5-init.js"></script>
+  <script src="js/main-vanilla.js"></script>
+  <script src="js/modern-plugins.js"></script>
+  <script>
+    // Protect Admin Dashboard
+    const token = localStorage.getItem("token");
+    const role = localStorage.getItem("role");
+
+    // User must be logged in and must be an ADMIN
+    if (!token || role !== "ADMIN") {
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <script>
+    async function loadAdminStatistics() {
+      const token = localStorage.getItem("token");
+      const role = localStorage.getItem("role");
+
+      if (!token || role !== "ADMIN") {
+        window.location.href = "login.html";
+        return;
+      }
+
+      const headers = {
+        "Authorization": `Bearer ${token}`
+      };
+
+      const baseUrl = "http://localhost:8080";
+
+      try {
+        const [alumniResponse, jobsResponse, eventsResponse] =
+          await Promise.all([
+            fetch(`${baseUrl}/api/alumni`, { headers }),
+            fetch(`${baseUrl}/api/job-opportunities/active`, { headers }),
+            fetch(`${baseUrl}/api/events/active`, { headers })
+          ]);
+
+        if (!alumniResponse.ok || !jobsResponse.ok || !eventsResponse.ok) {
+          throw new Error("Unable to retrieve dashboard statistics.");
+        }
+
+        const alumni = await alumniResponse.json();
+
+        const recentAlumniList = document.getElementById("recentAlumniList");
+
+        if (recentAlumniList) {
+          recentAlumniList.innerHTML = "";
+
+          if (alumni.length === 0) {
+            const emptyItem = document.createElement("li");
+            emptyItem.className = "activity-item";
+            emptyItem.textContent = "No alumni registered yet.";
+            recentAlumniList.appendChild(emptyItem);
+          } else {
+            alumni.slice(0, 5).forEach(person => {
+              const item = document.createElement("li");
+              item.className = "activity-item";
+
+              const body = document.createElement("div");
+              body.className = "activity-item__body";
+
+              const name = document.createElement("p");
+              name.className = "activity-item__text";
+              name.textContent =
+                `${person.firstName || ""} ${person.lastName || ""}`.trim()
+                || "Unnamed Alumni";
+
+              const details = document.createElement("span");
+              details.className = "activity-item__time";
+              details.textContent =
+                person.departmentName || "Department not specified";
+
+              body.append(name, details);
+              item.appendChild(body);
+              recentAlumniList.appendChild(item);
+            });
+          }
+        }
+
+        const jobs = await jobsResponse.json();
+
+        const jobsTable = document.getElementById("adminRecentJobs");
+
+        if (jobsTable) {
+          jobsTable.innerHTML = "";
+
+          if (jobs.length === 0) {
+            const row = document.createElement("tr");
+            const cell = document.createElement("td");
+
+            cell.colSpan = 3;
+            cell.className = "text-muted";
+            cell.textContent = "No active job opportunities available.";
+
+            row.appendChild(cell);
+            jobsTable.appendChild(row);
+          } else {
+            jobs.slice(0, 5).forEach(job => {
+              const row = document.createElement("tr");
+
+              const titleCell = document.createElement("td");
+              titleCell.textContent = job.jobTitle || "Untitled Job";
+
+              const companyCell = document.createElement("td");
+              companyCell.textContent =
+                job.companyName || "Not specified";
+
+              const locationCell = document.createElement("td");
+              locationCell.textContent =
+                job.location || "Not specified";
+
+              row.append(
+                titleCell,
+                companyCell,
+                locationCell
+              );
+
+              jobsTable.appendChild(row);
+            });
+          }
+        }
+
+        const events = await eventsResponse.json();
+
+        const eventsList = document.getElementById("adminUpcomingEvents");
+
+        if (eventsList) {
+          eventsList.innerHTML = "";
+
+          const today = new Date();
+          today.setHours(0, 0, 0, 0);
+
+          const upcoming = events
+            .filter(event =>
+              event.eventDate &&
+              event.eventDate.substring(0, 10) >=
+              `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`
+            )
+            .sort((a, b) =>
+              a.eventDate.localeCompare(b.eventDate)
+            )
+            .slice(0, 5);
+
+          if (upcoming.length === 0) {
+            const item = document.createElement("li");
+            item.className = "task-item";
+            item.textContent = "No upcoming events scheduled.";
+            eventsList.appendChild(item);
+          } else {
+            upcoming.forEach(event => {
+              const item = document.createElement("li");
+              item.className = "task-item";
+
+              const details = document.createElement("div");
+
+              const title = document.createElement("strong");
+              title.textContent = event.title || "Untitled Event";
+
+              const date = document.createElement("p");
+              date.className = "text-muted small mb-0";
+              date.textContent = new Date(
+                event.eventDate
+              ).toLocaleDateString("en-US", {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+              });
+
+              details.append(title, date);
+              item.appendChild(details);
+              eventsList.appendChild(item);
+            });
+          }
+        }
+
+
+        // Total registered alumni
+        const totalAlumniElement = document.getElementById("totalAlumni");
+        if (totalAlumniElement) {
+          totalAlumniElement.textContent = alumni.length;
+        }
+
+        // Alumni currently employed
+        const employedAlumniElement = document.getElementById("employedAlumni");
+        if (employedAlumniElement) {
+          employedAlumniElement.textContent =
+            alumni.filter(person => person.employed === true).length;
+        }
+        const employedCount = alumni.filter(
+          person => person.employed === true
+        ).length;
+
+        const unemployedCount = alumni.filter(
+          person => person.employed === false
+        ).length;
+
+        const unknownCount = alumni.length - employedCount - unemployedCount;
+
+        const chartCanvas = document.getElementById("employmentChart");
+
+        if (chartCanvas) {
+          if (window.employmentChartInstance) {
+            window.employmentChartInstance.destroy();
+          }
+
+          window.employmentChartInstance = new Chart(chartCanvas, {
+            type: "doughnut",
+            data: {
+              labels: ["Employed", "Unemployed", "Not Specified"],
+              datasets: [{
+                data: [employedCount, unemployedCount, unknownCount],
+                backgroundColor: ["#28a745", "#dc3545", "#adb5bd"],
+                borderWidth: 2
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                legend: {
+                  position: "bottom"
+                }
+              }
+            }
+          });
+        }
+
+
+        // Available jobs
+        const activeJobsElement = document.getElementById("activeJobs");
+        if (activeJobsElement) {
+          activeJobsElement.textContent = jobs.length;
+        }
+
+        // Events scheduled for today or later
+        const currentDate = new Date();
+
+        const todayString = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, "0")}-${String(currentDate.getDate()).padStart(2, "0")}`;
+
+        const upcomingEvents = events.filter(event => {
+          return event.eventDate &&
+            event.eventDate.substring(0, 10) >= todayString;
+        });
+
+        const upcomingEventsElement = document.getElementById("upcomingEvents");
+        if (upcomingEventsElement) {
+          upcomingEventsElement.textContent = upcomingEvents.length;
+        }
+
+      } catch (error) {
+        console.error("Admin dashboard error:", error);
+
+        ["totalAlumni", "employedAlumni", "activeJobs", "upcomingEvents"]
+          .forEach(id => {
+            const element = document.getElementById(id);
+            if (element) {
+              element.textContent = "Error";
+            }
+          });
+      }
+    }
+
+    loadAdminStatistics();
+
+
+
+    const refreshButton = document.getElementById("dash-refresh-btn");
+
+    if (refreshButton) {
+      refreshButton.addEventListener("click", () => {
+        window.location.reload();
+      });
+    }
+  </script>
+  <script>
+    // Display logged-in administrator information
+    const adminFirstName = localStorage.getItem("firstName") || "";
+    const adminLastName = localStorage.getItem("lastName") || "";
+    const adminEmail = localStorage.getItem("email") || "";
+
+    const adminFullName =
+      [adminFirstName, adminLastName].filter(Boolean).join(" ") ||
+      "Administrator";
+
+    const adminInitials =
+      (adminFirstName.charAt(0) + adminLastName.charAt(0))
+        .toUpperCase() || "A";
+
+    document.getElementById("adminInitials").textContent = adminInitials;
+    document.getElementById("adminHeaderName").textContent = adminFullName;
+    document.getElementById("dropdownAdminName").textContent = adminFullName;
+    document.getElementById("dropdownAdminEmail").textContent = adminEmail;
+
+    const adminAccountToggle =
+      document.getElementById("adminAccountToggle");
+
+    const adminAccountDropdown =
+      document.getElementById("adminAccountDropdown");
+
+    adminAccountToggle.addEventListener("click", function (event) {
+      event.stopPropagation();
+
+      const isOpen = adminAccountDropdown.style.display === "block";
+
+      adminAccountDropdown.style.display =
+        isOpen ? "none" : "block";
+
+      adminAccountToggle.setAttribute(
+        "aria-expanded",
+        String(!isOpen)
+      );
+    });
+
+    document.addEventListener("click", function (event) {
+      const accountMenu = document.getElementById("adminAccountMenu");
+
+      if (!accountMenu.contains(event.target)) {
+        adminAccountDropdown.style.display = "none";
+        adminAccountToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    document.getElementById("adminLogoutBtn")
+      .addEventListener("click", function () {
+
+        [
+          "token",
+          "role",
+          "userId",
+          "firstName",
+          "lastName",
+          "email"
+        ].forEach(key => localStorage.removeItem(key));
+
+        window.location.href = "login.html";
+      });
+  </script>
+</body>
+
+</html>

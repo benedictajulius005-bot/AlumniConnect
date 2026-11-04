@@ -1,0 +1,38 @@
+# Java / Spring Boot
+**/target/
+**/build/
+*.class
+*.jar
+*.war
+
+# IDE files
+.idea/
+**/.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+**/application-local.properties
+**/application-local.yml
+**/application-local.yaml
+
+# Logs
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Postman local settings
+.postman/
+
+# Postman local files
+postman/
+
+Project/src/main/resources/application.properties

@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Create, view, edit, and manage alumni events on AlumniConnect." />
+    <title>Events Management | AlumniConnect</title>
+    <meta name="theme-color" content="#4272d7" />
+    <link href="css/font-face.css" rel="stylesheet" media="all" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link href="vendor/fontawesome-7.3.1/css/all.min.css" rel="stylesheet" media="all" />
+    <link href="vendor/bootstrap-5.3.8.min.css" rel="stylesheet" media="all" />
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all" />
+    <link href="css/theme.css" rel="stylesheet" media="all" />
+    <link href="css/app.css" rel="stylesheet" media="all" />
+    <style>
+        /* AlumniConnect Toast Notification Fix */
+        #alumniToast {
+            position: fixed !important;
+            top: 80px !important;
+            right: 20px !important;
+            z-index: 99999 !important;
+            visibility: visible !important;
+        }
+
+        #alumniToast.show {
+            display: block !important;
+            opacity: 1 !important;
+        }
+
+        #alumniToast:not(.show) {
+            display: none !important;
+        }
+    </style>
+
+</head>
+
+<body class="app"><a class="visually-hidden-focusable skip-link" href="#main-content">Skip to main content</a>
+    <div class="page-wrapper">
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner"><a class="logo-link" href="index.html"
+                            aria-label="AlumniConnect Admin Dashboard">
+                            <span class="logo-mark" aria-hidden="true">A</span>
+                            <span class="logo-text">AlumniConnect</span>
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button" aria-label="Toggle navigation"><span
+                                class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+
+                    <ul class="navbar-mobile__list list-unstyled">
+
+                        <li>
+                            <a href="index.html">
+                                <i class="fa-solid fa-gauge-high"></i>
+                                Dashboard
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="admin-alumni.html">
+                                <i class="fa-solid fa-users"></i>
+                                Alumni Management
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="admin-jobs.html">
+                                <i class="fa-solid fa-briefcase"></i>
+                                Job Management
+                            </a>
+                        </li>
+                        <li>
+                            <a href="admin-skills.html">
+                                <i class="fa-solid fa-list-check"></i>
+                                Skill Management
+                            </a>
+                        </li>
+
+                        <li class="active">
+                            <a href="admin-events.html">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                Events Management
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="admin-announcements.html">
+                                <i class="fa-solid fa-bullhorn"></i>
+                                Announcements
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="admin-departments.html">
+                                <i class="fa-solid fa-building-columns"></i>
+                                Departments
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </nav>
+        </header>
+        <aside class="menu-sidebar" id="main-sidebar">
+            <div class="logo">
+                <a class="logo-link" href="index.html" aria-label="AlumniConnect Admin Dashboard">
+                    <span class="logo-mark" aria-hidden="true">A</span>
+                    <span class="logo-text">AlumniConnect</span>
+                </a>
+                <button class="sidebar-close js-sidebar-toggle" type="button" aria-label="Close navigation"><i
+                        class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+
+                    <ul class="list-unstyled navbar__list">
+
+                        <li>
+                            <a href="index.html">
+                                <i class="fa-solid fa-gauge-high"></i>
+                                Dashboard
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="admin-alumni.html">
+                                <i class="fa-solid fa-users"></i>
+                                Alumni Management
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="admin-jobs.html">
+                                <i class="fa-solid fa-briefcase"></i>
+                                Job Management
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="admin-skills.html">
+                                <i class="fa-solid fa-list-check"></i>
+                                Skill Management
+                            </a>
+                        </li>
+
+                        <li class="active">
+                            <a href="admin-events.html">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                Events Management
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="admin-announcements.html">
+                                <i class="fa-solid fa-bullhorn"></i>
+                                Announcements
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="admin-departments.html">
+                                <i class="fa-solid fa-building-columns"></i>
+                                Departments
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+            </div>
+        </aside>
+        <div class="page-container">
+            <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+                            <button class="sidebar-toggle js-sidebar-toggle" type="button"
+                                aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-sidebar"><i
+                                    class="fa-solid fa-bars" aria-hidden="true"></i></button>
+                            <div class="header-button" style="margin-left:auto;">
+                                <div class="account-wrap" id="adminAccountMenu" style="position:relative;">
+
+                                    <button type="button" id="adminAccountToggle" aria-label="Open admin account menu"
+                                        aria-expanded="false" style="display:flex;align-items:center;gap:10px;
+                   border:0;background:transparent;cursor:pointer;padding:8px;">
+
+                                        <span id="adminInitials" style="display:flex;align-items:center;justify-content:center;
+                       width:40px;height:40px;border-radius:50%;
+                       background:#263b64;color:white;font-weight:700;">
+                                            A
+                                        </span>
+
+                                        <span id="adminHeaderName" style="font-weight:600;color:#263b64;">
+                                            Administrator
+                                        </span>
+
+                                        <i class="fa-solid fa-chevron-down" style="font-size:12px;color:#263b64;"></i>
+                                    </button>
+
+                                    <div id="adminAccountDropdown" style="display:none;position:absolute;right:0;top:100%;
+                   width:260px;background:white;border-radius:8px;
+                   box-shadow:0 8px 24px rgba(0,0,0,0.15);
+                   z-index:1000;padding:16px;">
+
+                                        <div style="padding-bottom:12px;border-bottom:1px solid #eee;">
+                                            <strong id="dropdownAdminName" style="display:block;color:#263b64;">
+                                                Administrator
+                                            </strong>
+
+                                            <small id="dropdownAdminEmail"
+                                                style="color:#777;overflow-wrap:anywhere;"></small>
+
+                                            <small style="display:block;margin-top:6px;color:#777;">
+                                                System Administrator
+                                            </small>
+                                        </div>
+
+                                        <button type="button" id="adminLogoutBtn" style="width:100%;margin-top:12px;padding:10px;
+                       border:0;background:#f8f9fa;border-radius:5px;
+                       text-align:left;cursor:pointer;color:#c0392b;">
+                                            <i class="fa-solid fa-right-from-bracket"></i>
+                                            Logout
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main class="main-content" id="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <!-- Page header -->
+                        <div class="page-header">
+                            <div>
+                                <h1>Event Management</h1>
+                                <p class="subtitle">View and manage upcoming and past alumni events, including
+                                    registrations.</p>
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Events Management -->
+                        <div class="row" style="margin-top: 20px;">
+                            <div class="col-12">
+                                <section class="m-card">
+
+                                    <header class="m-card__header">
+                                        <div>
+                                            <h2 class="m-card__title">
+                                                All Events
+                                            </h2>
+                                            <p class="m-card__subtitle">
+                                                View, organize, and manage alumni events and registrations.
+                                            </p>
+                                        </div>
+
+                                        <button type="button" class="btn btn-primary" id="addEventButton">
+                                            <i class="fa-solid fa-plus me-1"></i>
+                                            Add Event
+                                        </button>
+                                    </header>
+
+                                    <div class="px-3 pb-3">
+                                        <input type="search" id="eventSearch" class="form-control"
+                                            placeholder="Search events by title or location..."
+                                            aria-label="Search Events">
+                                    </div>
+
+                                    <div class="table-responsive">
+                                        <table class="table table-hover align-middle">
+
+
+                                            <thead>
+                                                <tr>
+                                                    <th>Event ID</th>
+                                                    <th>Event Title</th>
+                                                    <th>Location</th>
+                                                    <th>Event Date</th>
+                                                    <th>Participants</th>
+                                                    <th>Status</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+
+
+
+
+                                            <tbody id="adminEventsTable">
+                                                <tr>
+                                                    <td colspan="7" class="text-center text-muted">
+                                                        Loading events...
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+
+                                </section>
+                            </div>
+                        </div>
+                        <!-- Footer -->
+                        <div class="row mt-4">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>© 2026 AlumniConnect. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+                <!-- View Event Modal -->
+                <div class="modal fade" id="viewEventModal" tabindex="-1" aria-labelledby="viewEventModalLabel"
+                    aria-hidden="true">
+
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="viewEventModalLabel">
+                                    Event Details
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <p><strong>Event ID:</strong> <span id="viewEventId"></span></p>
+                                <p><strong>Title:</strong> <span id="viewEventTitle"></span></p>
+                                <p><strong>Description:</strong> <span id="viewEventDescription"></span></p>
+                                <p><strong>Location:</strong> <span id="viewEventLocation"></span></p>
+                                <p><strong>Date:</strong> <span id="viewEventDate"></span></p>
+                                <p><strong>Maximum Participants:</strong> <span id="viewEventMaxParticipants"></span>
+                                </p>
+                                <p><strong>Registered Participants:</strong> <span id="viewEventParticipants"></span>
+                                </p>
+                                <p><strong>Status:</strong> <span id="viewEventStatus"></span></p>
+                                <p><strong>Created By:</strong> <span id="viewEventAdmin"></span></p>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Edit Event Modal -->
+                <div class="modal fade" id="editEventModal" tabindex="-1" aria-labelledby="editEventModalLabel"
+                    aria-hidden="true">
+
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editEventModalLabel">Edit Event</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+
+                            <form id="editEventForm">
+                                <div class="modal-body">
+
+                                    <input type="hidden" id="editEventId">
+
+                                    <div class="mb-3">
+                                        <label for="editEventTitle" class="form-label">Event Title</label>
+                                        <input type="text" class="form-control" id="editEventTitle" required>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="editEventDescription" class="form-label">Description</label>
+                                        <textarea class="form-control" id="editEventDescription" rows="3"
+                                            required></textarea>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="editEventLocation" class="form-label">Location</label>
+                                        <input type="text" class="form-control" id="editEventLocation" required>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="editEventDate" class="form-label">Event Date</label>
+                                        <input type="date" class="form-control" id="editEventDate" required>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="editEventMaxParticipants" class="form-label">
+                                            Maximum Participants
+                                        </label>
+                                        <input type="number" class="form-control" id="editEventMaxParticipants" min="1"
+                                            step="1" required>
+                                    </div>
+
+                                    <div class="form-check mb-3">
+                                        <input type="checkbox" class="form-check-input" id="editEventActive">
+                                        <label class="form-check-label" for="editEventActive">
+                                            Active Event
+                                        </label>
+                                    </div>
+
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-primary">
+                                        Update Event
+                                    </button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Delete Event Confirmation Modal -->
+                <div class="modal fade" id="deleteEventModal" tabindex="-1" aria-labelledby="deleteEventModalLabel"
+                    aria-hidden="true">
+
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deleteEventModalLabel">
+                                    Delete Event
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <p>Are you sure you want to delete this event?</p>
+                                <p class="text-danger mb-0">
+                                    This action cannot be undone. Associated registrations may also be affected.
+                                </p>
+                                <input type="hidden" id="deleteEventId">
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-danger" id="confirmDeleteEventButton">
+                                    Delete Event
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Event Modal -->
+                <div class="modal fade" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addEventModalLabel">
+                                    Add New Event
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+
+                            <form id="addEventForm">
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label for="newEventTitle" class="form-label">Event Title</label>
+                                        <input type="text" class="form-control" id="newEventTitle" required>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="newEventDescription" class="form-label">
+                                            Description
+                                        </label>
+                                        <textarea class="form-control" id="newEventDescription" rows="3"
+                                            required></textarea>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="newEventLocation" class="form-label">
+                                            Location
+                                        </label>
+                                        <input type="text" class="form-control" id="newEventLocation" required>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="newEventDate" class="form-label">
+                                            Event Date
+                                        </label>
+                                        <input type="date" class="form-control" id="newEventDate" required>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="newEventMaxParticipants" class="form-label">
+                                            Maximum Participants
+                                        </label>
+                                        <input type="number" class="form-control" id="newEventMaxParticipants" min="1"
+                                            step="1" required>
+                                    </div>
+
+                                    <div class="form-check mb-3">
+                                        <input type="checkbox" class="form-check-input" id="newEventActive" checked>
+                                        <label class="form-check-label" for="newEventActive">
+                                            Active Event
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-primary">
+                                        Save Event
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+    <script src="js/vanilla-utils.js"></script>
+    <script src="vendor/bootstrap-5.3.8.bundle.min.js"></script>
+    <script src="vendor/chartjs/chart.umd.js-4.5.1.min.js"></script>
+    <script src="js/bootstrap5-init.js"></script>
+    <!-- AlumniConnect Toast Notification -->
+    <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1100;">
+        <div id="alumniToast" class="toast border-0 shadow" role="status" aria-live="polite" aria-atomic="true">
+
+            <div class="toast-header bg-success text-white">
+                <strong class="me-auto">
+                    <i class="fas fa-check-circle me-2"></i>
+                    AlumniConnect
+                </strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+
+            <div class="toast-body" id="alumniToastMessage">
+                Event operation completed successfully.
+            </div>
+        </div>
+    </div>
+    <script src="js/main-vanilla.js"></script>
+    <script src="js/modern-plugins.js"></script>
+    <script>
+        // Protect Admin Dashboard
+        const token = localStorage.getItem("token");
+        const role = localStorage.getItem("role");
+
+        // User must be logged in and must be an ADMIN
+        if (!token || role !== "ADMIN") {
+            window.location.href = "login.html";
+        }
+    </script>
+
+
+
+    <script>
+        const EVENTS_API = "http://localhost:8080/api/events";
+        function showEventToast(message, isSuccess = true) {
+            const toastElement = document.getElementById("alumniToast");
+            const toastHeader = toastElement.querySelector(".toast-header");
+
+            toastHeader.classList.remove("bg-success", "bg-danger");
+            toastHeader.classList.add(isSuccess ? "bg-success" : "bg-danger");
+
+            document.getElementById("alumniToastMessage").textContent = message;
+
+            bootstrap.Toast.getOrCreateInstance(toastElement, {
+                delay: isSuccess ? 3500 : 4000
+            }).show();
+        }
+        async function loadAdminEvents() {
+            const table = document.getElementById("adminEventsTable");
+            const token = localStorage.getItem("token");
+
+            if (!token) {
+                window.location.href = "login.html";
+                return;
+            }
+
+            table.innerHTML = `
+        <tr>
+            <td colspan="7" class="text-center text-muted">
+                Loading events...
+            </td>
+        </tr>
+    `;
+
+            try {
+                const response = await fetch(EVENTS_API, {
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error("Failed to load events: " + response.status);
+                }
+
+                const data = await response.json();
+
+                const events = Array.isArray(data)
+                    ? data
+                    : data.content || [];
+
+                table.innerHTML = "";
+
+                if (events.length === 0) {
+                    table.innerHTML = `
+                <tr>
+                    <td colspan="7" class="text-center text-muted">
+                        No events found.
+                    </td>
+                </tr>
+            `;
+                    return;
+                }
+
+                events.forEach(event => {
+                    const row = table.insertRow();
+
+                    const values = [
+                        event.eventId ?? "",
+                        event.title || "Not specified",
+                        event.location || "Not specified",
+                        event.eventDate || "Not specified",
+                        `${event.numberOfParticipants ?? 0} / ${event.maxParticipants ?? 0}`,
+                        event.active ? "Active" : "Inactive"
+                    ];
+
+                    values.forEach(value => {
+                        const cell = row.insertCell();
+                        cell.textContent = value;
+                    });
+
+                    const actionsCell = row.insertCell();
+                    actionsCell.innerHTML = `
+    <button type="button"
+        class="btn btn-sm btn-info text-white me-1"
+        onclick="viewEvent(${event.eventId})">
+        View
+    </button>
+    <button type="button"
+    class="btn btn-sm btn-warning me-1"
+    onclick="editEvent(${event.eventId})">
+    Edit
+</button>
+<button type="button"
+    class="btn btn-sm btn-danger"
+    onclick="deleteEvent(${event.eventId})">
+    Delete
+</button>
+`;
+                });
+
+            } catch (error) {
+                console.error("Events loading error:", error);
+
+                table.innerHTML = `
+            <tr>
+                <td colspan="7" class="text-center text-danger">
+                    Unable to load events.
+                </td>
+            </tr>
+        `;
+            }
+        }
+
+        const eventSearch = document.getElementById("eventSearch");
+
+        eventSearch.addEventListener("input", function () {
+            const searchText = this.value.toLowerCase().trim();
+
+            const rows = document.querySelectorAll("#adminEventsTable tr");
+
+            rows.forEach(row => {
+                const cells = row.querySelectorAll("td");
+
+                if (cells.length !== 7) return;
+
+                const title = cells[1].textContent.toLowerCase();
+                const location = cells[2].textContent.toLowerCase();
+
+                const matches =
+                    title.includes(searchText) ||
+                    location.includes(searchText);
+
+                row.style.display = matches ? "" : "none";
+            });
+        });
+
+        document.getElementById("addEventButton").addEventListener("click", () => {
+            document.getElementById("addEventForm").reset();
+
+            bootstrap.Modal.getOrCreateInstance(
+                document.getElementById("addEventModal")
+            ).show();
+        });
+
+        document.getElementById("addEventForm").addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            const token = localStorage.getItem("token");
+
+            const eventData = {
+                title: document.getElementById("newEventTitle").value.trim(),
+                description: document.getElementById("newEventDescription").value.trim(),
+                location: document.getElementById("newEventLocation").value.trim(),
+                eventDate: document.getElementById("newEventDate").value,
+                maxParticipants: Number(
+                    document.getElementById("newEventMaxParticipants").value
+                ),
+                active: document.getElementById("newEventActive").checked,
+                adminId: Number(localStorage.getItem("userId"))
+            };
+
+            if (!Number.isInteger(eventData.adminId) || eventData.adminId <= 0) {
+                showEventToast("Administrator information is missing. Please log in again.", false);
+                return;
+            }
+
+            if (!Number.isInteger(eventData.maxParticipants) ||
+                eventData.maxParticipants < 1) {
+                showEventToast("Enter a valid maximum number of participants.", false);
+                return;
+            }
+
+            const saveButton = this.querySelector('button[type="submit"]');
+            saveButton.disabled = true;
+            saveButton.textContent = "Saving...";
+
+            try {
+                const response = await fetch(EVENTS_API, {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(eventData)
+                });
+
+                if (!response.ok) {
+                    const message = await response.text();
+                    throw new Error(message || "Unable to create event.");
+                }
+
+                bootstrap.Modal.getOrCreateInstance(
+                    document.getElementById("addEventModal")
+                ).hide();
+
+                this.reset();
+                await loadAdminEvents();
+
+                showEventToast("Event created successfully!");
+
+            } catch (error) {
+                console.error("Error creating event:", error);
+                showEventToast("Unable to create event. Please try again.", false);
+
+            } finally {
+                saveButton.disabled = false;
+                saveButton.textContent = "Save Event";
+            }
+        });
+        async function viewEvent(eventId) {
+            const token = localStorage.getItem("token");
+
+            try {
+                const response = await fetch(EVENTS_API, {
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error("Unable to retrieve event details.");
+                }
+
+                const events = await response.json();
+                const event = events.find(item => item.eventId === eventId);
+
+                if (!event) {
+                    showEventToast("Event not found.", false);
+                    return;
+                }
+
+                document.getElementById("viewEventId").textContent = event.eventId;
+                document.getElementById("viewEventTitle").textContent = event.title || "Not specified";
+                document.getElementById("viewEventDescription").textContent = event.description || "Not specified";
+                document.getElementById("viewEventLocation").textContent = event.location || "Not specified";
+                document.getElementById("viewEventDate").textContent = event.eventDate || "Not specified";
+                document.getElementById("viewEventMaxParticipants").textContent = event.maxParticipants ?? 0;
+                document.getElementById("viewEventParticipants").textContent = event.numberOfParticipants ?? 0;
+                document.getElementById("viewEventStatus").textContent = event.active ? "Active" : "Inactive";
+                document.getElementById("viewEventAdmin").textContent = event.adminName || "Not specified";
+
+                bootstrap.Modal.getOrCreateInstance(
+                    document.getElementById("viewEventModal")
+                ).show();
+
+            } catch (error) {
+                console.error("Error viewing event:", error);
+                showEventToast("Unable to load event details.", false);
+            }
+        }
+        async function editEvent(eventId) {
+            const token = localStorage.getItem("token");
+
+            try {
+                const response = await fetch(`${EVENTS_API}/${eventId}`, {
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error("Unable to retrieve event.");
+                }
+
+                const event = await response.json();
+
+                document.getElementById("editEventId").value = event.eventId;
+                document.getElementById("editEventTitle").value = event.title || "";
+                document.getElementById("editEventDescription").value = event.description || "";
+                document.getElementById("editEventLocation").value = event.location || "";
+                document.getElementById("editEventDate").value = event.eventDate || "";
+                document.getElementById("editEventMaxParticipants").value =
+                    event.maxParticipants ?? 1;
+                document.getElementById("editEventActive").checked =
+                    event.active === true;
+
+                bootstrap.Modal.getOrCreateInstance(
+                    document.getElementById("editEventModal")
+                ).show();
+
+            } catch (error) {
+                console.error("Error retrieving event:", error);
+                showEventToast("Unable to load event for editing.", false);
+            }
+        }
+
+        document.getElementById("editEventForm").addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            const token = localStorage.getItem("token");
+            const eventId = document.getElementById("editEventId").value;
+
+            const eventData = {
+                title: document.getElementById("editEventTitle").value.trim(),
+                description: document.getElementById("editEventDescription").value.trim(),
+                location: document.getElementById("editEventLocation").value.trim(),
+                eventDate: document.getElementById("editEventDate").value,
+                maxParticipants: Number(
+                    document.getElementById("editEventMaxParticipants").value
+                ),
+                active: document.getElementById("editEventActive").checked
+            };
+
+            if (!Number.isInteger(eventData.maxParticipants) ||
+                eventData.maxParticipants < 1) {
+                showEventToast("Enter a valid maximum number of participants.", false);
+                return;
+            }
+
+            const saveButton = this.querySelector('button[type="submit"]');
+            saveButton.disabled = true;
+            saveButton.textContent = "Updating...";
+
+            try {
+                const response = await fetch(`${EVENTS_API}/${eventId}`, {
+                    method: "PUT",
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(eventData)
+                });
+
+                if (!response.ok) {
+                    const message = await response.text();
+                    throw new Error(message || "Unable to update event.");
+                }
+
+                bootstrap.Modal.getOrCreateInstance(
+                    document.getElementById("editEventModal")
+                ).hide();
+
+                await loadAdminEvents();
+                showEventToast("Event updated successfully!");
+
+            } catch (error) {
+                console.error("Error updating event:", error);
+                showEventToast("Unable to update event. Please try again.", false);
+            } finally {
+                saveButton.disabled = false;
+                saveButton.textContent = "Update Event";
+            }
+        });
+        function deleteEvent(eventId) {
+            document.getElementById("deleteEventId").value = eventId;
+
+            bootstrap.Modal.getOrCreateInstance(
+                document.getElementById("deleteEventModal")
+            ).show();
+        }
+
+        document.getElementById("confirmDeleteEventButton").addEventListener("click", async function () {
+            const eventId = document.getElementById("deleteEventId").value;
+            const token = localStorage.getItem("token");
+
+            this.disabled = true;
+            this.textContent = "Deleting...";
+
+            try {
+                const response = await fetch(`${EVENTS_API}/${eventId}`, {
+                    method: "DELETE",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                });
+
+                if (!response.ok) {
+                    const message = await response.text();
+                    throw new Error(message || "Unable to delete event.");
+                }
+
+                bootstrap.Modal.getOrCreateInstance(
+                    document.getElementById("deleteEventModal")
+                ).hide();
+
+                await loadAdminEvents();
+                showEventToast("Event deleted successfully!");
+
+            } catch (error) {
+                console.error("Error deleting event:", error);
+                showEventToast("Unable to delete event. Please try again.", false);
+            } finally {
+                this.disabled = false;
+                this.textContent = "Delete Event";
+            }
+        });
+        loadAdminEvents();
+    </script>
+    <script>
+        const adminFirstName = localStorage.getItem("firstName") || "";
+        const adminLastName = localStorage.getItem("lastName") || "";
+        const adminEmail = localStorage.getItem("email") || "";
+
+        const adminFullName =
+            [adminFirstName, adminLastName].filter(Boolean).join(" ") ||
+            "Administrator";
+
+        const adminInitials =
+            (adminFirstName.charAt(0) + adminLastName.charAt(0))
+                .toUpperCase() || "A";
+
+        document.getElementById("adminInitials").textContent = adminInitials;
+        document.getElementById("adminHeaderName").textContent = adminFullName;
+        document.getElementById("dropdownAdminName").textContent = adminFullName;
+        document.getElementById("dropdownAdminEmail").textContent = adminEmail;
+
+        const adminAccountToggle =
+            document.getElementById("adminAccountToggle");
+
+        const adminAccountDropdown =
+            document.getElementById("adminAccountDropdown");
+
+        adminAccountToggle.addEventListener("click", function (event) {
+            event.stopPropagation();
+
+            const isOpen = adminAccountDropdown.style.display === "block";
+            adminAccountDropdown.style.display = isOpen ? "none" : "block";
+
+            adminAccountToggle.setAttribute("aria-expanded", String(!isOpen));
+        });
+
+        document.addEventListener("click", function (event) {
+            const accountMenu = document.getElementById("adminAccountMenu");
+
+            if (!accountMenu.contains(event.target)) {
+                adminAccountDropdown.style.display = "none";
+                adminAccountToggle.setAttribute("aria-expanded", "false");
+            }
+        });
+
+        document.getElementById("adminLogoutBtn")
+            .addEventListener("click", function () {
+                ["token", "role", "userId", "firstName", "lastName", "email"]
+                    .forEach(key => localStorage.removeItem(key));
+
+                window.location.href = "login.html";
+            });
+    </script>
+</body>
+
+</html>

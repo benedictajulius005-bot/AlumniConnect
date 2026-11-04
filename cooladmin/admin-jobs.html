@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Create, view, edit, and manage alumni job opportunities on AlumniConnect." />
+  <title>Job Management | AlumniConnect</title>
+  <meta name="theme-color" content="#4272d7" />
+  <link href="css/font-face.css" rel="stylesheet" media="all" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <link href="vendor/fontawesome-7.3.1/css/all.min.css" rel="stylesheet" media="all" />
+  <link href="vendor/bootstrap-5.3.8.min.css" rel="stylesheet" media="all" />
+  <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all" />
+  <link href="css/theme.css" rel="stylesheet" media="all" />
+  <link href="css/app.css" rel="stylesheet" media="all" />
+  <style>
+    .admin-jobs-table {
+      width: 100%;
+      min-width: 750px;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .admin-jobs-table th,
+    .admin-jobs-table td {
+      padding: 16px 24px;
+      text-align: left;
+      vertical-align: middle;
+      white-space: normal;
+      overflow-wrap: break-word;
+    }
+
+    /* Job Title */
+    .admin-jobs-table th:nth-child(1),
+    .admin-jobs-table td:nth-child(1) {
+      width: 45%;
+    }
+
+    /* Company */
+    .admin-jobs-table th:nth-child(2),
+    .admin-jobs-table td:nth-child(2) {
+      width: 28%;
+    }
+
+    /* Location */
+    .admin-jobs-table th:nth-child(3),
+    .admin-jobs-table td:nth-child(3) {
+      width: 27%;
+    }
+
+    /* AlumniConnect Toast Notification Fix */
+    #alumniToast {
+      position: fixed !important;
+      top: 80px !important;
+      right: 20px !important;
+      z-index: 99999 !important;
+      visibility: visible !important;
+    }
+
+    #alumniToast.show {
+      display: block !important;
+      opacity: 1 !important;
+    }
+
+    #alumniToast:not(.show) {
+      display: none !important;
+    }
+  </style>
+
+</head>
+
+<body class="app"><a class="visually-hidden-focusable skip-link" href="#main-content">Skip to main content</a>
+  <div class="page-wrapper">
+    <header class="header-mobile d-block d-lg-none">
+      <div class="header-mobile__bar">
+        <div class="container-fluid">
+          <div class="header-mobile-inner"><a class="logo-link" href="index.html"
+              aria-label="AlumniConnect Admin Dashboard">
+              <span class="logo-mark" aria-hidden="true">A</span>
+              <span class="logo-text">AlumniConnect</span>
+            </a>
+            <button class="hamburger hamburger--slider" type="button" aria-label="Toggle navigation"><span
+                class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar-mobile">
+        <div class="container-fluid">
+
+          <ul class="navbar-mobile__list list-unstyled">
+
+            <li>
+              <a href="index.html">
+                <i class="fa-solid fa-gauge-high"></i>
+                Dashboard
+              </a>
+            </li>
+
+            <li>
+              <a href="admin-alumni.html">
+                <i class="fa-solid fa-users"></i>
+                Alumni Management
+              </a>
+            </li>
+
+            <li class="active">
+              <a href="admin-jobs.html">
+                <i class="fa-solid fa-briefcase"></i>
+                Job Management
+              </a>
+            </li>
+
+            <li>
+              <a href="admin-skills.html">
+                <i class="fa-solid fa-list-check"></i>
+                Skill Management
+              </a>
+            </li>
+
+            <li>
+              <a href="admin-events.html">
+                <i class="fa-solid fa-calendar-days"></i>
+                Events Management
+              </a>
+            </li>
+
+            <li>
+              <a href="admin-announcements.html">
+                <i class="fa-solid fa-bullhorn"></i>
+                Announcements
+              </a>
+            </li>
+
+            <li>
+              <a href="admin-departments.html">
+                <i class="fa-solid fa-building-columns"></i>
+                Departments
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+      </nav>
+    </header>
+    <aside class="menu-sidebar" id="main-sidebar">
+      <div class="logo">
+        <a class="logo-link" href="index.html" aria-label="AlumniConnect Admin Dashboard">
+          <span class="logo-mark" aria-hidden="true">A</span>
+          <span class="logo-text">AlumniConnect</span>
+        </a>
+        <button class="sidebar-close js-sidebar-toggle" type="button" aria-label="Close navigation"><i
+            class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      </div>
+      <div class="menu-sidebar__content js-scrollbar1">
+        <nav class="navbar-sidebar">
+
+          <ul class="list-unstyled navbar__list">
+
+            <li>
+              <a href="index.html">
+                <i class="fa-solid fa-gauge-high"></i>
+                Dashboard
+              </a>
+            </li>
+
+            <li>
+              <a href="admin-alumni.html">
+                <i class="fa-solid fa-users"></i>
+                Alumni Management
+              </a>
+            </li>
+
+            <li class="active">
+              <a href="admin-jobs.html">
+                <i class="fa-solid fa-briefcase"></i>
+                Job Management
+              </a>
+            </li>
+            <li>
+              <a href="admin-skills.html">
+                <i class="fa-solid fa-list-check"></i>
+                Skill Management
+              </a>
+            </li>
+
+            <li>
+              <a href="admin-events.html">
+                <i class="fa-solid fa-calendar-days"></i>
+                Events Management
+              </a>
+            </li>
+
+            <li>
+              <a href="admin-announcements.html">
+                <i class="fa-solid fa-bullhorn"></i>
+                Announcements
+              </a>
+            </li>
+
+            <li>
+              <a href="admin-departments.html">
+                <i class="fa-solid fa-building-columns"></i>
+                Departments
+              </a>
+            </li>
+
+          </ul>
+
+        </nav>
+      </div>
+    </aside>
+    <div class="page-container">
+      <header class="header-desktop">
+        <div class="section__content section__content--p30">
+          <div class="container-fluid">
+            <div class="header-wrap">
+              <button class="sidebar-toggle js-sidebar-toggle" type="button" aria-label="Toggle navigation"
+                aria-expanded="false" aria-controls="main-sidebar"><i class="fa-solid fa-bars"
+                  aria-hidden="true"></i></button>
+              <div class="header-button" style="margin-left:auto;">
+                <div class="account-wrap" id="adminAccountMenu" style="position:relative;">
+
+                  <button type="button" id="adminAccountToggle" aria-label="Open admin account menu"
+                    aria-expanded="false" style="display:flex;align-items:center;gap:10px;
+                   border:0;background:transparent;cursor:pointer;padding:8px;">
+
+                    <span id="adminInitials" style="display:flex;align-items:center;justify-content:center;
+                       width:40px;height:40px;border-radius:50%;
+                       background:#263b64;color:white;font-weight:700;">
+                      A
+                    </span>
+
+                    <span id="adminHeaderName" style="font-weight:600;color:#263b64;">
+                      Administrator
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down" style="font-size:12px;color:#263b64;"></i>
+                  </button>
+
+                  <div id="adminAccountDropdown" style="display:none;position:absolute;right:0;top:100%;
+                   width:260px;background:white;border-radius:8px;
+                   box-shadow:0 8px 24px rgba(0,0,0,0.15);
+                   z-index:1000;padding:16px;">
+
+                    <div style="padding-bottom:12px;border-bottom:1px solid #eee;">
+                      <strong id="dropdownAdminName" style="display:block;color:#263b64;">
+                        Administrator
+                      </strong>
+
+                      <small id="dropdownAdminEmail" style="color:#777;overflow-wrap:anywhere;"></small>
+
+                      <small style="display:block;margin-top:6px;color:#777;">
+                        System Administrator
+                      </small>
+                    </div>
+
+                    <button type="button" id="adminLogoutBtn" style="width:100%;margin-top:12px;padding:10px;
+                       border:0;background:#f8f9fa;border-radius:5px;
+                       text-align:left;cursor:pointer;color:#c0392b;">
+                      <i class="fa-solid fa-right-from-bracket"></i>
+                      Logout
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="main-content" id="main-content">
+        <div class="section__content section__content--p30">
+          <div class="container-fluid">
+            <!-- Page header -->
+            <div class="page-header">
+              <div>
+                <h1>Job Management</h1>
+                <p class="subtitle">Create, view, edit, and manage job opportunities for alumni.</p>
+              </div>
+
+            </div>
+
+
+
+            <!-- Job Management -->
+            <div class="row" style="margin-top: 20px;">
+              <div class="col-12">
+                <section class="m-card">
+
+                  <header class="m-card__header">
+                    <div>
+                      <h2 class="m-card__title">
+                        Job Opportunities
+                      </h2>
+                      <p class="m-card__subtitle">
+                        View and manage available job opportunities.
+                      </p>
+                    </div>
+
+                    <button type="button" class="btn btn-primary" id="addJobButton">
+                      <i class="fa-solid fa-plus me-1"></i>
+                      Add Job
+                    </button>
+                  </header>
+
+                  <div class="px-3 pb-3">
+                    <input type="search" id="jobSearch" class="form-control"
+                      placeholder="Search jobs by title, company, or location..." aria-label="Search job opportunities">
+                  </div>
+
+                  <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                      <thead>
+                        <tr>
+                          <th>Job Title</th>
+                          <th>Company</th>
+                          <th>Location</th>
+                          <th>Job Type</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+
+                      <tbody id="adminJobsTable">
+                        <tr>
+                          <td colspan="5" class="text-center text-muted">
+                            Loading job opportunities...
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                </section>
+              </div>
+            </div>
+            <!-- Footer -->
+            <div class="row mt-4">
+              <div class="col-md-12">
+                <div class="copyright">
+                  <p>© 2026 AlumniConnect. All rights reserved.</p>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+
+
+        <!-- View Job Details Modal -->
+        <div class="modal fade" id="viewJobModal" tabindex="-1" aria-labelledby="viewJobModalLabel" aria-hidden="true">
+
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="viewJobModalLabel">
+                  <i class="fa-solid fa-briefcase me-2"></i>
+                  Job Opportunity Details
+                </h5>
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+
+              <div class="modal-body" id="viewJobDetails">
+                <p class="text-muted">Loading job details...</p>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                  Close
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Add Job Modal -->
+        <div class="modal fade" id="addJobModal" tabindex="-1" aria-labelledby="addJobModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="addJobModalLabel">
+                  Add New Job Opportunity
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+
+              <form id="addJobForm">
+                <div class="modal-body">
+
+                  <div class="mb-3">
+                    <label for="newJobTitle" class="form-label">
+                      Job Title
+                    </label>
+                    <input type="text" class="form-control" id="newJobTitle" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="newCompanyName" class="form-label">
+                      Company Name
+                    </label>
+                    <input type="text" class="form-control" id="newCompanyName" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="newJobLocation" class="form-label">
+                      Location
+                    </label>
+                    <input type="text" class="form-control" id="newJobLocation" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="newEmploymentType" class="form-label">
+                      Employment Type
+                    </label>
+                    <select class="form-select" id="newEmploymentType" required>
+                      <option value="">Select employment type</option>
+                      <option value="Full-time">Full-time</option>
+                      <option value="Part-time">Part-time</option>
+                      <option value="Contract">Contract</option>
+                      <option value="Internship">Internship</option>
+                      <option value="Remote">Remote</option>
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="newJobSalary" class="form-label">
+                      Salary
+                    </label>
+
+                    <input type="number" class="form-control" id="newJobSalary" min="0" step="0.01"
+                      placeholder="Enter salary amount">
+
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="newJobDeadline" class="form-label">
+                      Application Deadline
+                    </label>
+                    <input type="date" class="form-control" id="newJobDeadline">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="newJobDepartmentId" class="form-label">
+                      Department
+                    </label>
+                    <select class="form-select" id="newJobDepartmentId" required>
+                      <option value="">Loading departments...</option>
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">
+                      Required Skills
+                    </label>
+
+                    <div id="newJobSkillsList" class="border rounded p-3" style="max-height: 200px; overflow-y: auto;">
+                      <small class="text-muted">Loading skills...</small>
+                    </div>
+
+                    <small class="text-muted">
+                      Select all skills required for this job.
+                    </small>
+                  </div>
+
+
+                  <div class="mb-3">
+                    <label for="newJobDescription" class="form-label">
+                      Job Description
+                    </label>
+                    <textarea class="form-control" id="newJobDescription" rows="4" required></textarea>
+                  </div>
+
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Cancel
+                  </button>
+                  <button type="submit" class="btn btn-primary">
+                    Save Job
+                  </button>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Delete Job Confirmation Modal -->
+        <div class="modal fade" id="deleteJobModal" tabindex="-1" aria-labelledby="deleteJobModalLabel"
+          aria-hidden="true">
+
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="deleteJobModalLabel">
+                  Confirm Job Deletion
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+
+              <div class="modal-body">
+                <input type="hidden" id="deleteJobId">
+
+                <p>Are you sure you want to delete this job opportunity?</p>
+
+                <p class="fw-bold" id="deleteJobTitle"></p>
+
+                <p class="text-danger mb-0">
+                  This action cannot be undone.
+                </p>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                  Cancel
+                </button>
+
+                <button type="button" class="btn btn-danger" id="confirmDeleteJobButton">
+                  Delete Job
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Edit Job Modal -->
+        <div class="modal fade" id="editJobModal" tabindex="-1" aria-labelledby="editJobModalLabel" aria-hidden="true">
+
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="editJobModalLabel">
+                  Edit Job Opportunity
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+
+              <form id="editJobForm">
+                <div class="modal-body">
+
+                  <input type="hidden" id="editJobId">
+
+                  <div class="mb-3">
+                    <label for="editJobTitle" class="form-label">Job Title</label>
+                    <input type="text" class="form-control" id="editJobTitle" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="editCompanyName" class="form-label">Company Name</label>
+                    <input type="text" class="form-control" id="editCompanyName" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="editJobLocation" class="form-label">Location</label>
+                    <input type="text" class="form-control" id="editJobLocation" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="editEmploymentType" class="form-label">
+                      Employment Type
+                    </label>
+                    <select class="form-select" id="editEmploymentType" required>
+                      <option value="">Select employment type</option>
+                      <option value="Full-time">Full-time</option>
+                      <option value="Part-time">Part-time</option>
+                      <option value="Contract">Contract</option>
+                      <option value="Internship">Internship</option>
+                      <option value="Remote">Remote</option>
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="editJobSalary" class="form-label">Salary</label>
+                    <input type="number" class="form-control" id="editJobSalary" min="0" step="0.01">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="editJobDeadline" class="form-label">
+                      Application Deadline
+                    </label>
+                    <input type="date" class="form-control" id="editJobDeadline">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="editJobDepartmentId" class="form-label">
+                      Department
+                    </label>
+                    <select class="form-select" id="editJobDepartmentId" required>
+                      <option value="">Loading departments...</option>
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">
+                      Required Skills
+                    </label>
+
+                    <div id="editJobSkillsList" class="border rounded p-3" style="max-height: 200px; overflow-y: auto;">
+                      <small class="text-muted">Loading skills...</small>
+                    </div>
+
+                    <small class="text-muted">
+                      Select all skills required for this job.
+                    </small>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="editJobDescription" class="form-label">
+                      Job Description
+                    </label>
+                    <textarea class="form-control" id="editJobDescription" rows="4" required></textarea>
+                  </div>
+
+                  <div class="form-check mb-3">
+                    <input type="checkbox" class="form-check-input" id="editJobActive">
+                    <label class="form-check-label" for="editJobActive">
+                      Active Job Opportunity
+                    </label>
+                  </div>
+
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                  <button type="submit" class="btn btn-primary">
+                    Save Changes
+                  </button>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+
+      </main>
+    </div>
+  </div>
+  <script src="js/vanilla-utils.js"></script>
+  <script src="vendor/bootstrap-5.3.8.bundle.min.js"></script>
+  <script src="vendor/chartjs/chart.umd.js-4.5.1.min.js"></script>
+  <script src="js/bootstrap5-init.js"></script>
+  <!-- AlumniConnect Toast Notification -->
+  <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1100;">
+    <div id="alumniToast" class="toast border-0 shadow" role="status" aria-live="polite" aria-atomic="true">
+
+      <div class="toast-header bg-success text-white">
+        <strong class="me-auto">
+          <i class="fas fa-check-circle me-2"></i>
+          AlumniConnect
+        </strong>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+
+      <div class="toast-body" id="alumniToastMessage">
+        Job operation completed successfully.
+
+      </div>
+    </div>
+  </div>
+  <script src="js/main-vanilla.js"></script>
+  <script src="js/modern-plugins.js"></script>
+  <script>
+    // Protect Admin Dashboard
+    const token = localStorage.getItem("token");
+    const role = localStorage.getItem("role");
+
+    // User must be logged in and must be an ADMIN
+    if (!token || role !== "ADMIN") {
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <script>
+    function showJobToast(message, isSuccess = true) {
+      const toastElement = document.getElementById("alumniToast");
+      const toastHeader = toastElement.querySelector(".toast-header");
+
+      toastHeader.classList.remove("bg-success", "bg-danger");
+      toastHeader.classList.add(isSuccess ? "bg-success" : "bg-danger");
+
+      document.getElementById("alumniToastMessage").textContent = message;
+
+      bootstrap.Toast.getOrCreateInstance(toastElement, {
+        delay: isSuccess ? 3500 : 4000
+      }).show();
+    }
+    // Store available skills from the database
+    let availableSkills = [];
+
+
+    // Load all skills from the backend
+    async function loadAdminSkills() {
+
+      const token = localStorage.getItem("token");
+
+      try {
+
+        const response = await fetch(
+          "http://localhost:8080/api/skills",
+          {
+            headers: {
+              "Authorization": `Bearer ${token}`
+            }
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("Unable to load skills.");
+        }
+
+        const skills = await response.json();
+
+        availableSkills = Array.isArray(skills) ? skills : [];
+
+        renderSkillCheckboxes("newJobSkillsList");
+        renderSkillCheckboxes("editJobSkillsList");
+
+      } catch (error) {
+
+        console.error("Skill loading error:", error);
+
+        document.getElementById("newJobSkillsList").textContent =
+          "Unable to load skills.";
+
+        document.getElementById("editJobSkillsList").textContent =
+          "Unable to load skills.";
+      }
+    }
+
+    let availableDepartments = [];
+
+    async function loadAdminDepartments() {
+      const token = localStorage.getItem("token");
+
+      try {
+        const response = await fetch(
+          "http://localhost:8080/api/departments",
+          {
+            headers: {
+              "Authorization": `Bearer ${token}`
+            }
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("Unable to load departments.");
+        }
+
+        const departments = await response.json();
+
+        availableDepartments = Array.isArray(departments)
+          ? departments
+          : [];
+
+        populateDepartmentDropdown("newJobDepartmentId");
+        populateDepartmentDropdown("editJobDepartmentId");
+
+      } catch (error) {
+        console.error("Department loading error:", error);
+
+        document.getElementById("newJobDepartmentId").innerHTML =
+          '<option value="">Unable to load departments</option>';
+
+        document.getElementById("editJobDepartmentId").innerHTML =
+          '<option value="">Unable to load departments</option>';
+      }
+    }
+
+    function populateDepartmentDropdown(selectId, selectedId = "") {
+      const select = document.getElementById(selectId);
+
+      select.innerHTML = '<option value="">Select Department</option>';
+
+      availableDepartments.forEach(department => {
+        const option = document.createElement("option");
+
+        option.value = department.id;
+        option.textContent = department.departmentName;
+
+        if (String(department.id) === String(selectedId)) {
+          option.selected = true;
+        }
+
+        select.appendChild(option);
+      });
+    }
+
+    // Display skills as selectable checkboxes
+    function renderSkillCheckboxes(containerId, selectedIds = []) {
+
+      const container = document.getElementById(containerId);
+
+      container.innerHTML = "";
+
+      if (availableSkills.length === 0) {
+
+        container.textContent = "No skills available. Add skills first.";
+
+        return;
+      }
+
+      availableSkills.forEach(skill => {
+
+        const wrapper = document.createElement("div");
+        wrapper.className = "form-check mb-2";
+
+        const checkbox = document.createElement("input");
+
+        checkbox.type = "checkbox";
+        checkbox.className = "form-check-input";
+        checkbox.value = skill.id;
+        checkbox.id = `${containerId}_${skill.id}`;
+
+        checkbox.checked = selectedIds.includes(skill.id);
+
+        const label = document.createElement("label");
+
+        label.className = "form-check-label";
+        label.htmlFor = checkbox.id;
+        label.textContent = skill.skillName;
+
+        wrapper.appendChild(checkbox);
+        wrapper.appendChild(label);
+
+        container.appendChild(wrapper);
+
+      });
+    }
+
+
+    // Get selected skill IDs
+    function getSelectedSkillIds(containerId) {
+
+      const checkboxes = document.querySelectorAll(
+        `#${containerId} input[type="checkbox"]:checked`
+      );
+
+      return Array.from(checkboxes).map(
+        checkbox => Number(checkbox.value)
+      );
+
+    }
+    async function loadAdminJobs() {
+      const table = document.getElementById("adminJobsTable");
+      const token = localStorage.getItem("token");
+
+      if (!token) {
+        window.location.href = "login.html";
+        return;
+      }
+
+      try {
+        const response = await fetch(
+          "http://localhost:8080/api/job-opportunities",
+          {
+            headers: {
+              "Authorization": `Bearer ${token}`
+            }
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("Failed to load jobs");
+        }
+
+        const jobs = await response.json();
+        const jobList = Array.isArray(jobs)
+          ? jobs
+          : jobs.content || [];
+
+        table.innerHTML = "";
+
+        if (jobList.length === 0) {
+          const row = table.insertRow();
+          const cell = row.insertCell();
+
+          cell.colSpan = 5;
+          cell.className = "text-center text-muted";
+          cell.textContent = "No job opportunities found.";
+          return;
+        }
+
+        jobList.forEach(job => {
+          const row = table.insertRow();
+
+
+          const values = [
+            job.jobTitle || "Not specified",
+            job.companyName || "Not specified",
+            job.location || "Not specified",
+            job.employmentType || "Not specified"
+          ];
+
+
+          values.forEach(value => {
+            const cell = row.insertCell();
+            cell.textContent = value;
+          });
+
+
+          const actionsCell = row.insertCell();
+
+          const viewButton = document.createElement("button");
+          viewButton.type = "button";
+          viewButton.className = "btn btn-sm btn-outline-primary";
+          viewButton.textContent = "View";
+
+
+          viewButton.addEventListener("click", () => {
+            const details = document.getElementById("viewJobDetails");
+
+            details.innerHTML = "";
+
+            const fields = [
+              ["Job Title", job.jobTitle],
+              ["Company", job.companyName],
+              ["Location", job.location],
+              ["Employment Type", job.employmentType],
+              ["Salary", job.salary],
+              ["Application Deadline", job.applicationDeadline],
+              ["Job Description", job.jobDescription]
+            ];
+
+            fields.forEach(([label, value]) => {
+              const section = document.createElement("div");
+              section.className = "mb-3";
+
+              const heading = document.createElement("strong");
+              heading.textContent = label;
+
+              const paragraph = document.createElement("p");
+              paragraph.className = "mb-0 text-muted";
+              paragraph.style.whiteSpace = "pre-wrap";
+              paragraph.textContent =
+                value !== null && value !== undefined && value !== ""
+                  ? String(value)
+                  : "Not specified";
+
+              section.appendChild(heading);
+              section.appendChild(paragraph);
+              details.appendChild(section);
+            });
+
+            const modal = bootstrap.Modal.getOrCreateInstance(
+              document.getElementById("viewJobModal")
+            );
+
+            modal.show();
+          });
+
+
+          actionsCell.appendChild(viewButton);
+
+          const editButton = document.createElement("button");
+
+          editButton.type = "button";
+          editButton.className = "btn btn-sm btn-outline-warning ms-2";
+          editButton.textContent = "Edit";
+
+
+          editButton.addEventListener("click", () => {
+            document.getElementById("editJobId").value =
+              job.jobOpportunityId;
+
+            document.getElementById("editJobTitle").value =
+              job.jobTitle || "";
+
+            document.getElementById("editCompanyName").value =
+              job.companyName || "";
+
+            document.getElementById("editJobLocation").value =
+              job.location || "";
+
+            document.getElementById("editEmploymentType").value =
+              job.employmentType || "";
+
+            document.getElementById("editJobSalary").value =
+              job.salary ?? "";
+
+            document.getElementById("editJobDeadline").value =
+              job.applicationDeadline || "";
+
+            populateDepartmentDropdown(
+              "editJobDepartmentId",
+              job.departmentId
+            );
+
+            document.getElementById("editJobDescription").value =
+              job.jobDescription || "";
+
+            document.getElementById("editJobActive").checked =
+              job.active === true;
+
+
+
+            renderSkillCheckboxes(
+              "editJobSkillsList",
+              Array.isArray(job.requiredSkillIds)
+                ? job.requiredSkillIds
+                : []
+            );
+
+
+            const modal = bootstrap.Modal.getOrCreateInstance(
+              document.getElementById("editJobModal")
+            );
+
+            modal.show();
+          });
+
+
+          actionsCell.appendChild(editButton);
+
+          const deleteButton = document.createElement("button");
+
+          deleteButton.type = "button";
+          deleteButton.className = "btn btn-sm btn-outline-danger ms-2";
+          deleteButton.textContent = "Delete";
+
+
+          deleteButton.addEventListener("click", () => {
+
+            document.getElementById("deleteJobId").value =
+              job.jobOpportunityId;
+
+            document.getElementById("deleteJobTitle").textContent =
+              job.jobTitle || "Untitled Job";
+
+            const deleteModal = bootstrap.Modal.getOrCreateInstance(
+              document.getElementById("deleteJobModal")
+            );
+
+            deleteModal.show();
+
+          });
+
+          actionsCell.appendChild(deleteButton);
+
+        });
+
+      } catch (error) {
+        console.error("Job loading error:", error);
+
+        table.innerHTML = "";
+
+        const row = table.insertRow();
+        const cell = row.insertCell();
+
+        cell.colSpan = 5;
+        cell.className = "text-center text-danger";
+        cell.textContent = "Unable to load job opportunities.";
+      }
+    }
+
+    const jobSearch = document.getElementById("jobSearch");
+
+    jobSearch.addEventListener("input", function () {
+      const searchText = this.value.toLowerCase().trim();
+
+      const rows = document.querySelectorAll(
+        "#adminJobsTable tr"
+      );
+
+      rows.forEach(row => {
+        const cells = row.querySelectorAll("td");
+
+        // Ignore loading and empty-state rows
+        if (cells.length < 5) return;
+
+        const jobTitle = cells[0].textContent.toLowerCase();
+        const company = cells[1].textContent.toLowerCase();
+        const location = cells[2].textContent.toLowerCase();
+
+        const matches =
+          jobTitle.includes(searchText) ||
+          company.includes(searchText) ||
+          location.includes(searchText);
+
+        row.style.display = matches ? "" : "none";
+      });
+    });
+
+    document.getElementById("addJobButton").addEventListener("click", () => {
+      document.getElementById("addJobForm").reset();
+
+      const modal = bootstrap.Modal.getOrCreateInstance(
+        document.getElementById("addJobModal")
+      );
+
+      modal.show();
+    });
+
+    document.getElementById("addJobForm").addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const token = localStorage.getItem("token");
+
+      const departmentValue = document.getElementById("newJobDepartmentId").value.trim();
+      const skillIds = getSelectedSkillIds("newJobSkillsList");
+      const salaryValue = document.getElementById("newJobSalary").value.trim();
+
+
+      if (departmentValue && (!Number.isInteger(Number(departmentValue)) ||
+        Number(departmentValue) <= 0)) {
+        showJobToast("Enter a valid Department ID.", false);
+        return;
+      }
+
+      const jobData = {
+        jobTitle: document.getElementById("newJobTitle").value.trim(),
+        jobDescription: document.getElementById("newJobDescription").value.trim(),
+        companyName: document.getElementById("newCompanyName").value.trim(),
+        location: document.getElementById("newJobLocation").value.trim(),
+        employmentType: document.getElementById("newEmploymentType").value,
+        salary: salaryValue ? Number(salaryValue) : null,
+        applicationDeadline: document.getElementById("newJobDeadline").value || null,
+        active: true,
+        departmentId: departmentValue ? Number(departmentValue) : null,
+        skillIds: skillIds
+      };
+
+      const saveButton = this.querySelector('button[type="submit"]');
+      saveButton.disabled = true;
+      saveButton.textContent = "Saving...";
+
+      try {
+        const response = await fetch(
+          "http://localhost:8080/api/job-opportunities",
+          {
+            method: "POST",
+            headers: {
+              "Authorization": `Bearer ${token}`,
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(jobData)
+          }
+        );
+
+        if (!response.ok) {
+          const errorMessage = await response.text();
+          throw new Error(errorMessage || "Unable to save job.");
+        }
+
+        bootstrap.Modal.getOrCreateInstance(
+          document.getElementById("addJobModal")
+        ).hide();
+
+        this.reset();
+        await loadAdminJobs();
+
+        showJobToast("Job opportunity created successfully!");
+
+      } catch (error) {
+        console.error("Error creating job:", error);
+        showJobToast("Unable to create job. Please try again.", false);
+      } finally {
+        saveButton.disabled = false;
+        saveButton.textContent = "Save Job";
+      }
+    });
+
+    document.getElementById("editJobForm").addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const token = localStorage.getItem("token");
+      const jobId = document.getElementById("editJobId").value;
+      const skillIds = getSelectedSkillIds("editJobSkillsList");
+
+      const salaryValue = document.getElementById("editJobSalary").value.trim();
+
+
+      const departmentId = Number(
+        document.getElementById("editJobDepartmentId").value
+      );
+
+      if (!Number.isInteger(departmentId) || departmentId <= 0) {
+        showJobToast("Enter a valid Department ID.", false);
+        return;
+      }
+
+      const jobData = {
+        jobTitle: document.getElementById("editJobTitle").value.trim(),
+        jobDescription: document.getElementById("editJobDescription").value.trim(),
+        companyName: document.getElementById("editCompanyName").value.trim(),
+        location: document.getElementById("editJobLocation").value.trim(),
+        employmentType: document.getElementById("editEmploymentType").value,
+        salary: salaryValue ? Number(salaryValue) : null,
+        applicationDeadline:
+          document.getElementById("editJobDeadline").value || null,
+        active: document.getElementById("editJobActive").checked,
+        departmentId: departmentId,
+        skillIds: skillIds
+      };
+
+      const saveButton = this.querySelector('button[type="submit"]');
+      saveButton.disabled = true;
+      saveButton.textContent = "Saving...";
+
+      try {
+        const response = await fetch(
+          `http://localhost:8080/api/job-opportunities/${jobId}`,
+          {
+            method: "PUT",
+            headers: {
+              "Authorization": `Bearer ${token}`,
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(jobData)
+          }
+        );
+
+        if (!response.ok) {
+          const errorMessage = await response.text();
+          throw new Error(errorMessage || "Unable to update job.");
+        }
+
+        bootstrap.Modal.getOrCreateInstance(
+          document.getElementById("editJobModal")
+        ).hide();
+
+        await loadAdminJobs();
+
+        showJobToast("Job opportunity updated successfully!");
+
+      } catch (error) {
+        console.error("Error updating job:", error);
+        showJobToast("Unable to update job. Please try again.", false);
+      } finally {
+        saveButton.disabled = false;
+        saveButton.textContent = "Save Changes";
+      }
+    });
+
+    document.getElementById("confirmDeleteJobButton")
+      .addEventListener("click", async function () {
+
+        const jobId = document.getElementById("deleteJobId").value;
+        const token = localStorage.getItem("token");
+
+        if (!jobId) {
+          showJobToast("No job selected for deletion.", false);
+          return;
+        }
+
+        const deleteButton = this;
+        deleteButton.disabled = true;
+        deleteButton.textContent = "Deleting...";
+
+        try {
+          const response = await fetch(
+            `http://localhost:8080/api/job-opportunities/${jobId}`,
+            {
+              method: "DELETE",
+              headers: {
+                "Authorization": `Bearer ${token}`
+              }
+            }
+          );
+
+          if (!response.ok) {
+            const errorMessage = await response.text();
+            throw new Error(errorMessage || "Unable to delete job.");
+          }
+
+          bootstrap.Modal.getOrCreateInstance(
+            document.getElementById("deleteJobModal")
+          ).hide();
+
+          await loadAdminJobs();
+
+          showJobToast("Job opportunity deleted successfully!");
+
+        } catch (error) {
+          console.error("Error deleting job:", error);
+          showJobToast("Unable to delete job. Please try again.", false);
+
+        } finally {
+          deleteButton.disabled = false;
+          deleteButton.textContent = "Delete Job";
+        }
+      });
+
+    loadAdminSkills();
+    loadAdminDepartments();
+    loadAdminJobs();
+  </script>
+  <script>
+    const adminFirstName = localStorage.getItem("firstName") || "";
+    const adminLastName = localStorage.getItem("lastName") || "";
+    const adminEmail = localStorage.getItem("email") || "";
+
+    const adminFullName =
+      [adminFirstName, adminLastName].filter(Boolean).join(" ") ||
+      "Administrator";
+
+    const adminInitials =
+      (adminFirstName.charAt(0) + adminLastName.charAt(0))
+        .toUpperCase() || "A";
+
+    document.getElementById("adminInitials").textContent = adminInitials;
+    document.getElementById("adminHeaderName").textContent = adminFullName;
+    document.getElementById("dropdownAdminName").textContent = adminFullName;
+    document.getElementById("dropdownAdminEmail").textContent = adminEmail;
+
+    const adminAccountToggle =
+      document.getElementById("adminAccountToggle");
+
+    const adminAccountDropdown =
+      document.getElementById("adminAccountDropdown");
+
+    adminAccountToggle.addEventListener("click", function (event) {
+      event.stopPropagation();
+
+      const isOpen = adminAccountDropdown.style.display === "block";
+      adminAccountDropdown.style.display = isOpen ? "none" : "block";
+
+      adminAccountToggle.setAttribute("aria-expanded", String(!isOpen));
+    });
+
+    document.addEventListener("click", function (event) {
+      const accountMenu = document.getElementById("adminAccountMenu");
+
+      if (!accountMenu.contains(event.target)) {
+        adminAccountDropdown.style.display = "none";
+        adminAccountToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    document.getElementById("adminLogoutBtn")
+      .addEventListener("click", function () {
+        ["token", "role", "userId", "firstName", "lastName", "email"]
+          .forEach(key => localStorage.removeItem(key));
+
+        window.location.href = "login.html";
+      });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description"
+        content="AlumniConnect alumni dashboard for career tracking, profile management, and skill-based job recommendations." />
+    <title>Alumni Dashboard | AlumniConnect </title>
+    <meta name="theme-color" content="#4272d7" />
+    <link href="css/font-face.css" rel="stylesheet" media="all" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link href="vendor/fontawesome-7.3.1/css/all.min.css" rel="stylesheet" media="all" />
+    <link href="vendor/bootstrap-5.3.8.min.css" rel="stylesheet" media="all" />
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all" />
+    <link href="css/theme.css" rel="stylesheet" media="all" />
+    <link href="css/app.css" rel="stylesheet" media="all" />
+</head>
+
+<body class="app"><a class="visually-hidden-focusable skip-link" href="#main-content">Skip to main content</a>
+    <div class="page-wrapper">
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="index4.html"
+                            style="font-size:22px; font-weight:700; color:#263b64; text-decoration:none;">
+                            AlumniConnect
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button" aria-label="Toggle navigation"><span
+                                class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+
+                        <li class="active">
+                            <a href="index4.html">
+                                <i class="fa-solid fa-gauge-high"></i>
+                                Dashboard
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="profile.html">
+                                <i class="fa-solid fa-user"></i>
+                                My Profile
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="skills.html">
+                                <i class="fa-solid fa-list-check"></i>
+                                My Skills
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="employment.html">
+                                <i class="fa-solid fa-briefcase"></i>
+                                Employment Information
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="jobs.html">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                Job Opportunities
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="recommendations.html">
+                                <i class="fa-solid fa-star"></i>
+                                Recommended Jobs
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="events.html">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                Events
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="announcements.html">
+                                <i class="fa-solid fa-bullhorn"></i>
+                                Announcements
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+
+        </header>
+        <aside class="menu-sidebar" id="main-sidebar">
+            <div class="logo"><a class="logo-link" href="index4.html" aria-label="AlumniConnect home"><span
+                        class="logo-mark" aria-hidden="true">A</span><span class="logo-text">AlumniConnect</span></a>
+                <button class="sidebar-close js-sidebar-toggle" type="button" aria-label="Close navigation"><i
+                        class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+
+                        <li class="active">
+                            <a href="index4.html">
+                                <i class="fa-solid fa-gauge-high"></i>
+                                Dashboard
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="profile.html">
+                                <i class="fa-solid fa-user"></i>
+                                My Profile
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="skills.html">
+                                <i class="fa-solid fa-list-check"></i>
+                                My Skills
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="employment.html">
+                                <i class="fa-solid fa-briefcase"></i>
+                                Employment Information
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="jobs.html">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                Job Opportunities
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="recommendations.html">
+                                <i class="fa-solid fa-star"></i>
+                                Recommended Jobs
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="events.html">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                Events
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="announcements.html">
+                                <i class="fa-solid fa-bullhorn"></i>
+                                Announcements
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+
+            </div>
+        </aside>
+        <div class="page-container">
+            <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+                            <button class="sidebar-toggle js-sidebar-toggle" type="button"
+                                aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-sidebar"><i
+                                    class="fa-solid fa-bars" aria-hidden="true"></i></button>
+
+                            <div class="header-button">
+                                <div class="account-wrap">
+                                    <div class="account-item" id="alumniAccountMenu">
+                                        <button type="button" id="alumniAccountToggle"
+                                            class="d-flex align-items-center gap-2 border-0 bg-transparent"
+                                            aria-expanded="false" aria-controls="alumniAccountDropdown">
+
+                                            <span id="alumniInitials"
+                                                class="d-flex align-items-center justify-content-center rounded-circle text-white fw-bold"
+                                                style="width:42px;height:42px;background:#263b64;">
+                                                A
+                                            </span>
+
+                                            <span class="fw-semibold">My Account</span>
+                                            <i class="fa-solid fa-chevron-down"></i>
+                                        </button>
+
+                                        <div id="alumniAccountDropdown"
+                                            class="position-absolute bg-white shadow rounded-3 p-3"
+                                            style="display:none;right:0;top:55px;width:240px;z-index:9999;">
+
+                                            <div class="mb-3">
+                                                <strong id="dropdownAlumniName">Alumni</strong>
+                                                <div id="dropdownAlumniEmail" class="text-muted small text-break"></div>
+                                            </div>
+
+                                            <hr>
+
+                                            <a href="profile.html" class="d-block text-decoration-none mb-3">
+                                                <i class="fa-solid fa-user me-2"></i>
+                                                My Profile
+                                            </a>
+
+                                            <a href="#" id="alumniLogoutBtn"
+                                                class="d-block text-decoration-none text-danger">
+                                                <i class="fa-solid fa-power-off me-2"></i>
+                                                Logout
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main class="main-content" id="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid"> <!-- Page header -->
+                        <div class="page-header">
+                            <div>
+
+                                <h1>Welcome Back, <span id="alumniName">Alumni</span></h1>
+
+                                <p class="subtitle">Track your career, manage your profile, and discover opportunities.
+                                </p>
+                            </div>
+                            <div class="page-header__actions">
+
+                                <button type="button" class="m-btn m-btn--ghost" id="dash-refresh-btn"
+                                    aria-label="Refresh dashboard data">
+                                    <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i>
+                                    Refresh
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <!-- KPI strip -->
+                        <div class="row row-tight">
+                            <div class="col-sm-6 col-lg-3">
+                                <article class="stat-card">
+                                    <div class="stat-card__head">
+                                        <p class="stat-card__label">Profile Completion</p>
+                                        <span class="stat-card__icon stat-card__icon--c1"><i
+                                                class="fa-solid fa-folder-open" aria-hidden="true"></i></span>
+                                    </div>
+                                    <p class="stat-card__value" id="profileCompletion">--%</p>
+                                    <p class="stat-card__delta">
+                                        Complete your alumni profile
+                                    </p>
+                                </article>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <article class="stat-card">
+                                    <div class="stat-card__head">
+                                        <p class="stat-card__label"> Employment Status</p>
+                                        <span class="stat-card__icon stat-card__icon--c2"><i
+                                                class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+                                    </div>
+                                    <p class="stat-card__value" id="employmentStatus">--</p>
+                                    <p class="stat-card__delta">
+                                        Current career status
+                                    </p>
+                                </article>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <article class="stat-card">
+                                    <div class="stat-card__head">
+                                        <p class="stat-card__label">Skills Added</p>
+                                        <span class="stat-card__icon stat-card__icon--c3"><i
+                                                class="fa-solid fa-gauge-simple" aria-hidden="true"></i></span>
+                                    </div>
+                                    <p class="stat-card__value" id="skillsCount">--</p>
+                                    <p class="stat-card__delta">
+                                        Skills in your profile
+                                    </p>
+                                </article>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <article class="stat-card">
+                                    <div class="stat-card__head">
+                                        <p class="stat-card__label">Recommended Jobs</p>
+                                        <span class="stat-card__icon stat-card__icon--c4"><i class="fa-regular fa-clock"
+                                                aria-hidden="true"></i></span>
+                                    </div>
+                                    <p class="stat-card__value" id="recommendedJobsCount">--</p>
+                                    <p class="stat-card__delta">
+                                        Jobs matched to your skills
+                                    </p>
+                                </article>
+                            </div>
+                        </div>
+
+                        <!-- Recommended Jobs + Upcoming Events -->
+                        <div class="row row-tight" style="margin-top: 16px;">
+                            <div class="col-lg-8">
+                                <section class="m-card" id="recommendedJobsSection" aria-labelledby="projects-title">
+                                    <header class="m-card__header">
+                                        <div>
+                                            <h2 class="m-card__title" id="projects-title">Recommended Jobs</h2>
+                                            <p class="m-card__subtitle">Job opportunities matched to your skills.</p>
+                                        </div>
+                                        <a href="recommendations.html" class="m-btn m-btn--ghost"
+                                            style="height:30px; padding:0 10px; font-size:12.5px;">View all</a>
+                                    </header>
+                                    <ul class="project-list" id="recommendedJobsList">
+                                    </ul>
+                                </section>
+                            </div>
+                            <div class="col-lg-4">
+                                <section class="m-card" aria-labelledby="deadlines-title">
+                                    <header class="m-card__header">
+                                        <div>
+                                            <h2 class="m-card__title" id="deadlines-title">Upcoming Events</h2>
+                                            <p class="m-card__subtitle">Upcoming alumni events.</p>
+                                        </div>
+                                    </header>
+                                    <ul class="deadline-list" id="upcomingEventsList">
+
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+
+                        <!-- Activity feed + Team availability -->
+                        <div class="row row-tight" style="margin-top: 16px;">
+                            <div class="col-lg-8">
+                                <section class="m-card" aria-labelledby="activity-title">
+                                    <header class="m-card__header">
+                                        <div>
+                                            <h2 class="m-card__title" id="activity-title">Recent Announcements</h2>
+                                            <p class="m-card__subtitle">Latest updates and information.</p>
+                                        </div>
+                                        <a href="announcements.html" class="m-btn m-btn--ghost"
+                                            style="height:30px; padding:0 10px; font-size:12.5px;">View all</a>
+                                    </header>
+                                    <ul class="activity-list" id="announcementsList">
+
+                                    </ul>
+                                </section>
+                            </div>
+                            <div class="col-lg-4">
+                                <section class="m-card" aria-labelledby="team-title">
+                                    <header class="m-card__header">
+                                        <div>
+                                            <h2 class="m-card__title" id="team-title">Profile Summary</h2>
+                                            <p class="m-card__subtitle">Your alumni information.</p>
+                                        </div>
+                                    </header>
+                                    <ul class="team-list" id="profileSummaryList">
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="row" style="margin-top: 28px;">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>© 2026 AlumniConnect. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="js/vanilla-utils.js"></script>
+    <script src="vendor/bootstrap-5.3.8.bundle.min.js"></script>
+    <script src="vendor/chartjs/chart.umd.js-4.5.1.min.js"></script>
+    <script src="js/bootstrap5-init.js"></script>
+    <script src="js/main-vanilla.js"></script>
+    <script src="js/modern-plugins.js"></script>
+    <script>
+        // Protect Alumni Dashboard
+        const token = localStorage.getItem("token");
+        const role = localStorage.getItem("role");
+
+        if (!token || role !== "ALUMNI") {
+            window.location.replace("login.html");
+        } else {
+            const firstName = localStorage.getItem("firstName") || "";
+            const lastName = localStorage.getItem("lastName") || "";
+            const alumniEmail = localStorage.getItem("email") || "";
+
+            const fullName = [firstName, lastName]
+                .filter(Boolean)
+                .join(" ");
+
+            const initials = (
+                firstName.charAt(0) + lastName.charAt(0)
+            ).toUpperCase() || "A";
+
+            document.getElementById("alumniInitials").textContent = initials;
+
+            document.getElementById("dropdownAlumniName").textContent =
+                fullName || "Alumni";
+
+            document.getElementById("dropdownAlumniEmail").textContent =
+                alumniEmail;
+
+            document.getElementById("alumniName").textContent =
+                firstName || "Alumni";
+
+            const accountToggle =
+                document.getElementById("alumniAccountToggle");
+
+            const accountDropdown =
+                document.getElementById("alumniAccountDropdown");
+
+            accountToggle.addEventListener("click", function (event) {
+                event.stopPropagation();
+
+                const isOpen = accountDropdown.style.display === "block";
+
+                accountDropdown.style.display =
+                    isOpen ? "none" : "block";
+
+                accountToggle.setAttribute(
+                    "aria-expanded",
+                    String(!isOpen)
+                );
+            });
+
+            document.addEventListener("click", function (event) {
+                if (!document.getElementById("alumniAccountMenu")
+                    .contains(event.target)) {
+
+                    accountDropdown.style.display = "none";
+                    accountToggle.setAttribute("aria-expanded", "false");
+                }
+            });
+
+            document.getElementById("alumniLogoutBtn")
+                .addEventListener("click", function (event) {
+                    event.preventDefault();
+                    localStorage.removeItem("token");
+                    localStorage.removeItem("role");
+                    localStorage.removeItem("userId");
+                    localStorage.removeItem("firstName");
+                    localStorage.removeItem("lastName");
+                    localStorage.removeItem("email");
+
+                    window.location.href = "login.html";
+                });
+        }
+    </script>
+    <script>
+        async function loadAlumniDashboard() {
+            const userId = localStorage.getItem("userId");
+            const token = localStorage.getItem("token");
+
+            try {
+                const response = await fetch(
+                    `http://localhost:8080/api/alumni/${userId}`,
+                    {
+                        method: "GET",
+                        headers: {
+                            "Authorization": `Bearer ${token}`,
+                            "Content-Type": "application/json"
+                        }
+                    }
+                );
+
+                if (!response.ok) {
+                    throw new Error("Could not load alumni profile.");
+                }
+
+                const alumni = await response.json();
+
+                console.log("Alumni profile:", alumni);
+
+                // Display Profile Summary
+                const profileSummaryList =
+                    document.getElementById("profileSummaryList");
+
+                profileSummaryList.innerHTML = `
+    <li>
+        <span class="team-list__name">
+            Department
+            <span class="team-list__role">
+                ${alumni.departmentName || "Not provided"}
+            </span>
+        </span>
+    </li>
+
+    <li>
+        <span class="team-list__name">
+            Degree
+            <span class="team-list__role">
+                ${alumni.degree || "Not provided"}
+            </span>
+        </span>
+    </li>
+
+    <li>
+        <span class="team-list__name">
+            Graduation Year
+            <span class="team-list__role">
+                ${alumni.graduationYear || "Not provided"}
+            </span>
+        </span>
+    </li>
+
+    <li>
+        <span class="team-list__name">
+            Current Position
+            <span class="team-list__role">
+                ${alumni.currentPosition || "Not provided"}
+            </span>
+        </span>
+    </li>
+
+    <li>
+        <span class="team-list__name">
+            Current Company
+            <span class="team-list__role">
+                ${alumni.currentCompany || "Not provided"}
+            </span>
+        </span>
+    </li>
+`;
+
+                // Employment Status
+                document.getElementById("employmentStatus").textContent =
+                    alumni.employed ? "Employed" : "Unemployed";
+
+                // Skills Count
+                document.getElementById("skillsCount").textContent =
+                    alumni.skills ? alumni.skills.length : 0;
+
+                // Profile Completion
+                const profileFields = [
+                    alumni.matricNumber,
+                    alumni.phoneNumber,
+                    alumni.graduationYear,
+                    alumni.degree,
+                    alumni.address,
+                    alumni.dateOfBirth,
+                    alumni.gender,
+                    alumni.departmentName
+                ];
+
+                // Employment details apply only to employed alumni
+                if (alumni.employed === true) {
+                    profileFields.push(
+                        alumni.currentCompany,
+                        alumni.currentPosition
+                    );
+                }
+
+                const completedFields = profileFields.filter(field =>
+                    field !== null &&
+                    field !== undefined &&
+                    field !== ""
+                ).length;
+
+                const profileCompletion = Math.round(
+                    (completedFields / profileFields.length) * 100
+                );
+
+                document.getElementById("profileCompletion").textContent =
+                    profileCompletion + "%";
+
+                // Load Recommended Jobs
+                const recommendationResponse = await fetch(
+                    `http://localhost:8080/api/recommendations/alumni/${userId}`,
+                    {
+                        method: "GET",
+                        headers: {
+                            "Authorization": `Bearer ${token}`,
+                            "Content-Type": "application/json"
+                        }
+                    }
+                );
+
+                if (!recommendationResponse.ok) {
+                    throw new Error("Could not load job recommendations.");
+                }
+
+                const recommendations = await recommendationResponse.json();
+
+                // Recommended Jobs Count
+                document.getElementById("recommendedJobsCount").textContent =
+                    recommendations.length;
+
+                console.log("Job recommendations:", recommendations);
+
+                // Display Recommended Jobs
+                const recommendedJobsList =
+                    document.getElementById("recommendedJobsList");
+
+                recommendedJobsList.innerHTML = "";
+
+                if (recommendations.length === 0) {
+                    recommendedJobsList.innerHTML = `
+        <li>
+            <div>
+                <p class="project-list__title">
+                    No recommended jobs yet
+                </p>
+                <span class="project-list__meta">
+                    Add more skills to your profile to improve your job matches.
+                </span>
+            </div>
+        </li>
+    `;
+                } else {
+                    recommendations.slice(0, 6).forEach(job => {
+
+                        const matchScore = Math.round(job.matchScore || 0);
+
+                        const listItem = document.createElement("li");
+
+                        listItem.innerHTML = `
+            <div>
+                <p class="project-list__title">
+                    ${job.jobTitle}
+                </p>
+
+                <span class="project-list__meta">
+                    ${job.companyName} ·
+                    ${job.location || "Location not specified"} ·
+                    ${job.employmentType || "Employment type not specified"}
+                    · <span class="status--approved">
+                        ${matchScore}% match
+                    </span>
+                </span>
+            </div>
+
+            <span class="project-list__bar"
+                  style="--pct: ${matchScore}%;">
+            </span>
+        `;
+
+                        recommendedJobsList.appendChild(listItem);
+                    });
+                }
+
+                // Load Upcoming Events
+                const eventsResponse = await fetch(
+                    "http://localhost:8080/api/events/active",
+                    {
+                        method: "GET",
+                        headers: {
+                            "Authorization": `Bearer ${token}`,
+                            "Content-Type": "application/json"
+                        }
+                    }
+                );
+
+                if (!eventsResponse.ok) {
+                    throw new Error("Could not load upcoming events.");
+                }
+
+                const events = await eventsResponse.json();
+
+                const upcomingEventsList =
+                    document.getElementById("upcomingEventsList");
+
+                upcomingEventsList.innerHTML = "";
+
+                // Keep only future/today events and sort by date
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+
+                const upcomingEvents = events
+                    .filter(event => {
+                        const eventDate = new Date(event.eventDate + "T00:00:00");
+                        return eventDate >= today;
+                    })
+                    .sort((a, b) =>
+                        new Date(a.eventDate) - new Date(b.eventDate)
+                    )
+                    .slice(0, 6);
+
+                if (upcomingEvents.length === 0) {
+
+                    upcomingEventsList.innerHTML = `
+        <li>
+            <div class="deadline-list__body">
+                <p class="deadline-list__title">
+                    No upcoming events
+                </p>
+                <span class="deadline-list__project">
+                    New events will appear here.
+                </span>
+            </div>
+        </li>
+    `;
+
+                } else {
+
+                    upcomingEvents.forEach(event => {
+
+                        const eventDate =
+                            new Date(event.eventDate + "T00:00:00");
+
+                        const day = String(eventDate.getDate()).padStart(2, "0");
+
+                        const month = eventDate.toLocaleString(
+                            "en-US",
+                            { month: "short" }
+                        );
+
+                        const listItem = document.createElement("li");
+
+                        listItem.innerHTML = `
+            <div class="deadline-list__date">
+                <strong>${day}</strong>
+                <span>${month}</span>
+            </div>
+
+            <div class="deadline-list__body">
+                <p class="deadline-list__title">
+                    ${event.title}
+                </p>
+
+                <span class="deadline-list__project">
+                    ${event.location || "Location not specified"}
+                </span>
+            </div>
+        `;
+
+                        upcomingEventsList.appendChild(listItem);
+                    });
+                }
+
+                console.log("Upcoming events:", upcomingEvents);
+
+                // Load Recent Announcements
+                const announcementsResponse = await fetch(
+                    "http://localhost:8080/api/announcements/active",
+                    {
+                        method: "GET",
+                        headers: {
+                            "Authorization": `Bearer ${token}`,
+                            "Content-Type": "application/json"
+                        }
+                    }
+                );
+
+                if (!announcementsResponse.ok) {
+                    throw new Error("Could not load announcements.");
+                }
+
+                const announcements = await announcementsResponse.json();
+
+                const announcementsList =
+                    document.getElementById("announcementsList");
+
+                announcementsList.innerHTML = "";
+
+                // Show newest announcements first
+                const recentAnnouncements = announcements
+                    .sort((a, b) =>
+                        new Date(b.postedDate) - new Date(a.postedDate)
+                    )
+                    .slice(0, 5);
+
+                if (recentAnnouncements.length === 0) {
+
+                    announcementsList.innerHTML = `
+        <li class="activity-item">
+            <div class="activity-item__body">
+                <p class="activity-item__text">
+                    No announcements available.
+                </p>
+                <span class="activity-item__time">
+                    New announcements will appear here.
+                </span>
+            </div>
+        </li>
+    `;
+
+                } else {
+
+                    recentAnnouncements.forEach(announcement => {
+
+                        const postedDate = new Date(announcement.postedDate);
+
+                        const formattedDate = postedDate.toLocaleDateString(
+                            "en-US",
+                            {
+                                month: "short",
+                                day: "numeric",
+                                year: "numeric"
+                            }
+                        );
+
+                        const listItem = document.createElement("li");
+                        listItem.className = "activity-item";
+
+                        listItem.innerHTML = `
+            <div class="activity-item__body">
+
+                <p class="activity-item__text">
+                    <b>${announcement.title}</b>
+                    <br>
+                    ${announcement.message}
+                </p>
+
+                <span class="activity-item__time">
+                    ${formattedDate}
+                </span>
+
+            </div>
+        `;
+
+                        announcementsList.appendChild(listItem);
+                    });
+                }
+
+                console.log("Recent announcements:", recentAnnouncements);
+
+            } catch (error) {
+                console.error("Dashboard error:", error);
+            }
+        }
+
+        loadAlumniDashboard();
+        document.getElementById("dash-refresh-btn")
+            .addEventListener("click", function (event) {
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                window.location.reload();
+            }, true);
+
+        async function loadDashboardEmploymentStatus() {
+            const token = localStorage.getItem("token");
+            const userId = localStorage.getItem("userId");
+
+            if (!token || !userId) return;
+
+            try {
+                const response = await fetch(
+                    `http://localhost:8080/api/alumni/${userId}`,
+                    {
+                        headers: {
+                            "Authorization": `Bearer ${token}`
+                        }
+                    }
+                );
+
+                if (!response.ok) {
+                    throw new Error("Failed to load employment status.");
+                }
+
+                const alumni = await response.json();
+
+                const statusElement = document.getElementById("employmentStatus");
+
+                if (alumni.employed === true) {
+                    statusElement.textContent = "Employed";
+                } else if (alumni.employed === false) {
+                    statusElement.textContent = "Unemployed";
+                } else {
+                    statusElement.textContent = "Not Provided";
+                }
+
+            } catch (error) {
+                console.error("Employment status error:", error);
+            }
+        }
+
+        loadDashboardEmploymentStatus();
+    </script>
+</body>
+
+</html>

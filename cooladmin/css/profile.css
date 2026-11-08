@@ -1,0 +1,372 @@
+
+/* =========================================
+   ALUMNICONNECT - PROFILE PAGE
+   ========================================= */
+
+/* Page background and layout */
+.main-content {
+    background: var(--ac-background, #f3f5fa);
+    min-height: calc(100vh - 70px);
+}
+
+.main-content .section__content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* Page heading */
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.page-header h1 {
+    color: var(--ac-text, #202b3c);
+    font-size: 27px;
+    font-weight: 750;
+    letter-spacing: -0.6px;
+    margin-bottom: 7px;
+}
+
+.page-header .subtitle {
+    color: var(--ac-muted, #718096);
+    font-size: 14px;
+    margin: 0;
+}
+
+.page-header__actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Buttons */
+.m-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 42px;
+    padding: 10px 19px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 650;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.m-btn--primary {
+    background: var(--ac-primary, #2864c8);
+    color: #fff;
+    border: 1px solid var(--ac-primary, #2864c8);
+    box-shadow: 0 4px 10px rgba(40, 100, 200, 0.15);
+}
+
+.m-btn--primary:hover {
+    background: var(--ac-primary-dark, #173b70);
+    border-color: var(--ac-primary-dark, #173b70);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.m-btn--ghost {
+    background: #fff;
+    color: #526176;
+    border: 1px solid var(--ac-border, #e1e7f0);
+}
+
+.m-btn--ghost:hover {
+    background: #f5f8fd;
+    color: var(--ac-primary, #2864c8);
+    border-color: #b8cbed;
+}
+
+.m-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Profile tabs */
+.settings-tabs {
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid var(--ac-border, #e1e7f0) !important;
+    margin-bottom: 24px !important;
+}
+
+.settings-tabs .nav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 13px 19px;
+    border: none !important;
+    border-radius: 9px 9px 0 0;
+    background: transparent;
+    color: #718096;
+    font-size: 14px;
+    font-weight: 650;
+    transition: all 0.2s ease;
+}
+
+.settings-tabs .nav-link:hover {
+    color: var(--ac-primary, #2864c8);
+    background: rgba(40, 100, 200, 0.04);
+}
+
+.settings-tabs .nav-link.active {
+    color: var(--ac-primary, #2864c8);
+    background: #fff;
+}
+
+.settings-tabs .nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 12px;
+    right: 12px;
+    height: 3px;
+    border-radius: 5px 5px 0 0;
+    background: var(--ac-primary, #2864c8);
+}
+
+/* Main profile cards */
+.m-card {
+    background: var(--ac-white, #fff);
+    border: 1px solid var(--ac-border, #e1e7f0);
+    border-radius: var(--ac-radius, 14px);
+    box-shadow: var(--ac-shadow, 0 4px 16px rgba(28, 45, 75, 0.06));
+    overflow: hidden;
+    margin-bottom: 24px;
+    transition: box-shadow 0.2s ease;
+}
+
+.m-card:hover {
+    box-shadow: 0 7px 22px rgba(28, 45, 75, 0.09);
+}
+
+.m-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 23px 26px;
+    border-bottom: 1px solid #edf0f5;
+    background: #fff;
+}
+
+.m-card__title {
+    color: var(--ac-text, #202b3c);
+    font-size: 17px;
+    font-weight: 750;
+    margin: 0 0 6px;
+}
+
+.m-card__subtitle {
+    color: var(--ac-muted, #718096);
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Forms */
+.m-card form {
+    padding: 25px 26px;
+}
+
+.m-card .form-group {
+    margin-bottom: 21px;
+}
+
+.m-card label {
+    display: block;
+    color: #344256;
+    font-size: 13px;
+    font-weight: 650;
+    margin-bottom: 8px;
+}
+
+.m-card .form-control,
+.m-card .form-select {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 13px;
+    border: 1px solid #dce3ed;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #263448;
+    font-family: inherit;
+    font-size: 13px;
+    box-shadow: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.m-card textarea.form-control {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.m-card .form-control::placeholder {
+    color: #a1acbb;
+}
+
+.m-card .form-control:focus,
+.m-card .form-select:focus {
+    border-color: var(--ac-primary, #2864c8);
+    box-shadow: 0 0 0 3px rgba(40, 100, 200, 0.10);
+    outline: none;
+}
+
+.m-card .form-control[readonly] {
+    background: #f4f6fa;
+    color: #718096;
+    cursor: not-allowed;
+}
+
+.m-card .form-control:disabled,
+.m-card .form-select:disabled {
+    background: #f4f6fa;
+}
+
+/* Form spacing */
+.m-card .row {
+    --bs-gutter-x: 20px;
+}
+
+.m-card .row:last-child {
+    margin-bottom: 0;
+}
+
+/* Security form */
+#changePasswordForm {
+    max-width: 650px;
+}
+
+#changePasswordForm .m-btn {
+    margin-top: 5px;
+}
+
+/* Profile feedback message */
+#profileMessage {
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+/* Account dropdown */
+#alumniAccountToggle {
+    padding: 5px 8px;
+    border-radius: 10px;
+    color: #344256;
+    transition: background 0.2s ease;
+}
+
+#alumniAccountToggle:hover {
+    background: #f2f5fa !important;
+}
+
+#alumniAccountDropdown {
+    border: 1px solid var(--ac-border, #e1e7f0);
+    box-shadow: 0 10px 30px rgba(28, 45, 75, 0.13) !important;
+}
+
+#alumniAccountDropdown a {
+    color: #526176;
+    font-size: 13px;
+    font-weight: 550;
+}
+
+#alumniAccountDropdown a:hover {
+    color: var(--ac-primary, #2864c8);
+}
+
+/* Notification toast */
+#profileToast {
+    min-width: 280px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+#profileToast .toast-header {
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#profileToast .toast-body {
+    padding: 14px 15px;
+    font-size: 13px;
+}
+
+/* Footer */
+.copyright {
+    padding: 20px 0 5px;
+    color: #8a96a8;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Responsive layout */
+@media (max-width: 767px) {
+    .main-content .section__content {
+        padding: 20px 15px;
+    }
+
+    .page-header {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 22px;
+    }
+
+    .page-header h1 {
+        font-size: 23px;
+    }
+
+    .page-header__actions {
+        width: 100%;
+    }
+
+    .page-header__actions .m-btn {
+        flex: 1;
+    }
+
+    .m-card__header {
+        padding: 19px;
+    }
+
+    .m-card form {
+        padding: 20px;
+    }
+
+    .settings-tabs .nav-link {
+        padding: 12px 13px;
+        font-size: 13px;
+    }
+
+    .m-card .form-group {
+        margin-bottom: 17px;
+    }
+}
+
+@media (max-width: 420px) {
+    .page-header__actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .page-header__actions .m-btn {
+        width: 100%;
+    }
+
+    .settings-tabs {
+        gap: 2px;
+    }
+
+    .settings-tabs .nav-link {
+        padding: 11px 9px;
+        font-size: 12px;
+    }
+}

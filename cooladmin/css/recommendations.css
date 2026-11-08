@@ -1,0 +1,330 @@
+/* =========================================
+   ALUMNI RECOMMENDATIONS PAGE
+   File: alumnirecommendations.css
+========================================= */
+
+:root {
+    --recommend-primary: #3976df;
+    --recommend-primary-dark: #285fc2;
+    --recommend-navy: #142746;
+    --recommend-text: #24344d;
+    --recommend-muted: #8291a8;
+    --recommend-border: #e7edf5;
+    --recommend-background: #f4f7fc;
+}
+
+/* Page background */
+
+body.app {
+    background: var(--recommend-background);
+    color: var(--recommend-text);
+}
+
+/* Page heading */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 27px;
+    padding: 5px 0 20px;
+    border-bottom: 1px solid var(--recommend-border);
+}
+
+.page-header h1 {
+    margin: 0 0 8px;
+    color: var(--recommend-navy);
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
+
+.page-header .subtitle {
+    margin: 0;
+    color: var(--recommend-muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Main recommendation panel */
+
+.main-content > .section__content .card {
+    overflow: hidden;
+    border: 1px solid var(--recommend-border);
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 5px 18px rgba(31, 55, 90, 0.05);
+}
+
+.main-content > .section__content .card > .card-header {
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--recommend-border);
+    background: #ffffff;
+}
+
+.main-content > .section__content .card > .card-header strong {
+    color: var(--recommend-navy);
+    font-size: 16px;
+    font-weight: 750;
+}
+
+.main-content > .section__content .card > .card-body {
+    padding: 25px;
+}
+
+/* Section heading */
+
+.main-content .card-body h4 {
+    color: var(--recommend-navy);
+    font-size: 17px;
+    font-weight: 750;
+}
+
+/* Introductory description */
+
+.main-content .card-body > p.text-muted {
+    color: var(--recommend-muted) !important;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* Recommendation grid */
+
+#recommendationsList > div {
+    display: flex;
+}
+
+/* Individual recommendation cards */
+
+#recommendationsList .card {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid var(--recommend-border);
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow: 0 4px 14px rgba(31, 55, 90, 0.045);
+    transition: transform 0.22s ease,
+                box-shadow 0.22s ease,
+                border-color 0.22s ease;
+}
+
+#recommendationsList .card:hover {
+    transform: translateY(-4px);
+    border-color: #cbdcf8;
+    box-shadow: 0 12px 25px rgba(31, 55, 90, 0.09);
+}
+
+#recommendationsList .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px;
+}
+
+/* Job title */
+
+#recommendationsList .card-title {
+    width: 100%;
+    margin-bottom: 12px;
+    color: var(--recommend-navy);
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* Company */
+
+#recommendationsList .card-body > p.mb-2 {
+    color: var(--recommend-primary-dark);
+    font-size: 13px;
+    font-weight: 750;
+}
+
+/* Job location and employment type */
+
+#recommendationsList .text-muted {
+    color: #718198 !important;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* Matching and missing skills headings */
+
+#recommendationsList .card-body h6 {
+    width: 100%;
+    margin-top: 12px !important;
+    margin-bottom: 10px !important;
+    color: #344761;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/* Matching skills container */
+
+#recommendationsList .card-body > div.d-flex.flex-wrap {
+    width: 100%;
+    min-height: 28px;
+    align-items: center;
+}
+
+/* Skill badges */
+
+#recommendationsList .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 10px;
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: 650;
+    line-height: 1.4;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+/* Matching skills */
+
+#recommendationsList .badge.bg-success {
+    background: #e6f7f1 !important;
+    color: #13866f !important;
+    border: 1px solid #c9eee2;
+}
+
+/* Skills to improve */
+
+#recommendationsList .badge.bg-warning {
+    background: #fff5df !important;
+    color: #94630c !important;
+    border: 1px solid #f6e5bd;
+}
+
+/* Text when there are no matching or missing skills */
+
+#recommendationsList .card-body > div.d-flex.flex-wrap:empty {
+    display: none;
+}
+
+/* Match percentage */
+
+#recommendationsList .card-body > p.fw-bold {
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 10px !important;
+    padding-top: 17px;
+    border-top: 1px solid #edf1f6;
+    color: var(--recommend-navy);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+/* Match progress bar */
+
+#recommendationsList .progress {
+    width: 100%;
+    height: 9px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #edf1f7;
+}
+
+#recommendationsList .progress-bar {
+    border-radius: 20px;
+    background: linear-gradient(90deg, #3976df, #16a085);
+    transition: width 0.5s ease;
+}
+
+/* Refresh button */
+
+#refreshRecommendationsBtn {
+    min-height: 37px;
+    padding: 8px 14px;
+    border: 1px solid #d6e3f7;
+    border-radius: 9px;
+    background: #ffffff;
+    color: var(--recommend-primary);
+    font-size: 12px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+#refreshRecommendationsBtn:hover {
+    border-color: var(--recommend-primary);
+    background: #edf4ff;
+}
+
+#refreshRecommendationsBtn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Loading, empty and error messages */
+
+#recommendationsMessage {
+    color: var(--recommend-muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+#recommendationsMessage:empty {
+    display: none;
+}
+
+/* Footer */
+
+.main-content .copyright {
+    padding: 22px 0 10px;
+    color: var(--recommend-muted);
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Account dropdown uses alumniconnect.css */
+
+/* Responsive layout */
+
+@media (max-width: 991px) {
+    .main-content > .section__content .card > .card-body {
+        padding: 20px;
+    }
+
+    #recommendationsList .card-body {
+        padding: 19px;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-header h1 {
+        font-size: 25px;
+    }
+
+    #recommendationsList > div {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-content > .section__content .card > .card-header {
+        padding: 16px 18px;
+    }
+
+    .main-content > .section__content .card > .card-body {
+        padding: 17px;
+    }
+
+    #recommendationsList .card-body {
+        padding: 17px;
+    }
+
+    .main-content .card-body h4 {
+        font-size: 15px;
+    }
+
+    #refreshRecommendationsBtn {
+        width: 100%;
+    }
+}

@@ -16,6 +16,9 @@
     <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all" />
     <link href="css/theme.css" rel="stylesheet" media="all" />
     <link href="css/app.css" rel="stylesheet" media="all" />
+<link href="css/alumniconnect.css" rel="stylesheet" media="all" />
+<link href="css/alumnidashboard.css" rel="stylesheet" media="all" />
+
 </head>
 
 <body class="app"><a class="visually-hidden-focusable skip-link" href="#main-content">Skip to main content</a>
@@ -24,10 +27,11 @@
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="index4.html"
-                            style="font-size:22px; font-weight:700; color:#263b64; text-decoration:none;">
-                            AlumniConnect
-                        </a>
+                      <a class="logo d-flex align-items-center gap-2" href="index4.html"
+    style="font-size:21px; font-weight:750; color:#263b64; text-decoration:none;">
+    <span class="logo-mark" aria-hidden="true">AC</span>
+    <span>AlumniConnect</span>
+</a>
                         <button class="hamburger hamburger--slider" type="button" aria-label="Toggle navigation"><span
                                 class="hamburger-box"><span class="hamburger-inner"></span></span></button>
                     </div>
@@ -100,8 +104,7 @@
 
         </header>
         <aside class="menu-sidebar" id="main-sidebar">
-            <div class="logo"><a class="logo-link" href="index4.html" aria-label="AlumniConnect home"><span
-                        class="logo-mark" aria-hidden="true">A</span><span class="logo-text">AlumniConnect</span></a>
+            <div class="logo"><a class="logo-link" href="index4.html" aria-label="AlumniConnect home"><span class="logo-mark" aria-hidden="true">AC</span><span class="logo-text">AlumniConnect</span></a>
                 <button class="sidebar-close js-sidebar-toggle" type="button" aria-label="Close navigation"><i
                         class="fa-solid fa-xmark" aria-hidden="true"></i></button>
             </div>
@@ -229,24 +232,29 @@
             <main class="main-content" id="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid"> <!-- Page header -->
-                        <div class="page-header">
-                            <div>
+                       <div class="ac-welcome">
+    <div class="ac-welcome__content">
+        <span class="ac-welcome__tag">
+            <i class="fa-solid fa-graduation-cap"></i>
+            ALUMNICONNECT
+        </span>
 
-                                <h1>Welcome Back, <span id="alumniName">Alumni</span></h1>
+        <h1>Welcome back, <span id="alumniName">Alumni</span>!</h1>
 
-                                <p class="subtitle">Track your career, manage your profile, and discover opportunities.
-                                </p>
-                            </div>
-                            <div class="page-header__actions">
+        <p>
+            Your career journey continues here. Manage your profile,
+            discover opportunities and stay connected with your alumni community.
+        </p>
+    </div>
 
-                                <button type="button" class="m-btn m-btn--ghost" id="dash-refresh-btn"
-                                    aria-label="Refresh dashboard data">
-                                    <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i>
-                                    Refresh
-                                </button>
-
-                            </div>
-                        </div>
+    <div class="ac-welcome__actions">
+        <button type="button" class="m-btn m-btn--ghost" id="dash-refresh-btn"
+            aria-label="Refresh dashboard data">
+            <i class="fa-solid fa-arrows-rotate"></i>
+            Refresh
+        </button>
+    </div>
+</div>
 
                         <!-- KPI strip -->
                         <div class="row row-tight">

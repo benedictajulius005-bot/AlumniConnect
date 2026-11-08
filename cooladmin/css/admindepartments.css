@@ -1,0 +1,508 @@
+
+/* =========================================================
+   ALUMNICONNECT - ADMIN DEPARTMENTS
+   Page-specific styling
+   ========================================================= */
+
+/* Page layout */
+.main-content {
+    min-height: calc(100vh - 90px);
+    background: var(--ac-bg, #f5f7fb);
+}
+
+.main-content > .section__content {
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.page-header h1 {
+    margin: 0 0 7px;
+    color: var(--ac-navy, #263b64);
+    font-size: 27px;
+    font-weight: 750;
+    letter-spacing: -0.5px;
+}
+
+.page-header .subtitle {
+    margin: 0;
+    color: var(--ac-muted, #778196);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Department card */
+.m-card {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--ac-border, #e7ebf2);
+    border-radius: var(--ac-radius, 14px);
+    box-shadow: var(--ac-shadow, 0 5px 20px rgba(31, 45, 61, 0.05));
+}
+
+.m-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 23px 24px 18px;
+}
+
+.m-card__title {
+    margin: 0 0 6px;
+    color: var(--ac-navy, #263b64);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.m-card__subtitle {
+    margin: 0;
+    color: var(--ac-muted, #778196);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Add department button */
+#addDepartmentButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-height: 42px;
+    padding: 10px 17px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--ac-primary, #2864c8);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 650;
+    white-space: nowrap;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#addDepartmentButton:hover {
+    background: #1e52aa;
+    transform: translateY(-1px);
+}
+
+/* Search */
+#departmentSearch {
+    min-height: 43px;
+    padding: 10px 14px;
+    border: 1px solid var(--ac-border, #e7ebf2);
+    border-radius: 8px;
+    background: #fafbfd;
+    color: var(--ac-text, #263247);
+    font-size: 13px;
+    box-shadow: none;
+}
+
+#departmentSearch:focus {
+    border-color: var(--ac-primary, #2864c8);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(40, 100, 200, 0.1);
+}
+
+#departmentSearch::placeholder {
+    color: #9aa3b2;
+}
+
+/* Table */
+.m-card .table-responsive {
+    width: 100%;
+}
+
+.m-card .table {
+    width: 100%;
+    margin: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: var(--ac-text, #263247);
+    font-size: 13px;
+}
+
+.m-card .table thead th {
+    padding: 15px 18px;
+    border-top: 1px solid var(--ac-border, #e7ebf2);
+    border-bottom: 1px solid var(--ac-border, #e7ebf2);
+    background: #f7f9fc;
+    color: #66738a;
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 0.45px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.m-card .table tbody td {
+    padding: 16px 18px;
+    border-bottom: 1px solid #edf0f5;
+    color: #46536a;
+    vertical-align: middle;
+}
+
+.m-card .table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.m-card .table tbody tr:hover td {
+    background: #f9fbff;
+}
+
+.m-card .table tbody td:first-child {
+    color: #778196;
+    font-weight: 600;
+}
+
+.m-card .table tbody td:nth-child(2) {
+    color: var(--ac-navy, #263b64);
+    font-weight: 650;
+}
+
+.m-card .table tbody td:nth-child(3) {
+    color: #68758a;
+}
+
+/* Table action buttons */
+#adminDepartmentsTable .d-flex {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px !important;
+}
+
+#adminDepartmentsTable .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-height: 32px;
+    padding: 6px 10px;
+    border: 0;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 650;
+    transition: all 0.2s ease;
+}
+
+#adminDepartmentsTable .btn-info {
+    background: #e7f2ff;
+    color: #2670c9 !important;
+}
+
+#adminDepartmentsTable .btn-info:hover {
+    background: #d5e8ff;
+}
+
+#adminDepartmentsTable .btn-warning {
+    background: #fff4dc;
+    color: #9b6800;
+}
+
+#adminDepartmentsTable .btn-warning:hover {
+    background: #ffe9bd;
+}
+
+#adminDepartmentsTable .btn-danger {
+    background: #ffebeb;
+    color: #cf4141;
+}
+
+#adminDepartmentsTable .btn-danger:hover {
+    background: #ffdbdb;
+}
+
+/* General modal styling */
+.modal-content {
+    overflow: hidden;
+    border: 1px solid rgba(35, 55, 85, 0.08);
+    border-radius: 13px;
+    box-shadow: 0 15px 45px rgba(25, 39, 62, 0.16);
+}
+
+.modal-header {
+    padding: 19px 22px;
+    border-bottom: 1px solid #edf0f5;
+    background: #fff;
+}
+
+.modal-title {
+    color: var(--ac-navy, #263b64);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.modal-body {
+    padding: 22px;
+    color: #59667b;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.modal-body p:last-child {
+    margin-bottom: 0;
+}
+
+.modal-footer {
+    padding: 15px 22px;
+    border-top: 1px solid #edf0f5;
+    background: #fafbfd;
+}
+
+.modal-footer .btn {
+    min-height: 38px;
+    padding: 8px 15px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 650;
+}
+
+/* Modal form fields */
+.modal .form-label {
+    margin-bottom: 7px;
+    color: #46536a;
+    font-size: 12px;
+    font-weight: 650;
+}
+
+.modal .form-control {
+    min-height: 42px;
+    padding: 10px 12px;
+    border: 1px solid var(--ac-border, #e7ebf2);
+    border-radius: 7px;
+    color: var(--ac-text, #263247);
+    font-size: 13px;
+    box-shadow: none;
+}
+
+.modal .form-control:focus {
+    border-color: var(--ac-primary, #2864c8);
+    box-shadow: 0 0 0 3px rgba(40, 100, 200, 0.1);
+}
+
+.modal .btn-primary {
+    border-color: var(--ac-primary, #2864c8);
+    background: var(--ac-primary, #2864c8);
+}
+
+.modal .btn-primary:hover {
+    border-color: #1e52aa;
+    background: #1e52aa;
+}
+
+/* View department details */
+#viewDepartmentModal .modal-body p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #edf0f5;
+}
+
+#viewDepartmentModal .modal-body p:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+#viewDepartmentModal .modal-body strong {
+    min-width: 125px;
+    color: var(--ac-navy, #263b64);
+    font-weight: 700;
+}
+
+/* Delete confirmation */
+#deleteDepartmentModal .modal-body .text-danger {
+    padding: 12px;
+    border-radius: 7px;
+    background: #fff2f2;
+    font-size: 12px;
+}
+
+#deleteDepartmentName {
+    color: var(--ac-navy, #263b64);
+    font-size: 15px;
+}
+
+/* Toast */
+.toast-container {
+    z-index: 1100 !important;
+}
+
+#alumniToast {
+    overflow: hidden;
+    min-width: 290px;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 8px 28px rgba(25, 39, 62, 0.18);
+}
+
+#alumniToast .toast-header {
+    padding: 11px 14px;
+    font-size: 12px;
+    font-weight: 650;
+}
+
+#alumniToast .toast-body {
+    padding: 13px 15px;
+    color: #46536a;
+    background: #fff;
+    font-size: 13px;
+}
+
+/* Admin account menu */
+#adminAccountMenu {
+    position: relative;
+}
+
+#adminAccountToggle {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 10px !important;
+    border-radius: 9px;
+    transition: background 0.2s ease;
+}
+
+#adminAccountToggle:hover {
+    background: #f1f5fb !important;
+}
+
+#adminInitials {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 40px !important;
+    min-width: 40px;
+    height: 40px !important;
+    border: 2px solid #e5edfa;
+    border-radius: 50% !important;
+    background: var(--ac-primary, #2864c8) !important;
+    color: #fff !important;
+    font-size: 13px;
+    font-weight: 750 !important;
+}
+
+#adminHeaderName {
+    color: var(--ac-navy, #263b64) !important;
+    font-size: 13px;
+    font-weight: 650 !important;
+}
+
+#adminAccountDropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px) !important;
+    right: 0;
+    z-index: 1050 !important;
+    width: 260px;
+    padding: 16px !important;
+    border: 1px solid var(--ac-border, #e7ebf2);
+    border-radius: 10px !important;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(25, 39, 62, 0.14) !important;
+}
+
+#dropdownAdminName {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--ac-navy, #263b64) !important;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#dropdownAdminEmail {
+    display: block;
+    color: var(--ac-muted, #778196) !important;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+#adminLogoutBtn {
+    width: 100%;
+    margin-top: 12px !important;
+    padding: 10px 12px !important;
+    border: 0 !important;
+    border-radius: 7px !important;
+    background: #fff1f1 !important;
+    color: #c0392b !important;
+    font-size: 12px;
+    font-weight: 650;
+    text-align: left;
+    transition: background 0.2s ease;
+}
+
+#adminLogoutBtn:hover {
+    background: #ffe1e1 !important;
+}
+
+/* Footer */
+.copyright {
+    padding: 14px 0 5px;
+    text-align: center;
+}
+
+.copyright p {
+    margin: 0;
+    color: #929bad;
+    font-size: 11px;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .main-content > .section__content {
+        padding-top: 22px;
+    }
+
+    .page-header h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 767px) {
+    .m-card__header {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 19px 17px 15px;
+    }
+
+    #addDepartmentButton {
+        width: 100%;
+    }
+
+    .m-card .px-3.pb-3 {
+        padding-right: 17px !important;
+        padding-left: 17px !important;
+    }
+
+    .m-card .table {
+        min-width: 650px;
+    }
+
+    .modal-dialog {
+        margin: 12px;
+    }
+
+    #adminHeaderName {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header h1 {
+        font-size: 21px;
+    }
+
+    .page-header .subtitle {
+        font-size: 12px;
+    }
+
+    #adminAccountDropdown {
+        width: min(260px, calc(100vw - 30px));
+    }
+}

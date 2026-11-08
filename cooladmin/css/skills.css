@@ -1,0 +1,306 @@
+/* =========================================
+   ALUMNI SKILLS PAGE
+   File: alumniskills.css
+========================================= */
+
+:root {
+    --skills-primary: #3976df;
+    --skills-primary-dark: #285fc2;
+    --skills-navy: #142746;
+    --skills-text: #24344d;
+    --skills-muted: #8291a8;
+    --skills-border: #e7edf5;
+    --skills-background: #f4f7fc;
+    --skills-white: #ffffff;
+    --skills-radius: 15px;
+    --skills-shadow: 0 5px 18px rgba(31, 55, 90, 0.05);
+}
+
+/* Page background */
+
+body.app {
+    background: var(--skills-background);
+    color: var(--skills-text);
+}
+
+/* Page header */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+    padding: 5px 0 20px;
+    border-bottom: 1px solid var(--skills-border);
+}
+
+.page-header h1 {
+    margin: 0 0 8px;
+    color: var(--skills-navy);
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
+
+.page-header .subtitle {
+    margin: 0;
+    color: var(--skills-muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Skills cards */
+
+.main-content .card {
+    height: 100%;
+    margin-bottom: 22px;
+    overflow: hidden;
+    border: 1px solid var(--skills-border);
+    border-radius: var(--skills-radius);
+    background: var(--skills-white);
+    box-shadow: var(--skills-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.main-content .card:hover {
+    box-shadow: 0 10px 26px rgba(31, 55, 90, 0.08);
+}
+
+.main-content .card-header {
+    padding: 20px 23px;
+    border-bottom: 1px solid var(--skills-border);
+    background: #ffffff;
+}
+
+.main-content .card-header strong {
+    color: var(--skills-navy);
+    font-size: 16px;
+    font-weight: 750;
+}
+
+.main-content .card-body {
+    padding: 24px;
+}
+
+/* Form labels */
+
+.main-content .form-label {
+    display: block;
+    margin-bottom: 10px;
+    color: #344761;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* Skill dropdown */
+
+#skillSelect {
+    min-height: 48px;
+    padding: 10px 14px;
+    border: 1px solid #dce4ef;
+    border-radius: 10px;
+    background-color: #fff;
+    color: var(--skills-text);
+    font-size: 13px;
+    box-shadow: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#skillSelect:focus {
+    border-color: var(--skills-primary);
+    box-shadow: 0 0 0 3px rgba(57, 118, 223, 0.12);
+}
+
+/* Add skill button */
+
+#addSkillBtn {
+    min-height: 44px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 9px;
+    background: var(--skills-primary);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#addSkillBtn:hover {
+    transform: translateY(-2px);
+    background: var(--skills-primary-dark);
+}
+
+#addSkillBtn:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+/* Current skills introduction */
+
+#currentSkills {
+    margin-top: 18px;
+}
+
+#currentSkills > p {
+    padding: 18px;
+    border: 1px dashed #dce4ef;
+    border-radius: 10px;
+    background: #f9fbfe;
+    color: var(--skills-muted);
+    font-size: 13px;
+    text-align: center;
+}
+
+/* Individual skill rows */
+
+#currentSkills > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    min-height: 58px;
+    padding: 12px 15px !important;
+    margin-bottom: 12px !important;
+    border: 1px solid var(--skills-border) !important;
+    border-radius: 11px !important;
+    background: #fff;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+#currentSkills > div:hover {
+    border-color: #cbdcf8 !important;
+    background: #f8faff;
+}
+
+#currentSkills > div span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #344761;
+    font-size: 13px;
+    font-weight: 650;
+}
+
+#currentSkills > div span i {
+    color: #16a085;
+    font-size: 15px;
+}
+
+/* Remove skill button */
+
+.remove-skill-btn {
+    flex-shrink: 0;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.remove-skill-btn:hover {
+    background: #dc3545;
+    color: #fff;
+}
+
+/* Skill messages */
+
+#skillMessage {
+    min-height: 18px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* Toast notification */
+
+#skillsToast {
+    min-width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(20, 39, 70, 0.15);
+}
+
+#skillsToast .toast-header {
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+#skillsToast .toast-body {
+    padding: 14px 15px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Account dropdown */
+
+#alumniAccountToggle {
+    padding: 5px 8px;
+    border-radius: 30px;
+    transition: background 0.2s ease;
+}
+
+#alumniAccountToggle:hover {
+    background: #f3f6fb !important;
+}
+
+#alumniAccountDropdown {
+    border: 1px solid var(--skills-border);
+    border-radius: 15px !important;
+    box-shadow: 0 16px 40px rgba(25, 48, 82, 0.15) !important;
+}
+
+#alumniAccountDropdown a {
+    padding: 9px 7px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+#alumniAccountDropdown a:hover {
+    background: #f1f5fc;
+}
+
+/* Footer */
+
+.main-content .copyright {
+    padding: 22px 0 10px;
+    color: var(--skills-muted);
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Responsive design */
+
+@media (max-width: 991px) {
+    .main-content .card-body {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .page-header h1 {
+        font-size: 25px;
+    }
+
+    .main-content .card-header {
+        padding: 17px 18px;
+    }
+
+    .main-content .card-body {
+        padding: 18px;
+    }
+
+    #currentSkills > div {
+        gap: 8px;
+        padding: 10px !important;
+    }
+
+    .remove-skill-btn {
+        padding: 5px 9px;
+    }
+}

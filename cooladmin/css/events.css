@@ -1,0 +1,233 @@
+
+/* =========================================
+   ALUMNI EVENTS PAGE
+   File: alumnievents.css
+========================================= */
+
+:root {
+    --events-primary: #3976df;
+    --events-primary-dark: #285fc2;
+    --events-navy: #142746;
+    --events-text: #24344d;
+    --events-muted: #8291a8;
+    --events-border: #e7edf5;
+    --events-background: #f4f7fc;
+    --events-white: #ffffff;
+    --events-radius: 15px;
+    --events-shadow: 0 5px 18px rgba(31, 55, 90, 0.05);
+}
+
+/* Page background */
+
+body.app {
+    background: var(--events-background);
+    color: var(--events-text);
+}
+
+/* Page header */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+    padding: 5px 0 20px;
+    border-bottom: 1px solid var(--events-border);
+}
+
+.page-header h1 {
+    margin: 0 0 8px;
+    color: var(--events-navy);
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
+
+.page-header .subtitle {
+    margin: 0;
+    color: var(--events-muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Main events card */
+
+.main-content > .section__content .card {
+    height: 100%;
+    margin-bottom: 22px;
+    overflow: hidden;
+    border: 1px solid var(--events-border);
+    border-radius: var(--events-radius);
+    background: var(--events-white);
+    box-shadow: var(--events-shadow);
+}
+
+.main-content .card-header {
+    padding: 20px 23px;
+    border-bottom: 1px solid var(--events-border);
+    background: #ffffff;
+}
+
+.main-content .card-header strong {
+    color: var(--events-navy);
+    font-size: 16px;
+    font-weight: 750;
+}
+
+.main-content .card-body {
+    padding: 24px;
+}
+
+/* Upcoming events heading */
+
+.main-content .card-body h4 {
+    color: var(--events-navy);
+    font-size: 21px;
+    font-weight: 750;
+}
+
+/* Supporting text */
+
+.main-content .card-body > p {
+    color: #68778e;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Refresh button */
+
+#refreshEventsBtn {
+    padding: 9px 16px;
+    border: 1px solid var(--events-primary);
+    border-radius: 9px;
+    color: var(--events-primary);
+    font-size: 13px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+#refreshEventsBtn:hover {
+    background: var(--events-primary);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+#refreshEventsBtn:focus {
+    box-shadow: 0 0 0 3px rgba(57, 118, 223, 0.15);
+}
+
+/* Events loading and empty messages */
+
+#eventsMessage {
+    padding: 16px;
+    border-radius: 10px;
+    color: var(--events-muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+#eventsMessage:empty {
+    display: none;
+}
+
+/* Individual event cards */
+
+#eventsList > div {
+    display: flex;
+}
+
+#eventsList .card {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+    overflow: hidden;
+    border: 1px solid var(--events-border);
+    border-radius: 13px;
+    background: #ffffff;
+    box-shadow: 0 4px 14px rgba(31, 55, 90, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#eventsList .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(31, 55, 90, 0.09);
+}
+
+#eventsList .card-body {
+    padding: 20px;
+}
+
+#eventsList .card-title {
+    margin-bottom: 16px;
+    color: var(--events-navy);
+    font-size: 17px;
+    font-weight: 750;
+    line-height: 1.5;
+}
+
+#eventsList .card-body p {
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+#eventsList .card-body .fw-semibold {
+    color: var(--events-primary-dark);
+    font-weight: 700;
+}
+
+#eventsList .card-body .text-muted {
+    color: var(--events-muted) !important;
+}
+
+/* Footer */
+
+.main-content .copyright {
+    padding: 22px 0 10px;
+    color: var(--events-muted);
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Responsive design */
+
+@media (max-width: 991px) {
+    .main-content .card-body {
+        padding: 20px;
+    }
+
+    #eventsList .card-body {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .page-header h1 {
+        font-size: 25px;
+    }
+
+    .main-content .card-header {
+        padding: 17px 18px;
+    }
+
+    .main-content .card-body {
+        padding: 18px;
+    }
+
+    .main-content .card-body h4 {
+        font-size: 19px;
+    }
+
+    #refreshEventsBtn {
+        padding: 8px 12px;
+    }
+
+    #eventsList .card-title {
+        font-size: 16px;
+    }
+}

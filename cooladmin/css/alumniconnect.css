@@ -1,0 +1,344 @@
+/* =========================================
+   ALUMNICONNECT SHARED VARIABLES
+========================================= */
+
+:root {
+    --ac-primary: #2864c8;
+    --ac-primary-dark: #173b70;
+    --ac-navy: #1c2639;
+    --ac-background: #f3f5fa;
+    --ac-white: #ffffff;
+    --ac-text: #202b3c;
+    --ac-muted: #718096;
+    --ac-border: #e1e7f0;
+    --ac-success: #0f9d8a;
+    --ac-radius: 14px;
+    --ac-shadow: 0 4px 16px rgba(28, 45, 75, 0.06);
+}
+
+
+/* =========================================
+   ALUMNICONNECT SHARED BRANDING
+========================================= */
+
+/* Desktop sidebar and mobile header logo */
+
+.menu-sidebar .logo-link,
+.header-mobile .logo,
+.header-mobile .logo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    text-decoration: none !important;
+}
+
+/* AC logo mark */
+
+.menu-sidebar .logo-mark,
+.header-mobile .logo-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    min-width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    border-radius: 13px;
+    background: linear-gradient(145deg, #4b87f0, #2859b5);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    box-shadow: 0 5px 15px rgba(50, 107, 208, 0.22);
+}
+
+/* AlumniConnect wordmark */
+
+.menu-sidebar .logo-text,
+.header-mobile .logo-text {
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 750;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+}
+
+/* Mobile logo text */
+
+.header-mobile .logo-text {
+    color: #263b64;
+}
+
+
+/* =========================================
+   SIDEBAR LOGO ALIGNMENT
+========================================= */
+
+.menu-sidebar {
+    container-type: inline-size;
+}
+
+.menu-sidebar .logo {
+    display: flex;
+    align-items: center;
+    min-height: 86px;
+    overflow: hidden;
+}
+
+.menu-sidebar .logo-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    min-width: 0;
+    padding-left: 18px !important;
+    text-decoration: none !important;
+}
+
+.menu-sidebar .logo-mark {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 46px !important;
+    min-width: 46px !important;
+    height: 46px !important;
+    flex-shrink: 0 !important;
+    margin: 0;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+
+/* =========================================
+   COLLAPSED SIDEBAR LOGO
+========================================= */
+
+/*
+   When the sidebar becomes narrow, hide only
+   the AlumniConnect wordmark and keep AC visible.
+   This does not depend on a JavaScript class name.
+*/
+
+@container (max-width: 150px) {
+
+    .menu-sidebar .logo {
+        justify-content: center !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .menu-sidebar .logo-link {
+        justify-content: center !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        gap: 0 !important;
+    }
+
+    .menu-sidebar .logo-text {
+        display: none !important;
+    }
+
+    .menu-sidebar .logo-mark {
+        display: inline-flex !important;
+        width: 46px !important;
+        min-width: 46px !important;
+        height: 46px !important;
+        margin: 0 auto !important;
+        flex-shrink: 0 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+}
+
+
+/* =========================================
+   ANNOUNCEMENTS LOGO ALIGNMENT
+========================================= */
+
+.menu-sidebar .logo-link {
+    margin-left: 0 !important;
+    justify-content: flex-start;
+}
+
+.menu-sidebar .logo-mark {
+    margin-left: 0;
+}
+
+
+/* =========================================
+   SHARED ALUMNI ACCOUNT DROPDOWN
+========================================= */
+
+#alumniAccountMenu {
+    position: relative;
+}
+
+#alumniAccountToggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 12px;
+    border: none;
+    border-radius: 35px;
+    background: transparent;
+    color: #263b64;
+    font-size: 16px;
+    font-weight: 700;
+    transition: background 0.2s ease;
+}
+
+#alumniAccountToggle:hover,
+#alumniAccountToggle[aria-expanded="true"] {
+    background: #f3f6fb !important;
+}
+
+#alumniInitials {
+    width: 46px !important;
+    height: 46px !important;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #263b64 !important;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 800;
+    box-shadow: 0 4px 12px rgba(38, 59, 100, 0.15);
+}
+
+#alumniAccountToggle .fa-chevron-down {
+    margin-left: 4px;
+    font-size: 13px;
+    transition: transform 0.2s ease;
+}
+
+#alumniAccountToggle[aria-expanded="true"] .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+
+/* Dropdown container */
+
+#alumniAccountDropdown {
+    position: absolute !important;
+    top: 58px !important;
+    right: 0 !important;
+    left: auto !important;
+    z-index: 9999 !important;
+    width: 350px !important;
+    max-width: calc(100vw - 24px);
+    padding: 23px !important;
+    border: 1px solid #e5ebf4 !important;
+    border-radius: 19px !important;
+    background: #ffffff !important;
+    box-shadow: 0 16px 40px rgba(25, 48, 82, 0.14) !important;
+}
+
+
+/* Account name */
+
+#dropdownAlumniName {
+    display: block;
+    margin-bottom: 5px;
+    color: #263b64;
+    font-size: 21px;
+    font-weight: 750;
+    line-height: 1.4;
+}
+
+
+/* Account email */
+
+#dropdownAlumniEmail {
+    color: #687385;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+
+/* Dropdown divider */
+
+#alumniAccountDropdown hr {
+    margin: 19px 0;
+    border: 0;
+    border-top: 1px solid #e1e7f0;
+    opacity: 1;
+}
+
+
+/* Dropdown links */
+
+#alumniAccountDropdown a {
+    display: flex !important;
+    align-items: center;
+    gap: 11px;
+    min-height: 48px;
+    padding: 10px 5px !important;
+    margin: 0 0 10px !important;
+    border-radius: 9px;
+    color: #3976df;
+    font-size: 16px;
+    font-weight: 650;
+    text-decoration: none !important;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+#alumniAccountDropdown a:last-child {
+    margin-bottom: 0 !important;
+}
+
+#alumniAccountDropdown a:hover {
+    background: #f3f7ff;
+}
+
+#alumniAccountDropdown a i {
+    width: 22px;
+    text-align: center;
+    font-size: 17px;
+}
+
+
+/* Logout */
+
+#alumniAccountDropdown #alumniLogoutBtn {
+    color: #ed3347 !important;
+}
+
+#alumniAccountDropdown #alumniLogoutBtn:hover {
+    background: #fff2f3;
+}
+
+
+/* =========================================
+   MOBILE STYLES
+========================================= */
+
+@media (max-width: 576px) {
+
+    #alumniAccountToggle {
+        gap: 8px;
+        padding: 5px 9px;
+        font-size: 15px;
+    }
+
+    #alumniInitials {
+        width: 42px !important;
+        height: 42px !important;
+    }
+
+    #alumniAccountDropdown {
+        top: 55px !important;
+        width: min(350px, calc(100vw - 24px)) !important;
+        padding: 20px !important;
+    }
+
+    #dropdownAlumniName {
+        font-size: 19px;
+    }
+
+    #dropdownAlumniEmail {
+        font-size: 14px;
+    }
+}

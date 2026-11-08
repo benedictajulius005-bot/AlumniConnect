@@ -1,0 +1,307 @@
+/* =========================================
+   ALUMNI JOB OPPORTUNITIES PAGE
+   File: alumnijobs.css
+========================================= */
+
+:root {
+    --jobs-primary: #3976df;
+    --jobs-primary-dark: #285fc2;
+    --jobs-navy: #142746;
+    --jobs-text: #24344d;
+    --jobs-muted: #8291a8;
+    --jobs-border: #e7edf5;
+    --jobs-background: #f4f7fc;
+}
+
+/* Page background */
+
+body.app {
+    background: var(--jobs-background);
+    color: var(--jobs-text);
+}
+
+/* Page heading */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 27px;
+    padding: 5px 0 20px;
+    border-bottom: 1px solid var(--jobs-border);
+}
+
+.page-header h1 {
+    margin: 0 0 8px;
+    color: var(--jobs-navy);
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
+
+.page-header .subtitle {
+    margin: 0;
+    color: var(--jobs-muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Main job opportunities panel */
+
+.main-content > .section__content .card {
+    overflow: hidden;
+    border: 1px solid var(--jobs-border);
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 5px 18px rgba(31, 55, 90, 0.05);
+}
+
+.main-content > .section__content .card > .card-header {
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--jobs-border);
+    background: #ffffff;
+}
+
+.main-content > .section__content .card > .card-header strong {
+    color: var(--jobs-navy);
+    font-size: 16px;
+    font-weight: 750;
+}
+
+.main-content > .section__content .card > .card-body {
+    padding: 25px;
+}
+
+/* Available jobs heading */
+
+#jobsList + * {
+    margin-top: 10px;
+}
+
+.main-content .card-body h4 {
+    color: var(--jobs-navy);
+    font-size: 17px;
+    font-weight: 750;
+}
+
+/* Description */
+
+.main-content .card-body > p.text-muted {
+    color: var(--jobs-muted) !important;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* Job cards */
+
+#jobsList > div {
+    display: flex;
+}
+
+#jobsList .card {
+    width: 100%;
+    margin-bottom: 0;
+    overflow: hidden;
+    border: 1px solid var(--jobs-border);
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 4px 14px rgba(31, 55, 90, 0.045);
+    transition: transform 0.22s ease, box-shadow 0.22s ease,
+                border-color 0.22s ease;
+}
+
+#jobsList .card:hover {
+    transform: translateY(-4px);
+    border-color: #cbdcf8;
+    box-shadow: 0 12px 25px rgba(31, 55, 90, 0.09);
+}
+
+#jobsList .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px;
+}
+
+/* Job title */
+
+#jobsList .card-title {
+    width: 100%;
+    margin-bottom: 12px;
+    color: var(--jobs-navy);
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* Company name */
+
+#jobsList .fw-semibold {
+    margin-bottom: 13px !important;
+    color: var(--jobs-primary-dark);
+    font-size: 13px;
+    font-weight: 750 !important;
+}
+
+/* Job information */
+
+#jobsList .text-muted {
+    color: #718198 !important;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+#jobsList .card-body > p {
+    width: 100%;
+    overflow-wrap: anywhere;
+}
+
+#jobsList .card-body > p.mb-3 {
+    margin-top: 5px;
+    color: #566780;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* Required skills */
+
+#jobsList .card-body > p.mb-2:last-of-type {
+    padding: 11px 12px;
+    border: 1px solid #e5edfa;
+    border-radius: 9px;
+    background: #f6f9ff;
+    color: #526681;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* Application deadline */
+
+#jobsList .card-body > p.text-muted:last-of-type {
+    margin-top: auto;
+    padding-top: 13px;
+    border-top: 1px solid #edf1f6;
+}
+
+/* Apply button */
+
+#jobsList .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 17px;
+    margin-top: 12px !important;
+    border: none;
+    border-radius: 9px;
+    background: var(--jobs-primary);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 750;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#jobsList .btn-primary:hover {
+    transform: translateY(-2px);
+    background: var(--jobs-primary-dark);
+}
+
+/* Refresh button */
+
+#refreshJobsBtn {
+    min-height: 37px;
+    padding: 8px 13px;
+    border: 1px solid #d6e3f7;
+    border-radius: 9px;
+    background: #ffffff;
+    color: var(--jobs-primary);
+    font-size: 12px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+#refreshJobsBtn:hover {
+    border-color: var(--jobs-primary);
+    background: #edf4ff;
+}
+
+#refreshJobsBtn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Loading, empty and error messages */
+
+#jobsMessage {
+    color: var(--jobs-muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+#jobsMessage:empty {
+    display: none;
+}
+
+/* Footer */
+
+.main-content .copyright {
+    padding: 22px 0 10px;
+    color: var(--jobs-muted);
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Account dropdown uses shared alumniconnect.css */
+
+/* Responsive layout */
+
+@media (max-width: 991px) {
+    .main-content > .section__content .card > .card-body {
+        padding: 20px;
+    }
+
+    #jobsList .card-body {
+        padding: 19px;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-header h1 {
+        font-size: 25px;
+    }
+
+    #jobsList > div {
+        width: 100%;
+    }
+
+    #jobsList .card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-content > .section__content .card > .card-header {
+        padding: 16px 18px;
+    }
+
+    .main-content > .section__content .card > .card-body {
+        padding: 17px;
+    }
+
+    #jobsList .card-body {
+        padding: 17px;
+    }
+
+    .main-content .card-body h4 {
+        font-size: 15px;
+    }
+
+    #refreshJobsBtn {
+        width: 100%;
+    }
+}

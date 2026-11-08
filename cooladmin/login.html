@@ -1,132 +1,277 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="generator" content="AlumniConnect 3.4.0" />
-    <meta name="description" content="Sign in to the AlumniConnect dashboard." />
-    <title>Login | AlumniConnect </title>
-    <meta name="robots" content="noindex,nofollow" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Sign in | AlumniConnect Bootstrap 5 Admin Dashboard" />
-    <meta property="og:description" content="Sign in to the AlumniConnect dashboard." />
-    <meta property="og:image" content="screenshots/AlumniConnect-bootstrap-dashboard-2.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Sign in | AlumniConnect Bootstrap 5 Admin Dashboard" />
-    <meta name="twitter:description" content="Sign in to the AlumniConnect dashboard." />
-    <meta name="theme-color" content="#4272d7" />
-    <link href="css/font-face.css" rel="stylesheet" media="all" />
-    <link rel="preconnect" href="https://rsms.me/" />
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-    <link href="vendor/fontawesome-7.3.1/css/all.min.css" rel="stylesheet" media="all" />
-    <link href="vendor/bootstrap-5.3.8.min.css" rel="stylesheet" media="all" />
-    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all" />
-    <link href="css/theme.css" rel="stylesheet" media="all" />
-    <link href="css/app.css" rel="stylesheet" media="all" />
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sign in to AlumniConnect, your alumni career and networking platform.">
+    <meta name="theme-color" content="#10264b">
+    <title>Login | AlumniConnect</title>
 
-<body class="app auth-page"><a class="visually-hidden-focusable skip-link" href="#auth-form">Skip to sign-in form</a>
-    <main class="login-wrap" id="auth-form">
-        <div class="login-content"> <a href="index.html" class="auth-brand" aria-label="AlumniConnect home">
-                <span class="logo-mark" aria-hidden="true">C</span>
-                <span class="logo-text">AlumniConnect</span>
-            </a>
-            <h1 class="auth-title">Welcome Back</h1>
-            <p class="auth-subtitle">Sign in to continue to your dashboard.</p>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link href="vendor/bootstrap-5.3.8.min.css" rel="stylesheet">
+    <link href="vendor/fontawesome-7.3.1/css/all.min.css" rel="stylesheet">
+     <link href="css/alumniconnect.css" rel="stylesheet" media="all">
+    <link href="css/login.css" rel="stylesheet" media="all">
+<body>
 
-            <form class="login-form" id="loginForm">
+<main class="auth-layout">
+
+    <!-- LEFT BRANDING PANEL -->
+    <section class="brand-panel">
+
+        <a href="index.html" class="brand-logo">
+            <span class="logo-mark">AC</span>
+            <span>AlumniConnect</span>
+        </a>
+
+        <div class="brand-content">
+
+            <span class="brand-tag">
+                Alumni Career Network
+            </span>
+
+            <h1>
+                Connecting Alumni.<br>
+                <span>Building Careers.</span>
+            </h1>
+
+            <p>
+                Your professional journey continues here.
+                Connect your skills, explore career opportunities
+                and stay engaged with your alumni community.
+            </p>
+
+            <div class="feature-list">
+
+                <div class="feature">
+                    <span class="feature-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </span>
+                    Manage your professional profile
+                </div>
+
+                <div class="feature">
+                    <span class="feature-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </span>
+                    Discover relevant job opportunities
+                </div>
+
+                <div class="feature">
+                    <span class="feature-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </span>
+                    Stay connected with your alumni network
+                </div>
+
+            </div>
+        </div>
+
+        <div class="brand-footer">
+            © 2026 AlumniConnect. All rights reserved.
+        </div>
+
+    </section>
+
+
+    <!-- RIGHT LOGIN PANEL -->
+    <section class="form-panel">
+
+        <div class="login-content">
+
+            <div class="mobile-brand">
+                <span class="logo-mark">AC</span>
+                <span>AlumniConnect</span>
+            </div>
+
+            <div class="auth-heading">
+                <h2>Welcome back!</h2>
+                <p>Sign in to continue to your AlumniConnect dashboard.</p>
+            </div>
+
+            <form id="loginForm">
+
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input id="email" class="au-input" type="email" name="email" placeholder="you@example.com"
-                        autocomplete="email" required>
+
+                    <input
+                        id="email"
+                        class="form-control-custom"
+                        type="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required>
                 </div>
+
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input id="password" class="au-input" type="password" name="password" placeholder="••••••••"
-                        autocomplete="current-password" required>
+
+                    <div class="input-wrapper">
+                        <input
+                            id="password"
+                            class="form-control-custom password-input"
+                            type="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required>
+
+                        <button
+                            type="button"
+                            class="toggle-password"
+                            id="togglePassword"
+                            aria-label="Show password"
+                            aria-pressed="false">
+                            <i class="fas fa-eye" aria-hidden="true"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="login-checkbox">
-                    <label>
+
+                <div class="login-options">
+
+                    <label class="remember-option">
                         <input type="checkbox" name="remember">
                         Remember me
                     </label>
-                    <a href="forget-pass.html">Forgot password?</a>
+
+                    <a href="forget-pass.html" class="forgot-link">
+                        Forgot password?
+                    </a>
+
                 </div>
-                <div id="loginMessage"></div>
-                <button class="au-btn au-btn--green" type="submit">Sign in</button>
+
+                <div
+                    id="loginMessage"
+                    role="status"
+                    aria-live="polite">
+                </div>
+
+                <button class="login-button" id="loginButton" type="submit">
+                    Sign in
+                    <i class="fas fa-arrow-right ms-2"></i>
+                </button>
+
             </form>
 
             <div class="register-link">
-                <p>Don't have an account? <a href="register.html">Create one</a></p>
+                <p>
+                    Don't have an account?
+                    <a href="register.html">Create an account</a>
+                </p>
             </div>
 
         </div>
-    </main>
-    <script src="js/vanilla-utils.js"></script>
-    <script src="vendor/bootstrap-5.3.8.bundle.min.js"></script>
-    <script src="js/bootstrap5-init.js"></script>
-    <script src="js/main-vanilla.js"></script>
-    <script src="js/modern-plugins.js"></script>
-    <script>
-        document.getElementById("loginForm").addEventListener("submit", async function (event) {
-            event.preventDefault();
 
-            const email = document.getElementById("email").value.trim();
-            const password = document.getElementById("password").value;
-            const message = document.getElementById("loginMessage");
+    </section>
 
-            message.textContent = "Signing in...";
-            message.style.color = "#555";
+</main>
 
-            try {
-                const response = await fetch("http://localhost:8080/api/auth/login", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        email: email,
-                        password: password
-                    })
-                });
 
-                if (!response.ok) {
-                    throw new Error("Invalid email or password.");
+<script src="vendor/bootstrap-5.3.8.bundle.min.js"></script>
+
+<script>
+    // SHOW / HIDE PASSWORD
+    document.getElementById("togglePassword").addEventListener("click", function () {
+
+        const password = document.getElementById("password");
+        const icon = this.querySelector("i");
+
+        const isPassword = password.type === "password";
+
+        password.type = isPassword ? "text" : "password";
+
+        icon.classList.toggle("fa-eye", !isPassword);
+        icon.classList.toggle("fa-eye-slash", isPassword);
+
+        this.setAttribute(
+            "aria-label",
+            isPassword ? "Hide password" : "Show password"
+        );
+
+        this.setAttribute("aria-pressed", String(isPassword));
+    });
+
+
+    // LOGIN FUNCTIONALITY
+    document.getElementById("loginForm").addEventListener("submit", async function (event) {
+
+        event.preventDefault();
+
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+        const message = document.getElementById("loginMessage");
+        const button = document.getElementById("loginButton");
+
+        message.textContent = "Signing in...";
+        message.style.color = "#326bd0";
+
+        button.disabled = true;
+        button.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Signing in...';
+
+        try {
+
+            const response = await fetch("http://localhost:8080/api/auth/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email: email,
+                    password: password
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error("Invalid email or password.");
+            }
+
+            const data = await response.json();
+
+            // Save login information
+            localStorage.setItem("token", data.token);
+            localStorage.setItem("userId", data.userId);
+            localStorage.setItem("firstName", data.firstName);
+            localStorage.setItem("lastName", data.lastName);
+            localStorage.setItem("email", data.email);
+            localStorage.setItem("role", data.role);
+
+            message.textContent = "Login successful!";
+            message.style.color = "#16834b";
+
+            // Redirect according to role
+            setTimeout(() => {
+
+                if (data.role === "ADMIN") {
+                    window.location.href = "index.html";
+
+                } else if (data.role === "ALUMNI") {
+                    window.location.href = "index4.html";
+
+                } else {
+                    message.textContent = "Unknown user role.";
+                    message.style.color = "#dc3545";
+
+                    button.disabled = false;
+                    button.textContent = "Sign in";
                 }
 
-                const data = await response.json();
+            }, 800);
 
-                // Save login information
-                localStorage.setItem("token", data.token);
-                localStorage.setItem("userId", data.userId);
-                localStorage.setItem("firstName", data.firstName);
-                localStorage.setItem("lastName", data.lastName);
-                localStorage.setItem("email", data.email);
-                localStorage.setItem("role", data.role);
+        } catch (error) {
 
-                message.textContent = "Login successful!";
-                message.style.color = "green";
+            message.textContent = error.message;
+            message.style.color = "#dc3545";
 
-                // Redirect user according to role
-                setTimeout(() => {
-                    if (data.role === "ADMIN") {
-                        window.location.href = "index.html";
-                    } else if (data.role === "ALUMNI") {
-                        window.location.href = "index4.html";
-                    } else {
-                        message.textContent = "Unknown user role.";
-                        message.style.color = "red";
-                    }
-                }, 800);
+            button.disabled = false;
+            button.innerHTML = 'Sign in <i class="fas fa-arrow-right ms-2"></i>';
+        }
 
-            } catch (error) {
-                message.textContent = error.message;
-                message.style.color = "red";
-            }
-        });
-    </script>
+    });
+</script>
 
 </body>
-
 </html>

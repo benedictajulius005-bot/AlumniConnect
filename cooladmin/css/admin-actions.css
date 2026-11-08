@@ -1,0 +1,87 @@
+
+/* =====================================================
+   ALUMNICONNECT - GLOBAL ADMIN ACTION BUTTONS
+   EXTRA COMPACT SIZE
+   ===================================================== */
+
+body .table tbody td:last-child {
+    min-width: 200px !important;
+    white-space: nowrap !important;
+}
+
+body .table tbody td:last-child .d-flex {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 4px !important;
+}
+
+/* ALL ACTION BUTTONS */
+body .table tbody td:last-child button.btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 auto !important;
+    height: 28px !important;
+    min-height: 28px !important;
+    min-width: auto !important;
+    padding: 0 8px !important;
+    margin: 0 !important;
+    border-radius: 6px !important;
+    font-family: inherit !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    box-shadow: none !important;
+}
+
+/* VIEW */
+body .table tbody td:last-child button.btn-info,
+body .table tbody td:last-child button.btn-outline-info,
+body .table tbody td:last-child button.btn-primary,
+body .table tbody td:last-child button.btn-outline-primary {
+    background: #e9f1ff !important;
+    border: 1px solid #e9f1ff !important;
+    color: #2864c8 !important;
+}
+
+/* EDIT */
+body .table tbody td:last-child button.btn-warning,
+body .table tbody td:last-child button.btn-outline-warning {
+    background: #fff7e9 !important;
+    border: 1px solid #fff0d0 !important;
+    color: #ad6b00 !important;
+}
+
+/* DELETE */
+body .table tbody td:last-child button.btn-danger,
+body .table tbody td:last-child button.btn-outline-danger {
+    background: #fff0f0 !important;
+    border: 1px solid #ffd5d5 !important;
+    color: #dc4141 !important;
+}
+
+/* HOVER */
+body .table tbody td:last-child button.btn:hover {
+    filter: brightness(0.96);
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+    body .table tbody td:last-child {
+        min-width: 180px !important;
+    }
+
+    body .table tbody td:last-child button.btn {
+        height: 26px !important;
+        min-height: 26px !important;
+        padding: 0 6px !important;
+        font-size: 10px !important;
+    }
+
+    body .table tbody td:last-child .d-flex {
+        gap: 3px !important;
+    }
+}

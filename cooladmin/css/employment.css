@@ -1,0 +1,355 @@
+/* =========================================
+   ALUMNI EMPLOYMENT PAGE
+   File: alumniemployment.css
+========================================= */
+
+:root {
+    --employment-primary: #3976df;
+    --employment-primary-dark: #285fc2;
+    --employment-navy: #142746;
+    --employment-text: #24344d;
+    --employment-muted: #8291a8;
+    --employment-border: #e7edf5;
+    --employment-background: #f4f7fc;
+}
+
+/* Page background */
+
+body.app {
+    background: var(--employment-background);
+    color: var(--employment-text);
+}
+
+/* Page heading */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px;
+    padding: 5px 0 20px;
+    border-bottom: 1px solid var(--employment-border);
+}
+
+.page-header h1 {
+    margin: 0 0 8px;
+    color: var(--employment-navy);
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
+
+.page-header .subtitle {
+    max-width: 650px;
+    margin: 0;
+    color: var(--employment-muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Main cards */
+
+.main-content .card {
+    margin-bottom: 22px;
+    overflow: hidden;
+    border: 1px solid var(--employment-border);
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow: 0 5px 18px rgba(31, 55, 90, 0.05);
+    transition: box-shadow 0.2s ease;
+}
+
+.main-content .card:hover {
+    box-shadow: 0 10px 26px rgba(31, 55, 90, 0.08);
+}
+
+.main-content .card-header {
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    padding: 18px 23px;
+    border-bottom: 1px solid var(--employment-border);
+    background: #ffffff;
+}
+
+.main-content .card-header strong {
+    color: var(--employment-navy);
+    font-size: 16px;
+    font-weight: 750;
+}
+
+.main-content .card-body {
+    padding: 24px;
+}
+
+/* Form labels */
+
+.main-content .form-label {
+    display: block;
+    margin-bottom: 9px;
+    color: #344761;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* Form inputs */
+
+.main-content .form-control,
+.main-content .form-select {
+    min-height: 47px;
+    padding: 10px 13px;
+    border: 1px solid #dce4ef;
+    border-radius: 9px;
+    background-color: #ffffff;
+    color: var(--employment-text);
+    font-size: 13px;
+    box-shadow: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.main-content .form-control:focus,
+.main-content .form-select:focus {
+    border-color: var(--employment-primary);
+    box-shadow: 0 0 0 3px rgba(57, 118, 223, 0.12);
+}
+
+.main-content .form-control::placeholder {
+    color: #a0aabc;
+}
+
+/* Employment details section */
+
+#employmentDetails {
+    padding: 17px;
+    margin-bottom: 20px;
+    border: 1px solid #e7edf5;
+    border-radius: 11px;
+    background: #f9fbfe;
+}
+
+/* Primary buttons */
+
+.main-content .btn-primary {
+    min-height: 43px;
+    padding: 10px 19px;
+    border: none;
+    border-radius: 9px;
+    background: var(--employment-primary);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.main-content .btn-primary:hover {
+    transform: translateY(-1px);
+    background: var(--employment-primary-dark);
+}
+
+.main-content .btn-primary:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+/* Employment history form */
+
+#employmentHistoryForm {
+    padding: 22px;
+    margin-bottom: 23px;
+    border: 1px solid #e2eaf6;
+    border-radius: 12px;
+    background: #f9fbff;
+}
+
+#employmentHistoryForm .form-label {
+    margin-bottom: 8px;
+}
+
+/* Employment history records */
+
+#employmentHistoryList {
+    margin-top: 12px;
+}
+
+#employmentHistoryList > div {
+    padding: 20px !important;
+    margin-bottom: 14px !important;
+    border: 1px solid var(--employment-border) !important;
+    border-radius: 12px !important;
+    background: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#employmentHistoryList > div:hover {
+    border-color: #cbdcf8 !important;
+    box-shadow: 0 5px 16px rgba(31, 55, 90, 0.05);
+}
+
+#employmentHistoryList h5 {
+    margin-bottom: 7px !important;
+    color: var(--employment-navy);
+    font-size: 16px;
+    font-weight: 750;
+}
+
+#employmentHistoryList .fw-semibold {
+    color: #52647e;
+    font-size: 13px;
+}
+
+#employmentHistoryList .text-muted {
+    font-size: 12px;
+}
+
+/* Edit and delete buttons */
+
+#employmentHistoryList .btn {
+    padding: 7px 12px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+#employmentHistoryList .btn-outline-primary:hover {
+    background: var(--employment-primary);
+    color: #ffffff;
+}
+
+#employmentHistoryList .btn-outline-danger:hover {
+    background: #dc3545;
+    color: #ffffff;
+}
+
+/* Add employment button */
+
+#addEmploymentHistoryBtn {
+    min-height: 36px;
+    padding: 7px 13px;
+    border-radius: 8px;
+}
+
+/* Delete confirmation modal */
+
+#deleteHistoryModal .modal-content {
+    overflow: hidden;
+    border: 1px solid var(--employment-border);
+    border-radius: 15px !important;
+}
+
+#deleteHistoryModal .modal-header {
+    padding: 19px 22px;
+    border-bottom: 1px solid var(--employment-border);
+}
+
+#deleteHistoryModal .modal-title {
+    color: var(--employment-navy);
+    font-size: 16px;
+    font-weight: 750;
+}
+
+#deleteHistoryModal .modal-body {
+    padding: 23px;
+    color: #465770;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+#deleteHistoryModal .modal-footer {
+    padding: 15px 22px;
+    border-top: 1px solid var(--employment-border);
+}
+
+#deleteHistoryModal .modal-footer .btn {
+    min-width: 90px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 650;
+}
+
+/* Notification toast */
+
+#employmentToast {
+    min-width: 290px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(20, 39, 70, 0.15);
+}
+
+#employmentToast .toast-header {
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#employmentToast .toast-body {
+    padding: 14px 15px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Account dropdown inherits shared styling
+   from alumniconnect.css */
+
+/* Footer */
+
+.main-content .copyright {
+    padding: 22px 0 10px;
+    color: var(--employment-muted);
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Responsive layout */
+
+@media (max-width: 991px) {
+    .main-content .card-body {
+        padding: 20px;
+    }
+
+    #employmentHistoryForm {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-header h1 {
+        font-size: 25px;
+    }
+
+    .main-content .card-header {
+        padding: 16px 18px;
+    }
+
+    .main-content .card-body {
+        padding: 18px;
+    }
+
+    #employmentHistoryForm {
+        padding: 15px;
+    }
+
+    #employmentHistoryList > div {
+        padding: 15px !important;
+    }
+
+    #employmentHistoryList > div > div {
+        flex-direction: column;
+    }
+
+    #employmentHistoryList > div > div > div:last-child {
+        width: 100%;
+    }
+
+    #employmentHistoryList .btn {
+        flex: 1;
+    }
+
+    #saveEmploymentBtn {
+        width: 100%;
+    }
+
+    #employmentToast {
+        min-width: auto;
+        width: calc(100vw - 30px);
+    }
+}

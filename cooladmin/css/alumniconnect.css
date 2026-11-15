@@ -342,3 +342,18 @@
         font-size: 14px;
     }
 }
+
+
+/* Mobile account positioning */
+@media (max-width: 767.98px) {
+    #alumniAccountMenu {
+        margin-right: 12px;
+    }
+
+    #alumniAccountDropdown {
+        right: 0 !important;
+        left: auto !important;
+        width: min(300px, calc(100vw - 24px)) !important;
+        max-width: calc(100vw - 24px) !important;
+    }
+}

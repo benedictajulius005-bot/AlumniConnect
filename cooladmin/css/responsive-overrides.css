@@ -1,0 +1,148 @@
+
+/* ============================================================
+   AlumniConnect - Shared Responsive Styles
+   ============================================================ */
+
+body.app,
+body.app #main-content {
+    min-width: 0;
+    max-width: 100%;
+}
+
+body.app {
+    overflow-x: hidden;
+}
+
+/* Prevent content from exceeding the screen */
+body.app .page-container,
+body.app .main-content,
+body.app .section__content,
+body.app .section__content--p30,
+body.app .container-fluid {
+    min-width: 0;
+    max-width: 100%;
+}
+
+body.app img,
+body.app svg,
+body.app video,
+body.app canvas {
+    max-width: 100%;
+}
+
+/* Tables scroll inside their own container */
+body.app .table-responsive,
+body.app .table-wrapper,
+body.app .dataTables_wrapper,
+body.app .m-table-wrap {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+body.app table {
+    max-width: 100%;
+}
+
+body.app input,
+body.app select,
+body.app textarea,
+body.app button {
+    max-width: 100%;
+}
+
+/* Tablets */
+@media (max-width: 991.98px) {
+    body.app .page-container {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    body.app .main-content {
+        width: 100%;
+        min-width: 0;
+    }
+
+    body.app .row > *,
+    body.app [class*="col-"] {
+        min-width: 0;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 767.98px) {
+    body.app .main-content > .section__content,
+    body.app .main-content > .section__content--p30 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    body.app .page-header {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    body.app .page-header__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        max-width: 100%;
+    }
+
+    body.app .m-card,
+    body.app .card {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    body.app .modal-dialog {
+        max-width: calc(100% - 24px);
+        margin: 12px auto;
+    }
+
+    body.app .form-control,
+    body.app .form-select {
+        min-width: 0;
+        width: 100%;
+    }
+}
+
+/* Small phones */
+@media (max-width: 575.98px) {
+    body.app .main-content > .section__content,
+    body.app .main-content > .section__content--p30 {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    body.app .page-header h1 {
+        overflow-wrap: anywhere;
+    }
+
+    body.app .page-header__actions {
+        width: 100%;
+    }
+
+    body.app .page-header__actions > .m-btn,
+    body.app .page-header__actions > .btn {
+        max-width: 100%;
+    }
+
+    body.app .modal-dialog {
+        max-width: calc(100% - 16px);
+        margin: 8px auto;
+    }
+
+    body.app .modal-content {
+        max-width: 100%;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 379.98px) {
+    body.app .main-content > .section__content,
+    body.app .main-content > .section__content--p30 {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}

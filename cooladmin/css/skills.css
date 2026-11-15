@@ -268,7 +268,9 @@ body.app {
     text-align: center;
 }
 
-/* Responsive design */
+/* =========================================
+   SKILLS PAGE — MOBILE RESPONSIVENESS
+   ========================================= */
 
 @media (max-width: 991px) {
     .main-content .card-body {
@@ -276,31 +278,130 @@ body.app {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 767px) {
+
+    body.app {
+        overflow-x: hidden;
+    }
+
+    .page-container,
+    .main-content {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+
+    .main-content .section__content,
+    .main-content .section__content--p30 {
+        padding: 20px 15px !important;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .main-content .container-fluid {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .page-header {
-        align-items: flex-start;
+        display: flex;
         flex-direction: column;
+        align-items: flex-start;
         gap: 10px;
+        margin-bottom: 22px;
+        padding-bottom: 15px;
     }
 
     .page-header h1 {
-        font-size: 25px;
+        font-size: 23px;
+    }
+
+    .page-header .subtitle {
+        font-size: 13px;
+    }
+
+    .main-content .row {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .main-content .row > [class*="col-"] {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .main-content .card {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
     }
 
     .main-content .card-header {
-        padding: 17px 18px;
+        padding: 19px;
     }
 
     .main-content .card-body {
-        padding: 18px;
+        padding: 20px;
+    }
+
+    #skillSelect {
+        width: 100%;
+        min-width: 0;
+    }
+
+    #addSkillBtn {
+        width: 100%;
+        margin-top: 8px;
     }
 
     #currentSkills > div {
-        gap: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    #currentSkills > div span {
+        flex: 1;
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .main-content .section__content,
+    .main-content .section__content--p30 {
+        padding: 16px 12px !important;
+    }
+
+    .page-header h1 {
+        font-size: 21px;
+    }
+
+    .main-content .card-header,
+    .main-content .card-body {
+        padding: 16px;
+    }
+
+    #currentSkills > div {
         padding: 10px !important;
+        gap: 8px;
     }
 
     .remove-skill-btn {
         padding: 5px 9px;
+        font-size: 10px;
+    }
+
+    #skillsToast {
+        min-width: 0;
+        max-width: calc(100vw - 24px);
     }
 }

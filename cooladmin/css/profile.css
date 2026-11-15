@@ -368,5 +368,42 @@
     .settings-tabs .nav-link {
         padding: 11px 9px;
         font-size: 12px;
+    }    
+}
+
+/* Profile page — mobile account header */
+@media (max-width: 767px) {
+    #alumniAccountToggle {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        white-space: nowrap;
+        padding: 5px 8px !important;
+    }
+
+    #alumniAccountToggle .fw-semibold {
+        display: none !important;
+    }
+
+    #alumniAccountToggle .fa-chevron-down {
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    #alumniAccountToggle {
+        gap: 4px !important;
+        padding-right: 12px !important;
+        overflow: visible !important;
+    }
+
+    #alumniAccountToggle .fa-chevron-down {
+        position: relative !important;
+        left: -3px !important;
+        flex-shrink: 0 !important;
+        font-size: 12px !important;
     }
 }

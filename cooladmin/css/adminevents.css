@@ -642,6 +642,9 @@
     .modal-dialog {
         margin: 12px;
     }
+#adminHeaderName {
+    display: none !important;
+}
 
     .modal-body {
         padding: 18px;

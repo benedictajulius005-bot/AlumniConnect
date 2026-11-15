@@ -679,6 +679,10 @@
         flex-direction: column;
     }
 
+    #adminHeaderName {
+    display: none !important;
+}
+
     #addJobButton {
         width: 100%;
     }

@@ -36,3 +36,4 @@ Thumbs.db
 postman/
 
 Project/src/main/resources/application.properties
+Project/src/main/resources/application-local-backup.properties

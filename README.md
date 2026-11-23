@@ -54,7 +54,7 @@ The project aims to improve the connection between alumni skills and available e
 | UI Framework | Bootstrap 5 |
 | Database | MySQL |
 | Build Tool | Maven |
-| API Testing | Postman |
+| API Testing | Swagger UI (Springdoc OpenAPI) |
 | Development IDEs | IntelliJ IDEA and Visual Studio Code |
 
 ## 5. Job Recommendation Approach
@@ -297,7 +297,7 @@ The application was tested during development to assess the functionality of its
 
 ### Functional Testing
 
-Postman was used to test the backend REST API endpoints during development.
+Swagger UI was used to test selected backend REST API endpoints during development. Requests were sent using the available HTTP methods, and the returned status codes and response data were examined.
 
 The implemented application features were also checked, including:
 

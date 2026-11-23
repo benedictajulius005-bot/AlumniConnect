@@ -54,7 +54,7 @@ A projekt célja az öregdiákokkal való kapcsolattartás támogatása, valamin
 | Felhasználói felület keretrendszere | Bootstrap 5 |
 | Adatbázis | MySQL |
 | Build eszköz | Maven |
-| API-tesztelés | Postman |
+| API-tesztelés | Swagger UI (Springdoc OpenAPI) |
 | Fejlesztői környezetek | IntelliJ IDEA és Visual Studio Code |
 
 ## 5. Az állásajánlási módszer
@@ -297,7 +297,7 @@ Az alkalmazást a fejlesztés során teszteltem annak érdekében, hogy ellenőr
 
 ### Funkcionális tesztelés
 
-A backend REST API-végpontjainak teszteléséhez Postman alkalmazást használtam.
+A backend REST API-végpontjainak teszteléséhez a Swagger UI felületét használtam. A kéréseket a rendelkezésre álló HTTP-metódusokkal küldtem el, majd ellenőriztem a visszakapott HTTP-státuszkódokat és válaszadatokat.
 
 Az alkalmazás megvalósított funkcióit is ellenőriztem, többek között:
 

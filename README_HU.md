@@ -313,9 +313,9 @@ Az alkalmazás megvalósított funkcióit is ellenőriztem, többek között:
 
 Az állásajánlások relevanciáját öt résztvevő bevonásával értékeltem.
 
-Az ajánlási rendszer átlagosan **2,8 pontot ért el az 5 pontos skálán**.
+Az ajánlások relevanciájának átlagos értékelése **2,6 pont volt az 5 pontos skálán**, míg az általános hasznosság átlagos értékelése **2,8 pont volt az 5 pontos skálán**.
 
-Ez az eredmény kezdeti visszajelzést ad arról, hogy a résztvevők mennyire találták relevánsnak az ajánlásokat. Az értékelés azonban kis létszámú mintán alapul, ezért az eredmények nem tekinthetők az ajánlási rendszer hatékonyságára vonatkozó végleges bizonyítéknak.
+Ezek az eredmények előzetes visszajelzést adnak arról, hogyan ítélték meg a résztvevők az ajánlásokat. Az értékelés azonban mindössze öt résztvevő bevonásával történt, ezért az eredmények nem tekinthetők az ajánlási rendszer hatékonyságára vonatkozó végleges bizonyítéknak.
 
 A rendszer további értékelése nagyobb résztvevői csoport bevonásával és további ajánlási szempontok vizsgálatával javítható.
 
@@ -333,12 +333,12 @@ A projektben megvalósított funkciók:
 - Közlemények kezelése.
 - Adminisztrációs funkciók.
 
-A jelenlegi megvalósítás nem tartalmazza az alábbi funkciókat:
+A jelenlegi megvalósítás korlátai:
 
-- Öregdiákok által kezdeményezhető eseményregisztráció.
-- Külön munkáltatói felület.
+- Az öregdiákok a frontend felületén keresztül nem tudnak eseményekre regisztrálni. A backend tartalmazza az eseményrésztvevők regisztrálására és eltávolítására szolgáló végpontokat, de ezek a funkciók nincsenek integrálva az öregdiákok számára elérhető felületbe.
+- Nem áll rendelkezésre külön munkáltatói felület. Az álláslehetőségeket jelenleg az adminisztrációs felületen keresztül kezelik.
 
-Ezek a funkciók a rendszer későbbi továbbfejlesztése során valósíthatók meg.
+Az öregdiákok számára elérhető eseményregisztrációs folyamat integrálása, valamint egy külön munkáltatói felület kialakítása a rendszer későbbi továbbfejlesztésének része lehet.
 
 ## 11. Képernyőképek
 
@@ -360,7 +360,7 @@ A képernyőképek többek között az alábbi felületeket mutatják be:
 
 A rendszer későbbi továbbfejlesztésének lehetséges irányai:
 
-- Eseményregisztrációs funkció megvalósítása.
+- A meglévő backend eseményregisztrációs végpontok integrálása az öregdiákok számára elérhető regisztrációs folyamatba.
 - Külön munkáltatói felület kialakítása.
 - Az állásajánlási módszer továbbfejlesztése.
 - Az ajánlási rendszer nagyobb résztvevői csoporttal történő további értékelése.

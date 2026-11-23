@@ -1,40 +1,43 @@
 # AlumniConnect
-### Öregdiák-követő és készségalapú állásajánló rendszer
+### Spring Boot-alapú öregdiák-követő és készségalapú állásajánló rendszer tervezése és megvalósítása
 
 ## 1. A projekt bemutatása
 
-Az AlumniConnect egy webalapú rendszer, amely az öregdiákok szakmai életútjának nyomon követését, a szakmai kapcsolattartást és a készségalapú állásajánlást támogatja.
+Az AlumniConnect egy webalapú öregdiák-követő és készségalapú állásajánló rendszer, amely támogatja az öregdiákok szakmai életútjának nyomon követését, a szakmai kapcsolattartást és a karrierlehetőségek elérését.
 
-A rendszer lehetővé teszi az öregdiákok számára, hogy regisztráljanak, kezeljék profiljukat, rögzítsék korábbi munkahelyeiket, megadják készségeiket, megtekintsék az elérhető álláslehetőségeket, valamint készségeik alapján állásajánlásokat kapjanak.
+A rendszer lehetővé teszi az öregdiákok számára, hogy létrehozzák és kezeljék profiljukat, rögzítsék korábbi munkatapasztalataikat, kezeljék szakmai készségeiket, megtekintsék az elérhető álláslehetőségeket, valamint készségeik alapján állásajánlásokat kapjanak.
 
 Az adminisztrátorok egy adminisztrációs felületen keresztül kezelhetik az öregdiákok adatait, a tanszékeket, az álláslehetőségeket, a készségeket, az eseményeket és a közleményeket.
 
-A projekt fő célja az öregdiákokkal való kapcsolattartás erősítése, valamint a releváns karrierlehetőségekhez való hozzáférés javítása készségalapú álláspárosítás segítségével.
+A projekt célja az öregdiákokkal való kapcsolattartás támogatása, valamint a meglévő készségeikhez illeszkedő álláslehetőségek megtalálásának elősegítése.
 
 ## 2. Az alkalmazás elérhetősége
 
 - **Élő alkalmazás:** https://alumniconnect-frontend-glni.onrender.com
 - **GitHub-tároló:** https://github.com/benedictajulius005-bot/AlumniConnect
 
-*Megjegyzés: Az alkalmazás a Render platformon van hosztolva. Ha hosszabb ideig nem használták, az első megnyitáskor némi várakozási idő előfordulhat, amíg a szolgáltatás újraindul.*
+*Megjegyzés: Az alkalmazás a Render platformon van hosztolva. Hosszabb inaktivitás után az első megnyitáskor előfordulhat némi várakozási idő, amíg a szolgáltatás újraindul.*
 
 ## 3. Főbb funkciók
 
-**Öregdiákok számára**
+### Öregdiákok számára
+
 - Felhasználói regisztráció és bejelentkezés.
-- Profil létrehozása és kezelése.
+- Öregdiákprofil létrehozása és kezelése.
 - Korábbi munkahelyek és munkatapasztalatok kezelése.
-- Készségek kezelése.
+- Szakmai készségek hozzáadása és kezelése.
 - Elérhető álláslehetőségek böngészése.
 - Készségalapú állásajánlások megtekintése.
-- Egyező és hiányzó készségek megtekintése.
+- Egyező és hiányzó készségek megtekintése az ajánlott állásoknál.
 - Események és közlemények megtekintése.
 
-**Adminisztrátorok számára**
+### Adminisztrátorok számára
+
 - Adminisztrációs vezérlőpult.
-- Öregdiákok kezelése.
+- Öregdiák-fiókok és profilok kezelése.
 - Álláslehetőségek kezelése.
-- Készségek és tanszékek kezelése.
+- Készségek kezelése.
+- Tanszékek kezelése.
 - Események kezelése.
 - Közlemények kezelése.
 
@@ -47,10 +50,12 @@ A projekt fő célja az öregdiákokkal való kapcsolattartás erősítése, val
 | Backend architektúra | REST API |
 | Adathozzáférés | Spring Data JPA / Hibernate |
 | Biztonság | Spring Security és JWT |
-| Frontend | HTML, CSS, JavaScript |
+| Frontend | HTML, CSS és JavaScript |
 | Felhasználói felület keretrendszere | Bootstrap 5 |
 | Adatbázis | MySQL |
 | Build eszköz | Maven |
+| API-tesztelés | Postman |
+| Fejlesztői környezetek | IntelliJ IDEA és Visual Studio Code |
 
 ## 5. Az állásajánlási módszer
 
@@ -58,25 +63,60 @@ Az AlumniConnect készségalapú párosítási módszert alkalmaz az álláslehe
 
 A rendszer összehasonlítja az öregdiák profiljában regisztrált készségeket az egyes álláslehetőségekhez megadott elvárt készségekkel.
 
-Kiszámítja az egyezési százalékot, valamint azonosítja az egyező és hiányzó készségeket. Az alapértelmezett ajánlási küszöbérték 60%. Az ajánlás során csak az aktív, még le nem járt jelentkezési határidejű álláslehetőségeket veszi figyelembe.
+A rendszer egyezési százalékot számít, és azonosítja az alábbiakat:
+
+- **Egyező készségek:** Azok a készségek, amelyekkel az öregdiák rendelkezik, és amelyeket az adott álláslehetőség megkövetel.
+- **Hiányzó készségek:** Azok az elvárt készségek, amelyek nem szerepelnek az öregdiák profiljában.
+- **Egyezési százalék:** Az elvárt készségek azon százaléka, amelyek megfelelnek az öregdiák regisztrált készségeinek.
+
+Az alapértelmezett ajánlási küszöbérték 60%. A rendszer csak az aktív, még le nem járt jelentkezési határidejű álláslehetőségeket veszi figyelembe az ajánlások elkészítésekor.
+
+Ez a megközelítés segít az öregdiákoknak megtalálni a meglévő készségeikhez illeszkedő álláslehetőségeket, valamint felismerni azokat a területeket, ahol további készségek elsajátítására lehet szükségük.
 
 ## 6. A projekt felépítése
+
+A projekt fő könyvtárai és fájljai a következők:
 
 ```text
 AlumniConnect/
 │
-├── Project/                 # Spring Boot backend
+├── Project/                         # Spring Boot backend
 │   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   │   └── Alumni/Project/
+│   │   │   │       ├── controller/
+│   │   │   │       ├── dto/
+│   │   │   │       ├── entity/
+│   │   │   │       ├── enums/
+│   │   │   │       ├── exception/
+│   │   │   │       ├── repository/
+│   │   │   │       ├── security/
+│   │   │   │       ├── service/
+│   │   │   │       └── util/
+│   │   │   └── resources/
+│   │   └── test/
 │   ├── pom.xml
-│   └── ...
+│   ├── mvnw
+│   └── mvnw.cmd
 │
-├── cooladmin/               # Frontend alkalmazás
+├── cooladmin/                       # Frontend alkalmazás
+│   ├── css/
+│   ├── js/
+│   ├── images/
+│   ├── vendor/
+│   ├── login.html
+│   ├── register.html
+│   ├── profile.html
+│   ├── jobs.html
+│   ├── recommendations.html
+│   └── ...
 │
 ├── database/
 │   ├── alumni_system_schema.sql
 │   └── sample_data.sql
 │
-├── Screenshots/             # Alkalmazásképernyőképek
+├── Screenshots/                     # Alkalmazásképernyőképek
 │
 ├── README.md
 └── README_HU.md
@@ -84,15 +124,24 @@ AlumniConnect/
 
 ## 7. Telepítés és beállítás
 
+Az alábbi lépések segítségével az AlumniConnect helyben is futtatható.
+
 ### Előfeltételek
 
-- JDK 17
-- Maven
-- MySQL Server vagy MariaDB
-- IntelliJ IDEA vagy más Java IDE
-- Modern webböngésző
+A következő szoftverek telepítése szükséges:
+
+- Java Development Kit (JDK) 17.
+- MySQL Server vagy MariaDB.
+- Visual Studio Code.
+- Visual Studio Code Live Server bővítmény.
+- IntelliJ IDEA vagy más Java fejlesztőkörnyezet (nem kötelező).
+- Modern webböngésző.
+
+A Maven külön is telepíthető, de a projekt tartalmaz Maven Wrappert is.
 
 ### 1. lépés: A GitHub-tároló klónozása
+
+Nyiss meg egy terminált, majd futtasd az alábbi parancsokat:
 
 ```bash
 git clone https://github.com/benedictajulius005-bot/AlumniConnect.git
@@ -101,7 +150,7 @@ cd AlumniConnect
 
 ### 2. lépés: Az adatbázis létrehozása
 
-Hozz létre egy `alumni_system` nevű adatbázist MySQL-ben:
+Nyisd meg a MySQL-t vagy a phpMyAdmin felületet, és hozd létre az `alumni_system` nevű adatbázist.
 
 ```sql
 CREATE DATABASE alumni_system;
@@ -111,22 +160,35 @@ CREATE DATABASE alumni_system;
 
 A `database` könyvtár két SQL-fájlt tartalmaz:
 
-- **alumni_system_schema.sql:** Az adatbázis szerkezetét tartalmazza, beleértve a 13 táblát, az indexeket és a kapcsolatok meghatározását.
-- **sample_data.sql:** Fiktív bemutató adatokat tartalmaz tesztelési célokra.
+- **alumni_system_schema.sql:** Az adatbázis szerkezetét tartalmazza, beleértve a táblákat, elsődleges kulcsokat, indexeket és idegenkulcs-kapcsolatokat.
+- **sample_data.sql:** Fiktív tesztadatokat tartalmaz az alkalmazás kipróbálásához.
 
-Először az `alumni_system_schema.sql`, majd a `sample_data.sql` fájlt importáld az `alumni_system` adatbázisba phpMyAdmin vagy MySQL parancssor segítségével.
+A fájlokat az alábbi sorrendben kell importálni:
+
+1. Importáld az `alumni_system_schema.sql` fájlt.
+2. Ezután importáld a `sample_data.sql` fájlt.
+
+Mindkét fájlt az `alumni_system` adatbázisba kell importálni.
+
+Az importálás elvégezhető a phpMyAdmin felületén vagy a MySQL parancssor használatával.
+
+**Fontos:** Az adatbázis szerkezetét a backend elindítása előtt importálni kell, mivel a Hibernate automatikus táblalétrehozása nincs engedélyezve.
 
 ### 4. lépés: A backend konfigurálása
 
-Nyisd meg a következő könyvtárat:
+Navigálj az alábbi könyvtárba:
 
 ```text
 Project/src/main/resources/
 ```
 
-Másold le az `application-example.properties` fájlt, majd nevezd át a másolatot `application.properties` fájlra.
+Keresd meg az `application-example.properties` fájlt, és készíts róla egy másolatot az alábbi néven:
 
-Állítsd be a helyi adatbázis-kapcsolatot és a JWT titkos kulcsot.
+```text
+application.properties
+```
+
+Nyisd meg az új `application.properties` fájlt, majd állítsd be a helyi adatbázis-kapcsolatot.
 
 Példa konfiguráció:
 
@@ -134,87 +196,186 @@ Példa konfiguráció:
 server.port=8080
 spring.application.name=Project
 
+# Database Configuration
 spring.datasource.url=jdbc:mysql://localhost:3306/alumni_system?useSSL=false&serverTimezone=UTC
 spring.datasource.username=root
 spring.datasource.password=YOUR_DATABASE_PASSWORD
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
+# JPA / Hibernate Configuration
 spring.jpa.hibernate.ddl-auto=none
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
 spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
-
 spring.jpa.open-in-view=false
 
+# Job Recommendation Configuration
 app.recommendation.threshold=60
+
+# JWT Configuration
 app.jwt.secret=REPLACE_WITH_YOUR_OWN_SECRET
 app.jwt.expiration=86400000
 ```
 
-A portot, a felhasználónevet és a jelszót igazítsd a helyi MySQL-konfigurációdhoz.
+Módosítsd az adatbázis portját, felhasználónevét és jelszavát a saját MySQL-konfigurációdnak megfelelően.
 
-**Biztonsági megjegyzés:** A tényleges `application.properties` fájlt, az adatbázis-hitelesítési adatokat és a JWT titkos kulcsot ne töltsd fel a GitHubra.
+A JWT titkos kulcsot szintén saját, biztonságos értékre kell cserélni.
+
+**Biztonsági megjegyzés:** Soha ne töltsd fel a tényleges `application.properties` fájlt, az adatbázis-jelszót vagy a JWT titkos kulcsot a GitHubra.
 
 ### 5. lépés: A backend elindítása
 
-Nyiss terminált a `Project` könyvtárban, majd futtasd:
+Nyisd meg a `Project` könyvtárat az IntelliJ IDEA programban, vagy nyiss egy terminált közvetlenül ebben a könyvtárban.
+
+A Maven Wrapper használata Windows rendszeren:
+
+```powershell
+.\mvnw.cmd spring-boot:run
+```
+
+Ha a Maven külön telepítve van, az alábbi parancs is használható:
 
 ```bash
 mvn spring-boot:run
 ```
 
-A backend a következő címen lesz elérhető:
+Sikeres indítás esetén a backend az alábbi címen lesz elérhető:
 
 ```text
 http://localhost:8080
 ```
 
+A frontend használata közben a backendnek futnia kell.
+
 ### 6. lépés: A frontend elindítása
 
 A frontend alkalmazás a `cooladmin` könyvtárban található.
 
-Nyisd meg egy megfelelő helyi fejlesztői szerver segítségével, és győződj meg arról, hogy az API-konfiguráció a helyben futó backend címére mutat.
+Az alkalmazás Visual Studio Code segítségével történő elindításához:
+
+1. Nyisd meg az `AlumniConnect` projekt teljes könyvtárát a Visual Studio Code-ban.
+2. Nyisd meg a `cooladmin` könyvtárat.
+3. Ha még nincs telepítve, telepítsd a **Live Server** bővítményt.
+4. Keresd meg a `login.html` fájlt.
+5. Kattints rá jobb egérgombbal, majd válaszd az **Open with Live Server** lehetőséget.
+6. A frontend megnyílik az alapértelmezett webböngészőben.
+
+A frontend a `cooladmin/js/api-config.js` fájl segítségével automatikusan meghatározza a backend címét.
+
+- Helyi futtatás esetén (`localhost` vagy `127.0.0.1`) a `http://localhost:8080` címen futó backendhez csatlakozik.
+- Online futtatás esetén a telepített backendhez csatlakozik.
+
+A helyi és az online használat közötti váltáshoz nem szükséges manuálisan módosítani az API-címet.
+
+**Megjegyzés:** A frontend statikus HTML-, CSS- és JavaScript-fájlokból áll. Nincs szükség npm-telepítésre vagy build parancs futtatására.
 
 ## 8. Adatbázis-tervezés
 
-Az alkalmazás egy `alumni_system` nevű MySQL relációs adatbázist használ, amely 13 táblából áll:
+A rendszer MySQL-adatbázisa az `alumni_system` nevet viseli, és 13 táblát tartalmaz.
 
 | Tábla | Leírás |
 |---|---|
-| users | Felhasználói fiókok és szerepkörök |
-| admins | Adminisztrátori adatok |
-| alumni | Öregdiákok profiladatai |
-| departments | Tanszéki adatok |
-| alumni_id_sequence | Öregdiák-azonosítók sorszámozása |
-| skills | Elérhető készségek |
-| alumni_skills | Öregdiákok és készségeik kapcsolata |
-| employment_history | Korábbi munkaviszonyok |
-| job_opportunities | Álláslehetőségek |
-| job_skills | Az állásokhoz szükséges készségek |
-| events | Öregdiák-események |
-| event_alumni | Események és öregdiákok kapcsolata |
-| announcements | Rendszerközlemények |
+| `users` | Felhasználói fiókok és szerepkörök tárolása. |
+| `admins` | Adminisztrátori adatok tárolása. |
+| `alumni` | Öregdiákok profiladatainak tárolása. |
+| `departments` | Tanszéki adatok tárolása. |
+| `alumni_id_sequence` | Az öregdiák-azonosítók sorszámának kezelése. |
+| `skills` | Az elérhető készségek tárolása. |
+| `alumni_skills` | Az öregdiákprofilok és a regisztrált készségek összekapcsolása. |
+| `employment_history` | Korábbi munkahelyek és munkatapasztalatok tárolása. |
+| `job_opportunities` | Elérhető álláslehetőségek tárolása. |
+| `job_skills` | Az álláslehetőségek és az elvárt készségek összekapcsolása. |
+| `events` | Öregdiák-események tárolása. |
+| `event_alumni` | Az öregdiákok és az események közötti kapcsolatok tárolása. |
+| `announcements` | Rendszerközlemények tárolása. |
 
-Az adatbázis elsődleges és idegen kulcsokat használ az adatok integritásának és a táblák közötti kapcsolatoknak a biztosítására.
+Az adatbázis elsődleges és idegen kulcsokat használ az adatok integritásának biztosítására, valamint a különböző entitások közötti kapcsolatok kialakítására.
 
-## 9. A megvalósítás hatóköre és korlátai
+## 9. Tesztelés és értékelés
 
-A jelenlegi rendszer tartalmazza az öregdiákok regisztrációját és hitelesítését, a profilkezelést, a munkatapasztalatok kezelését, a készségkezelést, az álláslehetőségeket, az állásajánlást, az eseménykezelést és a közleményeket.
+Az alkalmazást a fejlesztés során teszteltem annak érdekében, hogy ellenőrizzem a főbb funkciók működését, valamint a frontend, a backend és az adatbázis közötti kommunikációt.
 
-Az eseményekre történő regisztráció és a munkáltatói felület nem része a jelenlegi megvalósításnak. Ezek a funkciók a rendszer későbbi továbbfejlesztése során valósíthatók meg.
+### Funkcionális tesztelés
 
-## 10. Képernyőképek
+A backend REST API-végpontjainak teszteléséhez Postman alkalmazást használtam.
 
-A `Screenshots` könyvtár az alkalmazás felhasználói felületét és a megvalósított funkciókat bemutató képernyőképeket tartalmazza.
+Az alkalmazás megvalósított funkcióit is ellenőriztem, többek között:
 
-## 11. Projektinformációk
+- Felhasználói regisztráció és hitelesítés.
+- Öregdiákprofilok kezelése.
+- Munkatapasztalatok kezelése.
+- Készségek kezelése.
+- Álláslehetőségek kezelése.
+- Állásajánlási funkció működése.
+- Események és közlemények kezelése.
 
-**Projekt címe:** Egy Spring Boot-alapú öregdiák-követő és készségalapú állásajánló rendszer tervezése és megvalósítása.
+### Az ajánlási rendszer értékelése
+
+Az állásajánlások relevanciáját öt résztvevő bevonásával értékeltem.
+
+Az ajánlási rendszer átlagosan **2,8 pontot ért el az 5 pontos skálán**.
+
+Ez az eredmény kezdeti visszajelzést ad arról, hogy a résztvevők mennyire találták relevánsnak az ajánlásokat. Az értékelés azonban kis létszámú mintán alapul, ezért az eredmények nem tekinthetők az ajánlási rendszer hatékonyságára vonatkozó végleges bizonyítéknak.
+
+A rendszer további értékelése nagyobb résztvevői csoport bevonásával és további ajánlási szempontok vizsgálatával javítható.
+
+## 10. A megvalósítás állapota és korlátai
+
+A projektben megvalósított funkciók:
+
+- Öregdiák-fiókok regisztrációja és bejelentkezése.
+- Öregdiákprofilok kezelése.
+- Munkatapasztalatok kezelése.
+- Készségek kezelése.
+- Álláslehetőségek kezelése.
+- Készségalapú állásajánlások.
+- Események kezelése.
+- Közlemények kezelése.
+- Adminisztrációs funkciók.
+
+A jelenlegi megvalósítás nem tartalmazza az alábbi funkciókat:
+
+- Öregdiákok által kezdeményezhető eseményregisztráció.
+- Külön munkáltatói felület.
+
+Ezek a funkciók a rendszer későbbi továbbfejlesztése során valósíthatók meg.
+
+## 11. Képernyőképek
+
+A `Screenshots` könyvtár az alkalmazás felhasználói felületét és megvalósított funkcióit bemutató képernyőképeket tartalmaz.
+
+A képernyőképek többek között az alábbi felületeket mutatják be:
+
+- Bejelentkezési és regisztrációs oldalak.
+- Öregdiák vezérlőpult.
+- Öregdiákprofil.
+- Munkatapasztalatok kezelése.
+- Készségek kezelése.
+- Álláslehetőségek.
+- Állásajánlások.
+- Események és közlemények.
+- Adminisztrációs vezérlőpult és kezelőfelületek.
+
+## 12. Továbbfejlesztési lehetőségek
+
+A rendszer későbbi továbbfejlesztésének lehetséges irányai:
+
+- Eseményregisztrációs funkció megvalósítása.
+- Külön munkáltatói felület kialakítása.
+- Az állásajánlási módszer továbbfejlesztése.
+- Az ajánlási rendszer nagyobb résztvevői csoporttal történő további értékelése.
+- További funkciók bevezetése az öregdiákok szakmai fejlődésének és kapcsolattartásának támogatására.
+
+## 13. Projektinformációk
+
+**Projekt címe:** Spring Boot-alapú öregdiák-követő és készségalapú állásajánló rendszer tervezése és megvalósítása.
 
 **Projekt típusa:** BSc számítástechnika szakos záróprojekt.
 
-**Backend:** Java Spring Boot.
+**Backend:** Java és Spring Boot.
 
 **Frontend:** HTML, CSS, JavaScript és Bootstrap 5.
 
 **Adatbázis:** MySQL.
+
+**GitHub-tároló:** https://github.com/benedictajulius005-bot/AlumniConnect

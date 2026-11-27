@@ -54,7 +54,7 @@ The project aims to improve the connection between alumni skills and available e
 | UI Framework | Bootstrap 5 |
 | Database | MySQL |
 | Build Tool | Maven |
-| API Testing | Postman |
+| API Testing | Swagger UI (Springdoc OpenAPI) |
 | Development IDEs | IntelliJ IDEA and Visual Studio Code |
 
 ## 5. Job Recommendation Approach
@@ -297,7 +297,7 @@ The application was tested during development to assess the functionality of its
 
 ### Functional Testing
 
-Postman was used to test the backend REST API endpoints during development.
+Swagger UI was used to test selected backend REST API endpoints during development. Requests were sent using the available HTTP methods, and the returned status codes and response data were examined.
 
 The implemented application features were also checked, including:
 
@@ -313,9 +313,9 @@ The implemented application features were also checked, including:
 
 The relevance of the job recommendations was evaluated with five participants.
 
-The recommendation system received an average relevance rating of **2.8 out of 5**.
+The average recommendation relevance rating was **2.6 out of 5**, while the average overall usefulness rating was **2.8 out of 5**.
 
-This result provides an initial indication of how participants perceived the relevance of the recommendations. However, the evaluation involved a small number of participants, so the findings should not be treated as conclusive evidence of recommendation effectiveness.
+These results provide preliminary feedback on how participants perceived the recommendations. However, the evaluation involved only five participants, so the findings should not be treated as conclusive evidence of recommendation effectiveness.
 
 Further evaluation with a larger group of users and additional recommendation criteria could improve the assessment.
 
@@ -333,12 +333,12 @@ The following features have been implemented:
 - Announcements management.
 - Administrative management features.
 
-The following features are not included in the current implementation:
+The following limitations remain in the current implementation:
 
-- Event registration by alumni.
-- A separate employer interface.
+- Alumni cannot register for events through the frontend. The backend contains event-participant registration and removal endpoints, but these functions are not integrated into the alumni-facing interface.
+- A separate employer interface is not available. Job opportunities are managed through the Administrator interface.
 
-These features may be considered for further development as part of future work.
+The alumni-facing event registration workflow and a dedicated employer interface may be considered for future development.
 
 ## 11. Screenshots
 
@@ -360,7 +360,7 @@ The screenshots include:
 
 Possible areas for future development include:
 
-- Implementing event registration functionality.
+- Integrating the existing backend event-participant endpoints into an alumni-facing event registration workflow.
 - Developing a separate employer interface.
 - Improving the job recommendation approach.
 - Conducting further evaluation with a larger group of participants.

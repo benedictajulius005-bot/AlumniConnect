@@ -43,18 +43,18 @@ A projekt célja az öregdiákokkal való kapcsolattartás támogatása, valamin
 
 ## 4. Alkalmazott technológiák
 
-| Összetevő | Technológia |
-|---|---|
-| Programozási nyelv | Java 17 |
-| Backend keretrendszer | Spring Boot 4.0.7 |
-| Backend architektúra | REST API |
-| Adathozzáférés | Spring Data JPA / Hibernate |
-| Biztonság | Spring Security és JWT |
-| Frontend | HTML, CSS és JavaScript |
-| Felhasználói felület keretrendszere | Bootstrap 5 |
-| Adatbázis | MySQL |
-| Build eszköz | Maven |
-| API-tesztelés | Swagger UI (Springdoc OpenAPI) |
+| Összetevő | Technológia                        |
+|---|------------------------------------|
+| Programozási nyelv | Java 17                            |
+| Backend keretrendszer | Spring Boot 4.0.7                  |
+| Backend architektúra | REST API                           |
+| Adathozzáférés | Spring Data JPA / Hibernate        |
+| Biztonság | Spring Security és JWT             |
+| Frontend | HTML, CSS és JavaScript            |
+| Felhasználói felület keretrendszere | Bootstrap 5                        |
+| Adatbázis | MariaDB (version 10.4.32)          |
+| Build eszköz | Maven                              |
+| API-tesztelés | Swagger UI (Springdoc OpenAPI)     |
 | Fejlesztői környezetek | IntelliJ IDEA és Visual Studio Code |
 
 ## 5. Az állásajánlási módszer
@@ -131,7 +131,7 @@ Az alábbi lépések segítségével az AlumniConnect helyben is futtatható.
 A következő szoftverek telepítése szükséges:
 
 - Java Development Kit (JDK) 17.
-- MySQL Server vagy MariaDB.
+- MariaDB (version 10.4.32).
 - Visual Studio Code.
 - Visual Studio Code Live Server bővítmény.
 - IntelliJ IDEA vagy más Java fejlesztőkörnyezet (nem kötelező).
@@ -150,7 +150,7 @@ cd AlumniConnect
 
 ### 2. lépés: Az adatbázis létrehozása
 
-Nyisd meg a MySQL-t vagy a phpMyAdmin felületet, és hozd létre az `alumni_system` nevű adatbázist.
+Nyisd meg a MariaDB-t vagy a phpMyAdmin felületet, és hozd létre az `alumni_system` nevű adatbázist.
 
 ```sql
 CREATE DATABASE alumni_system;
@@ -170,7 +170,7 @@ A fájlokat az alábbi sorrendben kell importálni:
 
 Mindkét fájlt az `alumni_system` adatbázisba kell importálni.
 
-Az importálás elvégezhető a phpMyAdmin felületén vagy a MySQL parancssor használatával.
+Az importálás elvégezhető a phpMyAdmin felületén vagy a MariaDB parancssor használatával.
 
 **Fontos:** Az adatbázis szerkezetét a backend elindítása előtt importálni kell, mivel a Hibernate automatikus táblalétrehozása nincs engedélyezve.
 
@@ -217,7 +217,7 @@ app.jwt.secret=REPLACE_WITH_YOUR_OWN_SECRET
 app.jwt.expiration=86400000
 ```
 
-Módosítsd az adatbázis portját, felhasználónevét és jelszavát a saját MySQL-konfigurációdnak megfelelően.
+Módosítsd az adatbázis portját, felhasználónevét és jelszavát a saját MariaDB-konfigurációdnak megfelelően.
 
 A JWT titkos kulcsot szintén saját, biztonságos értékre kell cserélni.
 
@@ -271,7 +271,7 @@ A helyi és az online használat közötti váltáshoz nem szükséges manuális
 
 ## 8. Adatbázis-tervezés
 
-A rendszer MySQL-adatbázisa az `alumni_system` nevet viseli, és 13 táblát tartalmaz.
+A rendszer MariaDB-adatbázisa az `alumni_system` nevet viseli, és 13 táblát tartalmaz.
 
 | Tábla | Leírás |
 |---|---|
@@ -293,31 +293,40 @@ Az adatbázis elsődleges és idegen kulcsokat használ az adatok integritásán
 
 ## 9. Tesztelés és értékelés
 
-Az alkalmazást a fejlesztés során teszteltem annak érdekében, hogy ellenőrizzem a főbb funkciók működését, valamint a frontend, a backend és az adatbázis közötti kommunikációt.
+Az alkalmazást a fejlesztés során teszteltük annak érdekében, hogy felmérjük a fő funkciók működését, valamint a frontend, a backend és az adatbázis közötti együttműködést.
+
+### Részletes tesztelési dokumentáció
+
+A részletes tesztelési dokumentumok a [`testing`](testing/) könyvtárban érhetők el:
+
+- [Funkcionális tesztesetek (Word)](testing/Functional_Test_Cases.docx)
+- [Funkcionális tesztesetek (Markdown)](testing/Functional_Test_Cases.md)
+- [Ajánlórendszer értékelése (Word)](testing/Recommendation_Evaluation.docx)
+- [Ajánlórendszer értékelése (Markdown)](testing/Recommendation_Evaluation.md)
 
 ### Funkcionális tesztelés
 
-A backend REST API-végpontjainak teszteléséhez a Swagger UI felületét használtam. A kéréseket a rendelkezésre álló HTTP-metódusokkal küldtem el, majd ellenőriztem a visszakapott HTTP-státuszkódokat és válaszadatokat.
+A fejlesztés során a Swagger UI segítségével teszteltük a backend REST API kiválasztott végpontjait. A kéréseket a rendelkezésre álló HTTP-metódusokkal küldtük el, majd megvizsgáltuk a visszakapott HTTP-státuszkódokat és válaszadatokat.
 
-Az alkalmazás megvalósított funkcióit is ellenőriztem, többek között:
+Az alkalmazás megvalósított funkcióit is ellenőriztük, többek között az alábbiakat:
 
 - Felhasználói regisztráció és hitelesítés.
-- Öregdiákprofilok kezelése.
-- Munkatapasztalatok kezelése.
+- Alumni profilok kezelése.
+- Munkatapasztalat kezelése.
 - Készségek kezelése.
 - Álláslehetőségek kezelése.
-- Állásajánlási funkció működése.
+- Készségalapú állásajánlási funkció.
 - Események és közlemények kezelése.
 
-### Az ajánlási rendszer értékelése
+### Az ajánlórendszer értékelése
 
-Az állásajánlások relevanciáját öt résztvevő bevonásával értékeltem.
+Az állásajánlások relevanciáját öt résztvevő bevonásával értékeltük.
 
-Az ajánlások relevanciájának átlagos értékelése **2,6 pont volt az 5 pontos skálán**, míg az általános hasznosság átlagos értékelése **2,8 pont volt az 5 pontos skálán**.
+Az ajánlások relevanciájának átlagos értékelése **5-ből 2,6**, míg az általános hasznosság átlagos értékelése **5-ből 2,8** volt.
 
-Ezek az eredmények előzetes visszajelzést adnak arról, hogyan ítélték meg a résztvevők az ajánlásokat. Az értékelés azonban mindössze öt résztvevő bevonásával történt, ezért az eredmények nem tekinthetők az ajánlási rendszer hatékonyságára vonatkozó végleges bizonyítéknak.
+Ezek az eredmények előzetes visszajelzést nyújtanak arról, hogyan ítélték meg a résztvevők az ajánlásokat. Az értékelés azonban mindössze öt résztvevő bevonásával történt, ezért az eredmények nem tekinthetők az ajánlórendszer hatékonyságát bizonyító, általános érvényű következtetésnek.
 
-A rendszer további értékelése nagyobb résztvevői csoport bevonásával és további ajánlási szempontok vizsgálatával javítható.
+Az értékelés egy nagyobb felhasználói csoport bevonásával és további ajánlási szempontok alkalmazásával tovább fejleszthető.
 
 ## 10. A megvalósítás állapota és korlátai
 
@@ -376,6 +385,6 @@ A rendszer későbbi továbbfejlesztésének lehetséges irányai:
 
 **Frontend:** HTML, CSS, JavaScript és Bootstrap 5.
 
-**Adatbázis:** MySQL.
+**Adatbázis:** MariaDB.
 
 **GitHub-tároló:** https://github.com/benedictajulius005-bot/AlumniConnect

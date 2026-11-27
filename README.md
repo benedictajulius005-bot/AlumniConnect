@@ -44,7 +44,7 @@ The project aims to improve the connection between alumni skills and available e
 ## 4. Technology Stack
 
 | Component | Technology |
-|---|---|
+|---|--|
 | Programming Language | Java 17 |
 | Backend Framework | Spring Boot 4.0.7 |
 | Backend Architecture | REST API |
@@ -52,7 +52,7 @@ The project aims to improve the connection between alumni skills and available e
 | Security | Spring Security and JWT |
 | Frontend | HTML, CSS and JavaScript |
 | UI Framework | Bootstrap 5 |
-| Database | MySQL |
+| Database | MariaDB (version 10.4.32)  |
 | Build Tool | Maven |
 | API Testing | Swagger UI (Springdoc OpenAPI) |
 | Development IDEs | IntelliJ IDEA and Visual Studio Code |
@@ -131,7 +131,7 @@ Follow these instructions to run AlumniConnect locally.
 Ensure the following software is installed:
 
 - Java Development Kit (JDK) 17.
-- MySQL Server or MariaDB.
+- MariaDB (version 10.4.32 recommended).
 - Visual Studio Code.
 - Visual Studio Code Live Server extension.
 - IntelliJ IDEA or another Java IDE (optional).
@@ -150,7 +150,7 @@ cd AlumniConnect
 
 ### Step 2: Create the Database
 
-Open MySQL or phpMyAdmin and create a database named `alumni_system`.
+Open your MariaDB client or phpMyAdmin and create a database named `alumni_system`.
 
 ```sql
 CREATE DATABASE alumni_system;
@@ -170,7 +170,7 @@ Import the files in the following order:
 
 Both files should be imported into the `alumni_system` database.
 
-You can use phpMyAdmin or the MySQL command line to import the files.
+You can use phpMyAdmin or the MariaDb command line to import the files.
 
 **Important:** The database schema must be imported before starting the backend because Hibernate is configured not to generate the database tables automatically.
 
@@ -217,7 +217,7 @@ app.jwt.secret=REPLACE_WITH_YOUR_OWN_SECRET
 app.jwt.expiration=86400000
 ```
 
-Adjust the database port, username, and password to match your local MySQL configuration.
+Adjust the database port, username, and password to match your local MariaDB configuration.
 
 Replace the JWT secret with your own secure secret.
 
@@ -271,7 +271,7 @@ No manual API address changes are required when switching between local and onli
 
 ## 8. Database Design
 
-The MySQL database is named `alumni_system` and contains 13 tables.
+The MariaDB database is named `alumni_system` and contains 13 tables.
 
 | Table | Description |
 |---|---|
@@ -295,6 +295,15 @@ The database uses primary keys and foreign-key relationships to maintain data in
 
 The application was tested during development to assess the functionality of its main features and the interaction between the frontend, backend, and database.
 
+### Detailed Testing Documentation
+
+The detailed testing documents are available in the [`testing`](testing/) directory:
+
+- [Functional Test Cases (Word)](testing/Functional_Test_Cases.docx)
+- [Functional Test Cases (Markdown)](testing/Functional_Test_Cases.md)
+- [Recommendation Evaluation (Word)](testing/Recommendation_Evaluation.docx)
+- [Recommendation Evaluation (Markdown)](testing/Recommendation_Evaluation.md)
+
 ### Functional Testing
 
 Swagger UI was used to test selected backend REST API endpoints during development. Requests were sent using the available HTTP methods, and the returned status codes and response data were examined.
@@ -308,6 +317,16 @@ The implemented application features were also checked, including:
 - Job opportunity management.
 - Job recommendation functionality.
 - Events and announcements management.
+
+Recommendation Evaluation
+
+The relevance of the job recommendations was evaluated with five participants.
+
+The average recommendation relevance rating was 2.6 out of 5, while the average overall usefulness rating was 2.8 out of 5.
+
+These results provide preliminary feedback on how participants perceived the recommendations. However, the evaluation involved only five participants, so the findings should not be treated as conclusive evidence of recommendation effectiveness.
+
+Further evaluation with a larger group of users and additional recommendation criteria could improve the assessment.
 
 ### Recommendation Evaluation
 
@@ -376,6 +395,6 @@ Possible areas for future development include:
 
 **Frontend:** HTML, CSS, JavaScript and Bootstrap 5.
 
-**Database:** MySQL.
+**Database:** MariaDB.
 
 **Repository:** https://github.com/benedictajulius005-bot/AlumniConnect

@@ -1,4 +1,3 @@
-
 /* =========================================================
    ALUMNICONNECT - ADMIN EVENTS MANAGEMENT
    ========================================================= */
@@ -9,7 +8,7 @@
     min-height: calc(100vh - 70px);
 }
 
-.main-content > .section__content {
+.main-content>.section__content {
     padding-top: 30px;
     padding-bottom: 25px;
 }
@@ -564,6 +563,7 @@
 
 /* Responsive */
 @media (max-width: 1199px) {
+
     .m-card .table thead th,
     .m-card .table tbody td {
         padding-left: 13px;
@@ -572,7 +572,7 @@
 }
 
 @media (max-width: 991px) {
-    .main-content > .section__content {
+    .main-content>.section__content {
         padding-top: 25px;
     }
 
@@ -582,7 +582,7 @@
 }
 
 @media (max-width: 767px) {
-    .main-content > .section__content {
+    .main-content>.section__content {
         padding-left: 15px;
         padding-right: 15px;
     }
@@ -642,9 +642,10 @@
     .modal-dialog {
         margin: 12px;
     }
-#adminHeaderName {
-    display: none !important;
-}
+
+    #adminHeaderName {
+        display: none !important;
+    }
 
     .modal-body {
         padding: 18px;
